@@ -13,11 +13,11 @@ drop if bpl==002  | bpl==004 | bpl==006 | bpl==008 | bpl==009 | bpl==010 | bpl==
 * Work factors screen: drop if not reporting as in labor force in 1970, or if in military or college in 1965.
 drop if labforce!=2 | milit5yr==2 | coll5yr==2
 
-* TO-DO: Revise top investigate longer-term Southern-born migrants. Must revise MWithinSouth simultaneously.
+* TO-DO [scheduled later]: Revise top investigate longer-term Southern-born migrants. Must revise MWithinSouth simultaneously.
 * Drop those living outside of South in 1965.
 drop if migplac5==000 | migplac5==002  | migplac5==004 | migplac5==006 | migplac5==008 | migplac5==009 | migplac5==010 | migplac5==011 | migplac5==015 | migplac5==016 | migplac5==017 | migplac5==018 | migplac5==019 | migplac5==020 | migplac5==023 | migplac5==024 | migplac5==025 | migplac5==026 | migplac5==027 | migplac5==029 | migplac5==030 | migplac5==031 | migplac5==032 | migplac5==033 | migplac5==034 | migplac5==035 | migplac5==036 | migplac5==038 | migplac5==039 | migplac5==041 | migplac5==042 | migplac5==044 | migplac5==046 | migplac5==049 | migplac5==050 | migplac5==053 | migplac5==054 | migplac5==055 | migplac5==056  | migplac5>060
 
-* TO-DO: 1. Move to separate marriage do file. 2. Check logic.
+* TO-DO [when I get to datamgt-generate1965.do]: 1. Move to separate marriage do file. 2. Check logic.
 * Generate dummies representing marriage to Northerner or Southerner.
 generate marriedNortherner = (bpl_sp==002  | bpl_sp==004 | bpl_sp==006 | bpl_sp==008 | bpl_sp==009 | bpl_sp==010 | bpl_sp==011 | bpl_sp==015 | bpl_sp==016 | bpl_sp==017 | bpl_sp==018 | bpl_sp==019 | bpl_sp==020 | bpl_sp==023 | bpl_sp==024 | bpl_sp==025 | bpl_sp==026 | bpl_sp==027 | bpl_sp==029 | bpl_sp==030 | bpl_sp==031 | bpl_sp==032 | bpl_sp==033 | bpl_sp==034 | bpl_sp==035 | bpl_sp==036 | bpl_sp==038 | bpl_sp==039 | bpl_sp==041 | bpl_sp==042 | bpl_sp==044 | bpl_sp==046 | bpl_sp==049 | bpl_sp==050 | bpl_sp==053 | bpl_sp==054 | bpl_sp==055 | bpl_sp==056)
 generate marriedSoutherner = (bpl_sp==01 | bpl_sp==05 | bpl_sp==12 | bpl_sp==13 | bpl_sp==21 | bpl_sp==22 | bpl_sp==28 | bpl_sp==37 | bpl_sp==40 | bpl_sp==45 | bpl_sp==47 | bpl_sp==48 | bpl_sp==51)
@@ -44,7 +44,7 @@ generate dSex = (sex - 1)
 * Logic: MToNorth and MWithinSouth are migrant groups.
 *		 MToNorth = 1 if residing in Northern state in 1970.
 *		 MWithinSouth = 1 if residing in Southern state in 1970 that is different from Southern state of residence in 1965.
-* 		 TO-DO: Revise logic of MWithinSouth so that it doesn't assume 1965 Southern residence, since I will be looking at longer-term migrants.
+* 		 TO-DO [scheduled later]: Revise logic of MWithinSouth and MToNorth so that it doesn't assume 1965 Southern residence, since I will be looking at longer-term migrants.
 generate MToNorth = (statefip==002  | statefip==004 | statefip==006 | statefip==008 | statefip==009 | statefip==010 | statefip==011 | statefip==015 | statefip==016 | statefip==017 | statefip==018 | statefip==019 | statefip==020 | statefip==023 | statefip==024 | statefip==025 | statefip==026 | statefip==027 | statefip==029 | statefip==030 | statefip==031 | statefip==032 | statefip==033 | statefip==034 | statefip==035 | statefip==036 | statefip==038 | statefip==039 | statefip==041 | statefip==042 | statefip==044 | statefip==046 | statefip==049 | statefip==050 | statefip==053 | statefip==054 | statefip==055 | statefip==056)
 generate MWithinSouth = (MToNorth!=1 & statefip!=migplac5)
 * Treatment dummies currently set to match treatment group dummies.
@@ -60,24 +60,25 @@ generate time=1
 joinby statefip using "inc70bystate.dta"
 joinby migplac5 using "inc65bystate.dta"
 * Deprecated: hard paths. 
-* TO-DO: Check that relative paths above work.
+* Done (3/13): Check that relative paths above work.
 * joinby statefip using "\\sacfiles1\home\m\maxbnorton\Documents\ECON 200C\1970 data\inc70bystate.dta"
 * joinby migplac5 using "\\sacfiles1\home\m\maxbnorton\Documents\ECON 200C\1970 data\inc65bystate.dta"
 
 * Deprecated renaming: renamed them in the source dta files above, 3/8/17.
-* TO-DO: Update other references to these vars with their new names.
+* Done (already): Update other references to these vars with their new names.
 * rename inc70 stateIncPresent
 * rename inc65 stateInc65
 
-* TO-DO: 1. Check if occUnlabeled is deprecated. 2. Check if there is a more direct way to strip labels.
+* Done: 1. Check if occUnlabeled is deprecated: yes, I think so (3/13). 2. Check if there is a more direct way to strip labels: yes, label drop (3/13).
 * Presumably this generate is a trick to strip the labels from these variables to facilitate the join. 
 * Join generates occscore5yr, erscor505yr, sei5yr, presgl5yr to compare to 1970 values.
-generate occUnlabeled=occ1950
-generate occ5Unlabeled = occ5yr95
-joinby occ5Unlabeled using "occ-indices.dta"
+* generate occUnlabeled=occ1950
+* generate occ5Unlabeled = occ5yr95
+label drop occ5yr95_lbl
+joinby occ5yr95 using "occ-indices.dta"
 
 * Drop if ERSCOR50 is N/A in either year. 
-* TO-DO: For whom is this the case?
+* Done: For whom is this the case? Apparently no one. Drop count is zero for both. I think good hygiene to leave it in anyway.
 drop if erscor50==9999
 drop if erscor505yr==9999
 
