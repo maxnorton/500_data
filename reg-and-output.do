@@ -3,7 +3,6 @@
 *TO-DO: check, revise specification for marriage accounting
 *TO-DO: check, revise specification for long-term migration
 *TO-DO: check how education was derived in old version; using the following as sub for now
-drop education
 generate education=0
 replace education=0 if higrade==1
 replace education=1 if higrade==1 | higrade==2
@@ -62,5 +61,3 @@ lincom tWillMarryN-tWillMarryS
 outreg2 [er_all occ_all sgl_all sei_all] using output-all, replace alpha(.02, .10, .20)  nonotes
 outreg2 [er_m occ_m sgl_m sei_m] using output-m, replace alpha(.02, .10, .20)  nonotes
 outreg2 [er_f occ_f sgl_f sei_f] using output-f, replace alpha(.02, .10, .20)  nonotes
-
-
