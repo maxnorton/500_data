@@ -1,6 +1,3 @@
-* Metro screen: deprecated, since not available for 1965.
-* drop if metro==0
-
 * Select "Black/Negro" only
 drop if race!=2
 
@@ -22,9 +19,6 @@ drop if migplac5==000 | migplac5==002  | migplac5==004 | migplac5==006 | migplac
 generate marriedNortherner = (bpl_sp==002  | bpl_sp==004 | bpl_sp==006 | bpl_sp==008 | bpl_sp==009 | bpl_sp==010 | bpl_sp==011 | bpl_sp==015 | bpl_sp==016 | bpl_sp==017 | bpl_sp==018 | bpl_sp==019 | bpl_sp==020 | bpl_sp==023 | bpl_sp==024 | bpl_sp==025 | bpl_sp==026 | bpl_sp==027 | bpl_sp==029 | bpl_sp==030 | bpl_sp==031 | bpl_sp==032 | bpl_sp==033 | bpl_sp==034 | bpl_sp==035 | bpl_sp==036 | bpl_sp==038 | bpl_sp==039 | bpl_sp==041 | bpl_sp==042 | bpl_sp==044 | bpl_sp==046 | bpl_sp==049 | bpl_sp==050 | bpl_sp==053 | bpl_sp==054 | bpl_sp==055 | bpl_sp==056)
 generate marriedSoutherner = (bpl_sp==01 | bpl_sp==05 | bpl_sp==12 | bpl_sp==13 | bpl_sp==21 | bpl_sp==22 | bpl_sp==28 | bpl_sp==37 | bpl_sp==40 | bpl_sp==45 | bpl_sp==47 | bpl_sp==48 | bpl_sp==51)
 
-* Deprecated: generate hasChild dummy. Logic: hasChild = 1 if woman with child or man with spouse with child, 0 o.w. If chborn reports code N/A, receives 0.
-* generate hasChild = ( (sex==2 & chborn>1) | (sex==1 & !missing(chborn_sp) & chborn_sp>1) )
-
 * Generate children, var representing number of children. 
 * Logic: 	1. children=0. 
 *			2. Replace children with (chborn-1) if chborn is not ., 0, or 1 (applies to all women). 
@@ -36,9 +30,6 @@ replace children = (chborn_sp-1) if (!missing(chborn_sp) & chborn_sp>1)
 
 * Generate gender dummy: male base, 1 = female.
 generate dSex = (sex - 1)
-
-* Metro dummy deprecated, since not available for 1965.
-* generate dMetro = (metro>1)
 
 * Generate migration treatment and treatment group dummies.
 * Logic: MToNorth and MWithinSouth are migrant groups.
@@ -55,26 +46,13 @@ generate tMWithinSouth=MWithinSouth
 * Join each record to a state_inc_1970 and state_inc_1965 variable (state per-capita income in respective year).
 joinby statefip using "inc70bystate.dta"
 joinby migplac5 using "inc65bystate.dta"
-* Deprecated: hard paths. 
-* Done (3/13): Check that relative paths above work.
-* joinby statefip using "\\sacfiles1\home\m\maxbnorton\Documents\ECON 200C\1970 data\inc70bystate.dta"
-* joinby migplac5 using "\\sacfiles1\home\m\maxbnorton\Documents\ECON 200C\1970 data\inc65bystate.dta"
 
-* Deprecated renaming: renamed them in the source dta files above, 3/8/17.
-* Done (already): Update other references to these vars with their new names.
-* rename inc70 stateIncPresent
-* rename inc65 stateInc65
-
-* Done: 1. Check if occUnlabeled is deprecated: yes, I think so (3/13). 2. Check if there is a more direct way to strip labels: yes, label drop (3/13).
-* Presumably this generate is a trick to strip the labels from these variables to facilitate the join. 
 * Join generates occscore5yr, erscor505yr, sei5yr, presgl5yr to compare to 1970 values.
-* generate occUnlabeled=occ1950
-* generate occ5Unlabeled = occ5yr95
 label drop occ5yr95_lbl
 joinby occ5yr95 using "occ-indices.dta"
 
 * Drop if ERSCOR50 is N/A in either year. 
-* Done: For whom is this the case? Apparently no one. Drop count is zero for both. I think good hygiene to leave it in anyway.
+* For whom is this the case? Apparently no one. Drop count is zero for both. I think good hygiene to leave it in anyway.
 drop if erscor50==9999
 drop if erscor505yr==9999
 

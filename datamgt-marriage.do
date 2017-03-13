@@ -1,7 +1,3 @@
-* Deprecated: not workable categories, because pre-65 period does not exist.
-* gen oldNMarriage = 0
-* gen oldSMarriage = 0
-
 * Set up marriage vars. See marriage-vars-map.xlsx for logic.
 gen willMarryN = 0
 gen willMarryS = 0

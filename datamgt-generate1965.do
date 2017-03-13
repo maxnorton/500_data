@@ -1,8 +1,5 @@
 * Aim of file: rewrite primary regression vars to 1965 values and output to new data file.
 
-* Done: Check if this year var is actually relevant to anything. Nope.
-* replace year=1965
-
 * Set time period to 0.
 replace time=0
 
@@ -37,5 +34,3 @@ replace tMToNorth=0
 replace tMWithinSouth=0
 
 save "data-1965.dta", replace
-
-* Done (3/13): Check about removing strange erscor50s (see near bottom of datamgt.do). Count says there are none.
