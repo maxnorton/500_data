@@ -58,7 +58,3 @@ drop if erscor505yr==9999
 
 * Generate age-square variable.
 generate agesqr=age*age
-
-* Generate individual records ID numbers for...
-* TO-DO: for... ?
-egen id = group(serial pernum)
