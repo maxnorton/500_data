@@ -17,7 +17,7 @@ replace age=age-5
 replace agesqr=age*age
 
 * If new age is less than the age at which the person was married, then rewrite their marriage dummy to 0.
-* TO-DO [when I get to datamgt-marriage]: 1. Check logic, refactor with newer logic in rev-marr-vars. 
+* TO-DO [scheduled later]: 1. Check logic, refactor with newer logic in rev-marr-vars. 
 *		 2. Update logic to accommodate long, short-term gains to marriage.
 replace marriedNortherner=0 if (age<agemarr)
 replace marriedSoutherner=0 if (age<agemarr) 
@@ -36,6 +36,6 @@ replace erscor50=erscor505yr
 replace tMToNorth=0
 replace tMWithinSouth=0
 
-save "data-1965.dta"
+save "data-1965.dta", replace
 
 * Done (3/13): Check about removing strange erscor50s (see near bottom of datamgt.do). Count says there are none.

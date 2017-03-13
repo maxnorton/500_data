@@ -17,4 +17,4 @@ replace willMarryS = (bpl_sp==01 | bpl_sp==05 | bpl_sp==12 | bpl_sp==13 | bpl_sp
 replace tWillMarryS = (bpl_sp==01 | bpl_sp==05 | bpl_sp==12 | bpl_sp==13 | bpl_sp==21 | bpl_sp==22 | bpl_sp==28 | bpl_sp==37 | bpl_sp==40 | bpl_sp==45 | bpl_sp==47 | bpl_sp==48 | bpl_sp==51) & time==1
 
 *Save data
-save "data-2periods-marriage.dta"
+save "data-2periods-marriage.dta", replace
