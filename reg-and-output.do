@@ -12,7 +12,7 @@ quietly regress erscor50  tMToNorth tMWithinSouth MToNorth MWithinSouth tWillMar
 est store er_all
 lincom tWillMarryN-tWillMarryS
 
-quietly regress occscore  tMToNorth tMWithinSouth MToNorth MWithinSouth tWillMarryN tWillMarryS willMarryN willMarryS time age agesqr dSex education children state_inc_1965 deltaStateInc, r
+quietly regress occscore_real  tMToNorth tMWithinSouth MToNorth MWithinSouth tWillMarryN tWillMarryS willMarryN willMarryS time age agesqr dSex education children state_inc_1965 deltaStateInc, r
 est store occ_all
 lincom tWillMarryN-tWillMarryS
 
@@ -29,7 +29,7 @@ quietly regress erscor50  tMToNorth tMWithinSouth MToNorth MWithinSouth tWillMar
 est store er_m
 lincom tWillMarryN-tWillMarryS
 
-quietly regress occscore  tMToNorth tMWithinSouth MToNorth MWithinSouth tWillMarryN tWillMarryS willMarryN willMarryS time age agesqr dSex education children state_inc_1965 deltaStateInc if dSex==0, r
+quietly regress occscore_real  tMToNorth tMWithinSouth MToNorth MWithinSouth tWillMarryN tWillMarryS willMarryN willMarryS time age agesqr dSex education children state_inc_1965 deltaStateInc if dSex==0, r
 est store occ_m
 lincom tWillMarryN-tWillMarryS
 
@@ -46,7 +46,7 @@ quietly regress erscor50  tMToNorth tMWithinSouth MToNorth MWithinSouth tWillMar
 est store er_f
 lincom tWillMarryN-tWillMarryS
 
-quietly regress occscore  tMToNorth tMWithinSouth MToNorth MWithinSouth tWillMarryN tWillMarryS willMarryN willMarryS time age agesqr dSex education children state_inc_1965 deltaStateInc if dSex==1, r
+quietly regress occscore_real  tMToNorth tMWithinSouth MToNorth MWithinSouth tWillMarryN tWillMarryS willMarryN willMarryS time age agesqr dSex education children state_inc_1965 deltaStateInc if dSex==1, r
 est store occ_f
 lincom tWillMarryN-tWillMarryS
 

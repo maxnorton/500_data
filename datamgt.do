@@ -57,9 +57,9 @@ drop if erscor505yr>=999
 
 * Adjust occscore to real 1964 or 1969 dollars
 gen occscore_dollars = occscore*100
-gen occscore_deflated = 0
-replace occscore_deflated = occscore_dollars * 18.366 / 13.745 if time==0
-replace occscore_deflated = occscore_dollars * 21.642 / 13.745 if time==1
+gen occscore_real = 0
+replace occscore_real = occscore_dollars * 18.366 / 13.745 if time==0
+replace occscore_real = occscore_dollars * 21.642 / 13.745 if time==1
 
 * Generate age-square variable.
 generate agesqr=age*age
