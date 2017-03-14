@@ -53,8 +53,8 @@ joinby occ5yr95 using "occ-indices.dta"
 
 * Drop if ERSCOR50 is N/A in either year. 
 * For whom is this the case? Apparently no one. Drop count is zero for both. I think good hygiene to leave it in anyway.
-drop if erscor50==9999
-drop if erscor505yr==9999
+drop if erscor50>=999
+drop if erscor505yr>=999
 
 * Generate age-square variable.
 generate agesqr=age*age
