@@ -38785,6 +38785,8 @@ r(111);
 . replace education=higrade-2 if higrade>2 
 (60,790 real changes made)
 
+* EXCEL ID 2
+
 . . regress occscore willMarryS willMarryN tWMS1 tWMN1 time age agesqr dSex education children state_inc_1965 deltaStateInc if dSex==0
 note: dSex omitted because of collinearity
 
@@ -39040,6 +39042,8 @@ file data-2periods-marriage.dta saved
 willMarry ambiguous abbreviation
 r(111);
 
+* EXCEL ID 3
+
 . regress occscore willMarryAtAll willMarryN tWMAA1 tWMN1 time age agesqr dSex education children state_inc_1965 deltaStateInc if dSex==0 & MToNorth==1
 note: dSex omitted because of collinearity
 
@@ -39067,6 +39071,8 @@ state_inc_1965 |   .0004715   .0001495     3.15   0.002     .0001784    .0007646
  deltaStateInc |  -.7274725   .4890494    -1.49   0.137    -1.686066    .2311214
          _cons |   8.840762   .9333325     9.47   0.000     7.011321     10.6702
 --------------------------------------------------------------------------------
+
+* EXCEL ID 4
 
 . regress erscor50 willMarryAtAll willMarryN tWMAA1 tWMN1 time age agesqr dSex education children state_inc_1965 deltaStateInc if dSex==0 & MToNorth==1
 note: dSex omitted because of collinearity
@@ -39096,6 +39102,8 @@ state_inc_1965 |   .0001136   .0005001     0.23   0.820    -.0008667    .0010939
          _cons |  -3.609405   3.121772    -1.16   0.248    -9.728443    2.509633
 --------------------------------------------------------------------------------
 
+* EXCEL ID 5
+
 . regress sei willMarryAtAll willMarryN tWMAA1 tWMN1 time age agesqr dSex education children state_inc_1965 deltaStateInc if dSex==0 & MToNorth==1
 note: dSex omitted because of collinearity
 
@@ -39123,6 +39131,8 @@ state_inc_1965 |   .0028762    .000374     7.69   0.000     .0021431    .0036092
  deltaStateInc |   .7756186   1.223208     0.63   0.526    -1.622013     3.17325
          _cons |  -23.04081   2.334448    -9.87   0.000     -27.6166   -18.46502
 --------------------------------------------------------------------------------
+
+* EXCEL ID 6
 
 . regress presgl willMarryAtAll willMarryN tWMAA1 tWMN1 time age agesqr dSex education children state_inc_1965 deltaStateInc if dSex==0 & MToNorth==1
 note: dSex omitted because of collinearity
@@ -39152,6 +39162,8 @@ state_inc_1965 |   .0005586   .0002516     2.22   0.026     .0000655    .0010517
          _cons |    1.33614   1.570313     0.85   0.395    -1.741856    4.414137
 --------------------------------------------------------------------------------
 
+* EXCEL ID 7
+
 . regress occscore willMarryAtAll willMarryS tWMAA1 tWMS1 time age agesqr dSex education children state_inc_1965 deltaStateInc if dSex==0 & MToNorth==1
 note: dSex omitted because of collinearity
 
@@ -39179,6 +39191,8 @@ state_inc_1965 |   .0004502   .0001495     3.01   0.003     .0001572    .0007432
  deltaStateInc |  -.8377829   .4887886    -1.71   0.087    -1.795866    .1202999
          _cons |   8.801259   .9339529     9.42   0.000     6.970602    10.63192
 --------------------------------------------------------------------------------
+
+* EXCEL ID 8
 
 . regress erscor50 willMarryAtAll willMarryS tWMAA1 tWMS1 time age agesqr dSex education children state_inc_1965 deltaStateInc if dSex==0 & MToNorth==1
 note: dSex omitted because of collinearity
@@ -39214,6 +39228,8 @@ r(199);
 
 . rvfplot
 
+* EXCEL ID 9 [duplicate of 2]
+
 . regress occscore willMarryAtAll willMarryN tWMAA1 tWMN1 time age agesqr dSex education children state_inc_1965 deltaStateInc if dSex==0 & MToNorth==1
 note: dSex omitted because of collinearity
 
@@ -39241,6 +39257,8 @@ state_inc_1965 |   .0004715   .0001495     3.15   0.002     .0001784    .0007646
  deltaStateInc |  -.7274725   .4890494    -1.49   0.137    -1.686066    .2311214
          _cons |   8.840762   .9333325     9.47   0.000     7.011321     10.6702
 --------------------------------------------------------------------------------
+
+* EXCEL ID 10
 
 . regress presgl willMarryAtAll willMarryS tWMAA1 tWMS1 time age agesqr dSex education children state_inc_1965 deltaStateInc if dSex==0 & MToNorth==1
 note: dSex omitted because of collinearity
@@ -39270,6 +39288,8 @@ state_inc_1965 |   .0005294   .0002515     2.11   0.035     .0000365    .0010223
          _cons |   1.303567   1.571214     0.83   0.407    -1.776195    4.383329
 --------------------------------------------------------------------------------
 
+* EXCEL ID 11
+
 . regress sei willMarryAtAll willMarryS tWMAA1 tWMS1 time age agesqr dSex education children state_inc_1965 deltaStateInc if dSex==0 & MToNorth==1
 note: dSex omitted because of collinearity
 
@@ -39297,6 +39317,8 @@ state_inc_1965 |   .0028183   .0003738     7.54   0.000     .0020855    .0035511
  deltaStateInc |   .6023241   1.222507     0.49   0.622    -1.793932     2.99858
          _cons |  -22.99694   2.335905    -9.84   0.000    -27.57559    -18.4183
 --------------------------------------------------------------------------------
+
+* EXCEL ID 12
 
 . regress occscore willMarryAtAll willMarryN tWMAA1 tWMN1 time age agesqr dSex education children state_inc_1965 deltaStateInc if dSex==0 & MToNorth==0
 note: dSex omitted because of collinearity
@@ -48890,6 +48912,8 @@ file data-2periods-marriage.dta saved
 . 
 end of do-file
 
+* EXCEL ID 13
+
 . regress occscore willMarryAtAll i.willMarryN tWMAA1 time age agesqr dSex education children state_inc_1965 deltaStateInc if dSex==0 & MToNorth==1
 note: dSex omitted because of collinearity
 
@@ -48916,6 +48940,8 @@ state_inc_1965 |   .0004639   .0001494     3.11   0.002     .0001711    .0007568
  deltaStateInc |  -.7433111   .4888677    -1.52   0.128    -1.701549    .2149267
          _cons |   8.847579   .9333253     9.48   0.000     7.018153    10.67701
 --------------------------------------------------------------------------------
+
+* EXCEL ID 14
 
 . regress occscore MWithinNorth tMWithinNorth willMarryAtAll willMarryN tWMAA1 tWMN1 time age agesqr dSex education children state_inc_1965 deltaStateInc if dSex==0 & MToNorth==
 > 1
@@ -48947,6 +48973,8 @@ state_inc_1965 |    .000418   .0001579     2.65   0.008     .0001085    .0007275
  deltaStateInc |  -2.001908   .6146253    -3.26   0.001    -3.206646   -.7971712
          _cons |   9.166017   .9740478     9.41   0.000      7.25677    11.07526
 --------------------------------------------------------------------------------
+
+* EXCEL ID 15
 
 . regress presgl MWithinNorth tMWithinNorth willMarryAtAll willMarryN tWMAA1 tWMN1 time age agesqr dSex education children state_inc_1965 deltaStateInc if dSex==0 & MToNorth==1
 note: dSex omitted because of collinearity
