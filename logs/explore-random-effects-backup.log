@@ -1,0 +1,1869 @@
+count if shortN==1 & Random-effects GLS regression                   Number of obs     =     15,549
+Group variable: id                              Number of groups  =      7,785
+
+R-sq:                                           Obs per group:
+     within  = 0.4642                                         min =          1
+     between = 0.0196                                         avg =        2.0
+     overall = 0.1347                                         max =          2
+
+                                                Wald chi2(25)     =    6869.59
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+-----------------------------------------------------------------------------------
+    occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   247.0225   202.7995     1.22   0.223    -150.4573    644.5022
+   willMarryAtAll |   466.6552   296.3663     1.57   0.115    -114.2122    1047.523
+       willMarryN |  -800.3544   415.7065    -1.93   0.054    -1615.124    14.41538
+ MWithinMarrAAInt |   -107.728   217.8311    -0.49   0.621    -534.6691    319.2131
+  MWithinMarrNInt |  -15.08871   167.1802    -0.09   0.928    -342.7559    312.5784
+        longtermN |   318.1546   269.1741     1.18   0.237     -209.417    845.7262
+       LTN_wMAA_i |  -281.2421   295.0717    -0.95   0.341     -859.572    297.0878
+        LTN_wMN_i |   886.8837   418.1424     2.12   0.034     67.33964    1706.428
+    tMWithinNorth |   382.3453   167.4835     2.28   0.022     54.08377    710.6069
+           tWMAA1 |  -229.7055   98.98903    -2.32   0.020    -423.7204   -35.69055
+            tWMN1 |   583.3602   410.7517     1.42   0.156    -221.6984    1388.419
+tMWithinMarrAAInt |  -114.0311   160.5688    -0.71   0.478    -428.7402    200.6779
+ tMWithinMarrNInt |   551.2871   250.5188     2.20   0.028      60.2793    1042.295
+       LTN_tMWN_i |  -233.1386   231.9286    -1.01   0.315    -687.7104    221.4331
+      LTN_tWMAA_i |   289.2387   105.3657     2.75   0.006     82.72573    495.7516
+       LTN_tWMN_i |  -553.7849   415.9578    -1.33   0.183    -1369.047    261.4774
+ LTN_tMWN_tWMAA_i |   14.78685   236.6613     0.06   0.950    -449.0607    478.6344
+  LTN_tMWN_tWMN_i |  -381.6544   284.2699    -1.34   0.179    -938.8131    175.5043
+             time |   817.4827   40.96385    19.96   0.000      737.195    897.7703
+              age |   48.02294   6.168766     7.78   0.000     35.93238     60.1135
+           agesqr |  -.6671504   .0778285    -8.57   0.000    -.8196915   -.5146093
+        education |  -303.4594   124.1823    -2.44   0.015    -546.8522   -60.06654
+         children |  -10.33579   4.323739    -2.39   0.017    -18.81016    -1.86142
+   state_inc_1965 |   .0885255   .0326403     2.71   0.007     .0245516    .1524994
+    deltaStateInc |  -192.4678   98.58504    -1.95   0.051    -385.6909    .7553256
+            _cons |   1568.276   299.1443     5.24   0.000     981.9636    2154.588
+------------------+----------------------------------------------------------------
+          sigma_u |  815.63416
+          sigma_e |  561.46407
+              rho |  .67848895   (fraction of variance due to u_i)
+-----------------------------------------------------------------------------------
+
+. regress occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_wMAA_i LTN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWit
+> hinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0
+
+      Source |       SS           df       MS      Number of obs   =    15,549
+-------------+----------------------------------   F(25, 15523)    =     97.12
+       Model |  2.3845e+09        25  95379126.6   Prob > F        =    0.0000
+    Residual |  1.5245e+10    15,523  982091.858   R-squared       =    0.1353
+-------------+----------------------------------   Adj R-squared   =    0.1339
+       Total |  1.7629e+10    15,548   1133875.1   Root MSE        =    991.01
+
+-----------------------------------------------------------------------------------
+    occscore_real |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   241.2548    201.186     1.20   0.230    -153.0933    635.6029
+   willMarryAtAll |   349.7161   302.4547     1.16   0.248    -243.1306    942.5627
+       willMarryN |  -317.7725   487.0986    -0.65   0.514    -1272.543    636.9977
+ MWithinMarrAAInt |  -102.4737   216.0916    -0.47   0.635    -526.0385    321.0911
+  MWithinMarrNInt |   .5755126   166.5471     0.00   0.997    -325.8763    327.0274
+        longtermN |   330.4238   268.1491     1.23   0.218    -195.1798    856.0275
+       LTN_wMAA_i |  -218.0293   304.0666    -0.72   0.473    -814.0354    377.9767
+        LTN_wMN_i |   346.2648   491.9971     0.70   0.482     -618.107    1310.637
+    tMWithinNorth |   477.4495   279.1389     1.71   0.087    -69.69533    1024.594
+           tWMAA1 |  -67.45086   133.6931    -0.50   0.614    -329.5049    194.6032
+            tWMN1 |  -148.1569    558.894    -0.27   0.791    -1243.655    947.3407
+tMWithinMarrAAInt |  -76.97436   275.9601    -0.28   0.780    -617.8885    463.9397
+ tMWithinMarrNInt |   765.0204     414.63     1.85   0.065    -47.70284    1577.744
+       LTN_tMWN_i |  -308.0992   396.6233    -0.78   0.437    -1085.527    469.3288
+      LTN_tWMAA_i |   191.7023   142.4874     1.35   0.179    -87.58972    470.9943
+       LTN_tWMN_i |   241.3221   566.2216     0.43   0.670    -868.5384    1351.183
+ LTN_tMWN_tWMAA_i |  -48.09933   411.0597    -0.12   0.907    -853.8245    757.6258
+  LTN_tMWN_tWMN_i |  -596.7315   476.6639    -1.25   0.211    -1531.048    337.5854
+             time |     905.01    56.9803    15.88   0.000      793.322    1016.698
+              age |   46.87937    6.56497     7.14   0.000     34.01127    59.74748
+           agesqr |  -.6574568   .0833827    -7.88   0.000    -.8208967   -.4940169
+        education |  -302.5599   95.87173    -3.16   0.002    -490.4797   -114.6401
+         children |  -13.00631   3.432159    -3.79   0.000    -19.73374   -6.278872
+   state_inc_1965 |   .0796672   .0255313     3.12   0.002      .029623    .1297115
+    deltaStateInc |  -422.7607   135.8464    -3.11   0.002    -689.0354    -156.486
+            _cons |   1614.267   296.5535     5.44   0.000     1032.988    2195.547
+-----------------------------------------------------------------------------------
+
+. do "/Users/max/Documents/500_data/500ltnorth-datamgt-longtermvar.do"
+
+. * Create long-term variable to distinguish between effects of marriage to northerners on long-timers and new migrants.
+. 
+. generate longtermN = 0
+variable longtermN already defined
+r(110);
+
+end of do-file
+
+r(110);
+
+. generate shortN = 0
+
+. 
+. replace shortN = 1 if MToNorth==1 & longtermN==0
+(1,071 real changes made)
+
+. 
+. do "/Users/max/Documents/500_data/500ltnorth-datamgt-longtermvar.do"
+
+. * Create long-term variable to distinguish between effects of marriage to northerners on long-timers and new migrants.
+. 
+. /*generate longtermN = 0
+> replace longtermN = 1 if MToNorth==1 & (migplac5==002  | migplac5==004 | migplac5==006 | migplac5==008 | migplac5==009 | migplac5==010 | migplac5==011 | migplac5==015 | migpla
+> c5==016 | migplac5==017 | migplac5==018 | migplac5==019 | migplac5==020 | migplac5==023 | migplac5==024 | migplac5==025 | migplac5==026 | migplac5==027 | migplac5==029 | migpl
+> ac5==030 | migplac5==031 | migplac5==032 | migplac5==033 | migplac5==034 | migplac5==035 | migplac5==036 | migplac5==038 | migplac5==039 | migplac5==041 | migplac5==042 | migp
+> lac5==044 | migplac5==046 | migplac5==049 | migplac5==050 | migplac5==053 | migplac5==054 | migplac5==055 | migplac5==056)
+> 
+> generate shortN = 0
+> replace shortN = 1 if MToNorth==1 & longtermN==0
+> 
+> 
+> generate LTN_MWN_i = longtermN*MWithinNorth
+> generate LTN_wMAA_i = longtermN*willMarryAtAll
+> generate LTN_wMN_i = longtermN*willMarryN
+> generate LTN_MWN_wMAA_i = LTN_MWN_i*willMarryAtAll
+> generate LTN_MWN_wMN_i = LTN_MWN_i*willMarryN
+> 
+> generate LTN_tMWN_i = longtermN*tMWithinNorth
+> generate LTN_tWMAA_i = longtermN*tWMAA1
+> generate LTN_tWMN_i = longtermN*tWMN1
+> generate LTN_tMWN_tWMAA_i = LTN_tMWN_i*tWMAA1
+> generate LTN_tMWN_tWMN_i = LTN_tMWN_i*tWMN1
+> */
+. generate STN_MWN_i = shortN*MWithinNorth
+
+. generate STN_wMAA_i = shortN*willMarryAtAll
+
+. generate STN_wMN_i = shortN*willMarryN
+
+. generate STN_MWN_wMAA_i = STN_MWN_i*willMarryAtAll
+
+. generate STN_MWN_wMN_i = STN_MWN_i*willMarryN
+
+. 
+. generate STN_tMWN_i = shortN*tMWithinNorth
+
+. generate STN_tWMAA_i = shortN*tWMAA1
+
+. generate STN_tWMN_i = shortN*tWMN1
+
+. generate STN_tMWN_tWMAA_i = STN_tMWN_i*tWMAA1
+
+. generate STN_tMWN_tWMN_i = STN_tMWN_i*tWMN1
+
+. 
+end of do-file
+
+. do "/Users/max/Documents/500_data/500shortnorth-reg-and-output.do"
+
+. *TO-DO: check justification for use of robust standard errors
+. 
+. 
+. /* As specified below, Stata will automatically omit longtermN, LTN_wMAA_i, LTN_MWN_wMN_i.
+>         To eliminate this problem, I drop LTN_MWN_i, LTN_MWN_wMAA_i, LTN_MWN_wMN_i from the regression.
+>         Ramsey RESET suggests I can also drop LTN_tMWN_i for some regressions, but not all, so I don't. I also retain LTN_tMWN_tWMAA_i and LTN_tWMN_tWMN_i.
+> 
+> * MIGRANTS TO NORTH
+>         * ==MALE
+>                 regress erscor50 MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i 
+> tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1
+> 965 deltaStateInc if MToNorth==1 & dSex==0, r
+>                 est store er_n_m
+> 
+>                 regress occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_w
+> MN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_
+> inc_1965 deltaStateInc if MToNorth==1 & dSex==0, r
+>                 est store occ_n_m
+> 
+>                 regress presgl MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i tM
+> WithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_196
+> 5 deltaStateInc if MToNorth==1 & dSex==0, r
+>                 est store sgl_n_m
+> 
+>                 regress sei MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i tMWit
+> hinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 d
+> eltaStateInc if MToNorth==1 & dSex==0, r
+>                 est store sei_n_m
+> 
+>         * ==FEMALE
+>                 regress erscor50 MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i 
+> tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1
+> 965 deltaStateInc if MToNorth==1 & dSex==1, r
+>                 est store er_n_f
+> 
+>                 regress occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_w
+> MN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_
+> inc_1965 deltaStateInc if MToNorth==1 & dSex==1, r
+>                 est store occ_n_f
+> 
+>                 regress presgl MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i tM
+> WithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_196
+> 5 deltaStateInc if MToNorth==1 & dSex==1, r
+>                 est store sgl_n_f
+> 
+>                 regress sei MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i tMWit
+> hinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 d
+> eltaStateInc if MToNorth==1 & dSex==1, r
+>                 est store sei_n_f
+> 
+>         * ==BOTH GENDERS
+>                 regress erscor50 MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i 
+> tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1
+> 965 deltaStateInc if MToNorth==1, r
+>                 est store er_n_all
+> 
+>                 regress occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_w
+> MN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_
+> inc_1965 deltaStateInc if MToNorth==1, r
+>                 est store occ_n_all
+> 
+>                 regress presgl MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i tM
+> WithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_196
+> 5 deltaStateInc if MToNorth==1, r
+>                 est store sgl_n_all
+> 
+>                 regress sei MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i tMWit
+> hinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 d
+> eltaStateInc if MToNorth==1, r
+>                 est store sei_n_all
+> */
+. 
+. * MIGRANTS TO NORTH
+.         * ==MALE
+.                 regress erscor50 MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt shortN STN_wMAA_i STN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAI
+> nt tMWithinMarrNInt STN_tMWN_i STN_tWMAA_i STN_tWMN_i STN_tMWN_tWMAA_i STN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0
+> , r
+
+Linear regression                               Number of obs     =     15,549
+                                                F(25, 15523)      =      16.68
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0242
+                                                Root MSE          =     22.337
+
+-----------------------------------------------------------------------------------
+                  |               Robust
+         erscor50 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   9.030304   4.998879     1.81   0.071    -.7680821    18.82869
+   willMarryAtAll |   3.448138   1.194465     2.89   0.004     1.106847    5.789429
+       willMarryN |    1.96009   1.857502     1.06   0.291     -1.68083     5.60101
+ MWithinMarrAAInt |  -6.091318   5.294738    -1.15   0.250    -16.46962    4.286987
+  MWithinMarrNInt |   2.253303    3.99228     0.56   0.572    -5.572033    10.07864
+           shortN |  -7.269177   6.038994    -1.20   0.229    -19.10631    4.567957
+       STN_wMAA_i |   7.602532   6.744917     1.13   0.260    -5.618293    20.82336
+        STN_wMN_i |  -8.521152   14.21064    -0.60   0.549    -36.37567    19.33337
+    tMWithinNorth |   .8195937   7.282995     0.11   0.910    -13.45593    15.09511
+           tWMAA1 |   3.016214   1.052626     2.87   0.004     .9529448    5.079484
+            tWMN1 |   .3516813   1.919593     0.18   0.855    -3.410945    4.114308
+tMWithinMarrAAInt |  -1.857308   7.697358    -0.24   0.809    -16.94503    13.23041
+ tMWithinMarrNInt |   .7305724   5.890078     0.12   0.901    -10.81467    12.27581
+       STN_tMWN_i |   1.905208   8.718737     0.22   0.827    -15.18454    18.99495
+      STN_tWMAA_i |  -6.005001   2.999827    -2.00   0.045    -11.88501   -.1249886
+       STN_tWMN_i |  -5.975326    14.9101    -0.40   0.689    -35.20086    23.25021
+ STN_tMWN_tWMAA_i |   4.570305   9.157225     0.50   0.618    -13.37893    22.51954
+  STN_tMWN_tWMN_i |    17.1918   9.661946     1.78   0.075    -1.746738    36.13035
+             time |   6.718752   1.235537     5.44   0.000     4.296956    9.140549
+              age |   1.328957   .1441304     9.22   0.000     1.046444    1.611469
+           agesqr |  -.0180683     .00184    -9.82   0.000    -.0216748   -.0144617
+        education |  -6.257253   1.662465    -3.76   0.000    -9.515879   -2.998627
+         children |  -.2457544   .0746891    -3.29   0.001    -.3921538    -.099355
+   state_inc_1965 |   .0005634   .0005862     0.96   0.337    -.0005856    .0017123
+    deltaStateInc |  -7.212037   2.937381    -2.46   0.014    -12.96965   -1.454428
+            _cons |   11.99424   3.334583     3.60   0.000     5.458064    18.53041
+-----------------------------------------------------------------------------------
+
+.                 ovtest
+
+Ramsey RESET test using powers of the fitted values of erscor50
+       Ho:  model has no omitted variables
+               F(3, 15520) =      1.45
+                  Prob > F =      0.2263
+
+.                 est store er_n_m
+
+. 
+.                 regress occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt shortN STN_wMAA_i STN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMa
+> rrAAInt tMWithinMarrNInt STN_tMWN_i STN_tWMAA_i STN_tWMN_i STN_tMWN_tWMAA_i STN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dS
+> ex==0, r
+
+Linear regression                               Number of obs     =     15,549
+                                                F(25, 15523)      =      97.85
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.1353
+                                                Root MSE          =     991.01
+
+-----------------------------------------------------------------------------------
+                  |               Robust
+    occscore_real |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   241.2548   200.8818     1.20   0.230     -152.497    635.0066
+   willMarryAtAll |   131.6867   47.26606     2.79   0.005     39.03972    224.3337
+       willMarryN |   28.49228   71.65359     0.40   0.691    -111.9571    168.9417
+ MWithinMarrAAInt |  -102.4737   220.5533    -0.46   0.642    -534.7841    329.8366
+  MWithinMarrNInt |   .5755126   177.3735     0.00   0.997    -347.0972    348.2482
+           shortN |  -330.4238   245.8817    -1.34   0.179    -812.3807    151.5331
+       STN_wMAA_i |   218.0293   279.1839     0.78   0.435    -329.2037    765.2624
+        STN_wMN_i |  -346.2648   603.0299    -0.57   0.566    -1528.274    835.7442
+    tMWithinNorth |   169.3503   316.7525     0.53   0.593    -451.5216    790.2223
+           tWMAA1 |   124.2514   40.50078     3.07   0.002     44.86517    203.6377
+            tWMN1 |   93.16524   75.03712     1.24   0.214    -53.91628    240.2468
+tMWithinMarrAAInt |  -125.0737   347.2961    -0.36   0.719    -805.8145    555.6672
+ tMWithinMarrNInt |   168.2889   280.8539     0.60   0.549    -382.2176    718.7953
+       STN_tMWN_i |   308.0992   373.5426     0.82   0.409    -424.0879    1040.286
+      STN_tWMAA_i |  -191.7023   119.5565    -1.60   0.109     -426.047    42.64242
+       STN_tWMN_i |  -241.3221   626.8198    -0.38   0.700    -1469.962    987.3179
+ STN_tMWN_tWMAA_i |   48.09933   401.7141     0.12   0.905    -739.3072    835.5059
+  STN_tMWN_tWMN_i |   596.7315   422.1045     1.41   0.157    -230.6426    1424.106
+             time |     905.01   54.62933    16.57   0.000     797.9301     1012.09
+              age |   46.87937   6.438575     7.28   0.000     34.25901    59.49973
+           agesqr |  -.6574568   .0839627    -7.83   0.000    -.8220336     -.49288
+        education |  -302.5599   72.18187    -4.19   0.000    -444.0448    -161.075
+         children |  -13.00631   3.216906    -4.04   0.000    -19.31182   -6.700793
+   state_inc_1965 |   .0796672   .0263199     3.03   0.002     .0280771    .1312574
+    deltaStateInc |  -422.7607   129.2308    -3.27   0.001    -676.0682   -169.4532
+            _cons |   1944.691   148.1855    13.12   0.000      1654.23    2235.152
+-----------------------------------------------------------------------------------
+
+.                 ovtest
+
+Ramsey RESET test using powers of the fitted values of occscore_real
+       Ho:  model has no omitted variables
+               F(3, 15520) =      1.30
+                  Prob > F =      0.2723
+
+.                 est store occ_n_m
+
+.                 
+.                 regress presgl MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt shortN STN_wMAA_i STN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt
+>  tMWithinMarrNInt STN_tMWN_i STN_tWMAA_i STN_tWMN_i STN_tMWN_tWMAA_i STN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, 
+> r
+
+Linear regression                               Number of obs     =     15,549
+                                                F(25, 15523)      =      20.33
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0302
+                                                Root MSE          =     11.778
+
+-----------------------------------------------------------------------------------
+                  |               Robust
+           presgl |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   4.161309   2.829329     1.47   0.141    -1.384507    9.707125
+   willMarryAtAll |  -.2248888   .6526943    -0.34   0.730    -1.504246    1.054468
+       willMarryN |    1.59159   1.036924     1.53   0.125    -.4409011    3.624082
+ MWithinMarrAAInt |  -3.304588   3.012573    -1.10   0.273    -9.209584    2.600407
+  MWithinMarrNInt |   4.344162   2.629201     1.65   0.098    -.8093789    9.497702
+           shortN |  -2.462286   3.309678    -0.74   0.457    -8.949641    4.025069
+       STN_wMAA_i |   5.699905    3.70698     1.54   0.124    -1.566209    12.96602
+        STN_wMN_i |  -8.942535   6.414613    -1.39   0.163    -21.51593    3.630857
+    tMWithinNorth |   .8833681    4.21787     0.21   0.834    -7.384151    9.150887
+           tWMAA1 |   1.798169   .5542141     3.24   0.001     .7118449    2.884494
+            tWMN1 |   .0277379   1.070189     0.03   0.979    -2.069957    2.125433
+tMWithinMarrAAInt |  -.4414257   4.460125    -0.10   0.921    -9.183791     8.30094
+ tMWithinMarrNInt |   .1718506   3.473664     0.05   0.961    -6.636937    6.980638
+       STN_tMWN_i |  -1.141899   5.004997    -0.23   0.820    -10.95228    8.668481
+      STN_tWMAA_i |  -2.316819   1.619026    -1.43   0.152    -5.490298    .8566607
+       STN_tWMN_i |  -.6211736    6.54376    -0.09   0.924    -13.44771    12.20536
+ STN_tMWN_tWMAA_i |   2.425594   5.182542     0.47   0.640    -7.732793    12.58398
+  STN_tMWN_tWMN_i |   4.875439   4.966629     0.98   0.326    -4.859734    14.61061
+             time |   4.080353   .6381972     6.39   0.000     2.829411    5.331294
+              age |   .6034924   .0762303     7.92   0.000     .4540722    .7529127
+           agesqr |  -.0087944   .0009722    -9.05   0.000    -.0107001   -.0068887
+        education |  -5.130258   .8825171    -5.81   0.000    -6.860095   -3.400422
+         children |  -.2790299   .0373898    -7.46   0.000    -.3523183   -.2057415
+   state_inc_1965 |   .0016148   .0003136     5.15   0.000     .0010001    .0022295
+    deltaStateInc |  -4.175189   1.512228    -2.76   0.006    -7.139333   -1.211045
+            _cons |   13.27784   1.782012     7.45   0.000     9.784887    16.77079
+-----------------------------------------------------------------------------------
+
+.                 ovtest
+
+Ramsey RESET test using powers of the fitted values of presgl
+       Ho:  model has no omitted variables
+               F(3, 15520) =      4.54
+                  Prob > F =      0.0035
+
+.                 est store sgl_n_m
+
+. 
+.                 regress sei MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt shortN STN_wMAA_i STN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tM
+> WithinMarrNInt STN_tMWN_i STN_tWMAA_i STN_tWMN_i STN_tMWN_tWMAA_i STN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, r
+
+Linear regression                               Number of obs     =     15,549
+                                                F(25, 15523)      =      23.62
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0359
+                                                Root MSE          =     17.831
+
+-----------------------------------------------------------------------------------
+                  |               Robust
+              sei |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   7.348902   4.875279     1.51   0.132    -2.207215    16.90502
+   willMarryAtAll |  -2.213772   .9861948    -2.24   0.025    -4.146829   -.2807146
+       willMarryN |   1.962842   1.549091     1.27   0.205    -1.073559    4.999242
+ MWithinMarrAAInt |  -5.209803   5.148013    -1.01   0.312    -15.30051    4.880904
+  MWithinMarrNInt |   5.978982   3.927571     1.52   0.128    -1.719517    13.67748
+           shortN |  -6.745952   5.349089    -1.26   0.207    -17.23079    3.738887
+       STN_wMAA_i |   11.43048   5.966534     1.92   0.055    -.2646279    23.12558
+        STN_wMN_i |  -11.46715   7.883611    -1.45   0.146    -26.91995    3.985645
+    tMWithinNorth |   5.222418   6.937966     0.75   0.452    -8.376806    18.82164
+           tWMAA1 |   2.865985   .8429544     3.40   0.001     1.213695    4.518274
+            tWMN1 |   .9784333    1.60175     0.61   0.541    -2.161185    4.118051
+tMWithinMarrAAInt |  -3.279671   7.333478    -0.45   0.655    -17.65414     11.0948
+ tMWithinMarrNInt |   .5406676   5.422171     0.10   0.921    -10.08742    11.16876
+       STN_tMWN_i |  -6.336925   7.679611    -0.83   0.409    -21.38986     8.71601
+      STN_tWMAA_i |  -2.333067   2.507027    -0.93   0.352    -7.247133    2.580999
+       STN_tWMN_i |  -.2208363   8.073091    -0.03   0.978    -16.04504    15.60337
+ STN_tMWN_tWMAA_i |   5.885146   8.044037     0.73   0.464    -9.882107     21.6524
+  STN_tMWN_tWMN_i |   4.891358   8.017471     0.61   0.542    -10.82382    20.60654
+             time |   4.670743   .9636291     4.85   0.000     2.781917    6.559568
+              age |   .6498662   .1142251     5.69   0.000     .4259717    .8737607
+           agesqr |  -.0097283   .0014494    -6.71   0.000    -.0125693   -.0068874
+        education |  -7.778199   1.066076    -7.30   0.000    -9.867833   -5.688566
+         children |  -.5157027    .054149    -9.52   0.000    -.6218411   -.4095644
+   state_inc_1965 |   .0047982   .0004869     9.86   0.000     .0038439    .0057525
+    deltaStateInc |  -3.384397   2.278608    -1.49   0.137    -7.850735     1.08194
+            _cons |    -3.3108   2.742871    -1.21   0.227    -8.687147    2.065548
+-----------------------------------------------------------------------------------
+
+.                 ovtest
+
+Ramsey RESET test using powers of the fitted values of sei
+       Ho:  model has no omitted variables
+               F(3, 15520) =      5.84
+                  Prob > F =      0.0006
+
+.                 est store sei_n_m
+
+. 
+.         * ==FEMALE
+.                 regress erscor50 MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt shortN STN_wMAA_i STN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAI
+> nt tMWithinMarrNInt STN_tMWN_i STN_tWMAA_i STN_tWMN_i STN_tMWN_tWMAA_i STN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==1
+> , r
+
+Linear regression                               Number of obs     =     10,391
+                                                F(25, 10365)      =      22.42
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0474
+                                                Root MSE          =     19.479
+
+-----------------------------------------------------------------------------------
+                  |               Robust
+         erscor50 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   5.369193    7.27587     0.74   0.461    -8.892916     19.6313
+   willMarryAtAll |    .980409   1.391135     0.70   0.481    -1.746485    3.707303
+       willMarryN |  -2.485157   2.205002    -1.13   0.260    -6.807386    1.837072
+ MWithinMarrAAInt |  -4.577606   7.471211    -0.61   0.540    -19.22262    10.06741
+  MWithinMarrNInt |  -1.905746    4.08872    -0.47   0.641    -9.920425    6.108934
+           shortN |  -3.578571   7.929799    -0.45   0.652    -19.12251    11.96536
+       STN_wMAA_i |   13.57531   9.379901     1.45   0.148      -4.8111    31.96173
+        STN_wMN_i |   2.847525   11.94981     0.24   0.812    -20.57641    26.27146
+    tMWithinNorth |  -4.547832   8.537128    -0.53   0.594    -21.28225    12.18659
+           tWMAA1 |   .2256856   1.323281     0.17   0.865      -2.3682    2.819572
+            tWMN1 |   8.043557   2.314738     3.47   0.001     3.506223    12.58089
+tMWithinMarrAAInt |   7.405613    8.88459     0.83   0.405     -10.0099    24.82112
+ tMWithinMarrNInt |  -3.276893   6.117768    -0.54   0.592     -15.2689    8.715113
+       STN_tMWN_i |   4.781339   10.26035     0.47   0.641    -15.33093     24.8936
+      STN_tWMAA_i |  -6.828572     5.2467    -1.30   0.193    -17.11312    3.455971
+       STN_tWMN_i |   3.547663   15.23915     0.23   0.816    -26.32401    33.41933
+ STN_tMWN_tWMAA_i |  -6.180314   10.39625    -0.59   0.552    -26.55896    14.19833
+  STN_tMWN_tWMN_i |  -2.556908   14.03067    -0.18   0.855    -30.05972    24.94591
+             time |   3.340104   1.498122     2.23   0.026     .4034951    6.276713
+              age |    .787853   .1481366     5.32   0.000     .4974766    1.078229
+           agesqr |  -.0141145   .0019162    -7.37   0.000    -.0178707   -.0103584
+        education |  -8.108201   1.665589    -4.87   0.000    -11.37308   -4.843326
+         children |  -.8042109    .088105    -9.13   0.000    -.9769137    -.631508
+   state_inc_1965 |   .0031547   .0006248     5.05   0.000       .00193    .0043794
+    deltaStateInc |  -.4494827   3.582507    -0.13   0.900    -7.471888    6.572922
+            _cons |   8.072065   3.464284     2.33   0.020       1.2814    14.86273
+-----------------------------------------------------------------------------------
+
+.                 ovtest
+
+Ramsey RESET test using powers of the fitted values of erscor50
+       Ho:  model has no omitted variables
+               F(3, 10362) =      2.44
+                  Prob > F =      0.0625
+
+.                 est store er_n_f
+
+. 
+.                 regress occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt shortN STN_wMAA_i STN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMa
+> rrAAInt tMWithinMarrNInt STN_tMWN_i STN_tWMAA_i STN_tWMN_i STN_tMWN_tWMAA_i STN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dS
+> ex==1, r
+
+Linear regression                               Number of obs     =     10,391
+                                                F(25, 10365)      =      51.88
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.1116
+                                                Root MSE          =     1069.3
+
+-----------------------------------------------------------------------------------
+                  |               Robust
+    occscore_real |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   169.6455   341.7263     0.50   0.620    -500.2041    839.4951
+   willMarryAtAll |   33.78913   71.62931     0.47   0.637    -106.6181    174.1964
+       willMarryN |   11.86319   102.4728     0.12   0.908    -189.0032    212.7296
+ MWithinMarrAAInt |  -149.7519   354.9781    -0.42   0.673    -845.5774    546.0737
+  MWithinMarrNInt |   7.427894   178.0178     0.04   0.967    -341.5213    356.3771
+           shortN |   -227.847   375.1945    -0.61   0.544    -963.3005    507.6065
+       STN_wMAA_i |   546.1801   435.0296     1.26   0.209    -306.5617    1398.922
+        STN_wMN_i |   131.7499   433.1118     0.30   0.761    -717.2328    980.7326
+    tMWithinNorth |  -281.7248   456.1096    -0.62   0.537    -1175.788     612.338
+           tWMAA1 |   62.42178   67.19959     0.93   0.353    -69.30239    194.1459
+            tWMN1 |   226.6271   109.6436     2.07   0.039      11.7044    441.5497
+tMWithinMarrAAInt |   439.4276   480.0348     0.92   0.360    -501.5333    1380.388
+ tMWithinMarrNInt |  -112.0804   283.6801    -0.40   0.693     -668.148    443.9873
+       STN_tMWN_i |    439.328   548.2267     0.80   0.423    -635.3021    1513.958
+      STN_tWMAA_i |  -332.0664   228.4745    -1.45   0.146    -779.9204    115.7877
+       STN_tWMN_i |  -124.2942    546.773    -0.23   0.820    -1196.075    947.4863
+ STN_tMWN_tWMAA_i |  -337.6689   554.0134    -0.61   0.542    -1423.642    748.3043
+  STN_tMWN_tWMN_i |   39.46786   597.0717     0.07   0.947    -1130.908    1209.843
+             time |   711.4971   87.23299     8.16   0.000     540.5036    882.4906
+              age |   39.68713     8.2474     4.81   0.000     23.52063    55.85362
+           agesqr |  -.8099885   .1084188    -7.47   0.000     -1.02251   -.5974667
+        education |  -212.5391   128.5183    -1.65   0.098    -464.4597    39.38159
+         children |  -38.20492    5.07232    -7.53   0.000    -48.14765    -28.2622
+   state_inc_1965 |   .1705488   .0343556     4.96   0.000     .1032051    .2378924
+    deltaStateInc |  -167.4115   210.4584    -0.80   0.426    -579.9506    245.1277
+            _cons |   1624.933   189.5331     8.57   0.000     1253.411    1996.454
+-----------------------------------------------------------------------------------
+
+.                 ovtest
+
+Ramsey RESET test using powers of the fitted values of occscore_real
+       Ho:  model has no omitted variables
+               F(3, 10362) =      1.70
+                  Prob > F =      0.1644
+
+.                 est store occ_n_f
+
+. 
+.                 regress presgl MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt shortN STN_wMAA_i STN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt
+>  tMWithinMarrNInt STN_tMWN_i STN_tWMAA_i STN_tWMN_i STN_tMWN_tWMAA_i STN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==1, 
+> r
+
+Linear regression                               Number of obs     =     10,391
+                                                F(25, 10365)      =      31.18
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0629
+                                                Root MSE          =     13.443
+
+-----------------------------------------------------------------------------------
+                  |               Robust
+           presgl |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   4.289799   3.456212     1.24   0.215    -2.485044    11.06464
+   willMarryAtAll |  -.5824862   1.041725    -0.56   0.576    -2.624469    1.459496
+       willMarryN |  -.0610241   2.087682    -0.03   0.977    -4.153284    4.031235
+ MWithinMarrAAInt |  -2.970919   3.705543    -0.80   0.423     -10.2345     4.29266
+  MWithinMarrNInt |   -2.72029   3.092474    -0.88   0.379    -8.782136    3.341557
+           shortN |  -3.132502   4.309449    -0.73   0.467    -11.57985     5.31485
+       STN_wMAA_i |   10.21359   5.569878     1.83   0.067    -.7044455    21.13162
+        STN_wMN_i |   1.362681   4.950641     0.28   0.783     -8.34153    11.06689
+    tMWithinNorth |  -2.597523   4.440658    -0.58   0.559    -11.30207    6.107024
+           tWMAA1 |   1.313732   .9987922     1.32   0.188    -.6440936    3.271557
+            tWMN1 |   4.383125    2.13872     2.05   0.040     .1908226    8.575428
+tMWithinMarrAAInt |   5.509828   4.775035     1.15   0.249    -3.850161    14.86982
+ tMWithinMarrNInt |  -1.633039   4.468792    -0.37   0.715    -10.39273    7.126655
+       STN_tMWN_i |    4.88845   5.932197     0.82   0.410      -6.7398     16.5167
+      STN_tWMAA_i |  -4.397968   3.632256    -1.21   0.226    -11.51789    2.721955
+       STN_tWMN_i |   4.151975   8.782866     0.47   0.636    -13.06414    21.36809
+ STN_tMWN_tWMAA_i |  -5.841534   6.092448    -0.96   0.338    -17.78391    6.100839
+  STN_tMWN_tWMN_i |  -3.109715   10.23501    -0.30   0.761     -23.1723    16.95287
+             time |   4.143092   1.035107     4.00   0.000     2.114083    6.172101
+              age |    .408192   .1043138     3.91   0.000     .2037169    .6126672
+           agesqr |  -.0083557    .001345    -6.21   0.000    -.0109921   -.0057192
+        education |  -9.632906   1.553984    -6.20   0.000    -12.67901   -6.586797
+         children |  -.5983171   .0614243    -9.74   0.000    -.7187205   -.4779137
+   state_inc_1965 |   .0025127   .0004367     5.75   0.000     .0016567    .0033687
+    deltaStateInc |   -2.20476   2.483001    -0.89   0.375    -7.071921    2.662402
+            _cons |   20.02245   2.434444     8.22   0.000     15.25047    24.79443
+-----------------------------------------------------------------------------------
+
+.                 ovtest
+
+Ramsey RESET test using powers of the fitted values of presgl
+       Ho:  model has no omitted variables
+               F(3, 10362) =      2.54
+                  Prob > F =      0.0547
+
+.                 est store sgl_n_f
+
+. 
+.                 regress sei MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt shortN STN_wMAA_i STN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tM
+> WithinMarrNInt STN_tMWN_i STN_tWMAA_i STN_tWMN_i STN_tMWN_tWMAA_i STN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==1, r
+
+Linear regression                               Number of obs     =     10,391
+                                                F(25, 10365)      =      36.19
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0716
+                                                Root MSE          =     19.983
+
+-----------------------------------------------------------------------------------
+                  |               Robust
+              sei |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   6.324852   6.163935     1.03   0.305    -5.757649    18.40735
+   willMarryAtAll |  -2.385303   1.571278    -1.52   0.129    -5.465311    .6947044
+       willMarryN |   3.799749   3.297068     1.15   0.249     -2.66314    10.26264
+ MWithinMarrAAInt |  -4.860966   6.444917    -0.75   0.451    -17.49425    7.772315
+  MWithinMarrNInt |   .6250285   5.073251     0.12   0.902    -9.319522    10.56958
+           shortN |  -2.293468   7.187451    -0.32   0.750    -16.38226    11.79532
+       STN_wMAA_i |   15.37703   9.024777     1.70   0.088    -2.313275    33.06733
+        STN_wMN_i |  -10.07189    10.0339    -1.00   0.316    -29.74028    9.596498
+    tMWithinNorth |  -9.382415   8.093937    -1.16   0.246    -25.24809    6.483263
+           tWMAA1 |     2.9333   1.499794     1.96   0.051    -.0065852    5.873184
+            tWMN1 |   3.109151   3.375181     0.92   0.357    -3.506855    9.725157
+tMWithinMarrAAInt |   13.10761   8.506182     1.54   0.123    -3.566148    29.78137
+ tMWithinMarrNInt |  -.2663739   7.070951    -0.04   0.970     -14.1268    13.59405
+       STN_tMWN_i |   9.659466   10.13452     0.95   0.341    -10.20615    29.52508
+      STN_tWMAA_i |   -7.75344   5.649504    -1.37   0.170    -18.82756    3.320677
+       STN_tWMN_i |    16.1162   14.63465     1.10   0.271    -12.57054    44.80294
+ STN_tMWN_tWMAA_i |  -10.95981   10.27478    -1.07   0.286    -31.10036     9.18073
+  STN_tMWN_tWMN_i |  -6.870629   15.80359    -0.43   0.664    -37.84872    24.10746
+             time |   5.905608   1.504253     3.93   0.000     2.956983    8.854233
+              age |   .4455398   .1569245     2.84   0.005     .1379375    .7531421
+           agesqr |  -.0106527   .0020017    -5.32   0.000    -.0145764    -.006729
+        education |  -10.80089   1.815758    -5.95   0.000    -14.36013   -7.241656
+         children |  -.9740079   .0858673   -11.34   0.000    -1.142324   -.8056914
+   state_inc_1965 |    .004824   .0006451     7.48   0.000     .0035596    .0060884
+    deltaStateInc |  -2.244629   3.592306    -0.62   0.532    -9.286242    4.796984
+            _cons |   10.07235   3.646599     2.76   0.006     2.924315    17.22039
+-----------------------------------------------------------------------------------
+
+.                 ovtest
+
+Ramsey RESET test using powers of the fitted values of sei
+       Ho:  model has no omitted variables
+               F(3, 10362) =      2.41
+                  Prob > F =      0.0646
+
+.                 est store sei_n_f
+
+. 
+.         * ==BOTH GENDERS
+.                 regress erscor50 MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt shortN STN_wMAA_i STN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAI
+> nt tMWithinMarrNInt STN_tMWN_i STN_tWMAA_i STN_tWMN_i STN_tMWN_tWMAA_i STN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1, r
+
+Linear regression                               Number of obs     =     25,940
+                                                F(25, 25914)      =      29.13
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0269
+                                                Root MSE          =     22.642
+
+-----------------------------------------------------------------------------------
+                  |               Robust
+         erscor50 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   8.646793   4.281314     2.02   0.043     .2551792    17.03841
+   willMarryAtAll |   4.354561   .9186303     4.74   0.000     2.553995    6.155128
+       willMarryN |   2.044116   1.562766     1.31   0.191    -1.018991    5.107224
+ MWithinMarrAAInt |  -6.742278   4.483324    -1.50   0.133    -15.52984    2.045285
+  MWithinMarrNInt |   .8290954   3.240735     0.26   0.798    -5.522926    7.181116
+           shortN |  -7.814239   4.906524    -1.59   0.111     -17.4313    1.802821
+       STN_wMAA_i |   11.25487   5.525904     2.04   0.042     .4237862    22.08594
+        STN_wMN_i |  -6.397148   9.520328    -0.67   0.502    -25.05752    12.26322
+    tMWithinNorth |   -1.52087   5.787176    -0.26   0.793    -12.86406    9.822317
+           tWMAA1 |   .6173866   .8485499     0.73   0.467    -1.045818    2.280592
+            tWMN1 |   3.745197   1.616507     2.32   0.021     .5767537    6.913641
+tMWithinMarrAAInt |   2.063072   6.087194     0.34   0.735    -9.868166    13.99431
+ tMWithinMarrNInt |  -.6790871   4.767703    -0.14   0.887    -10.02405    8.665875
+       STN_tMWN_i |   4.485089   6.938512     0.65   0.518     -9.11478    18.08496
+      STN_tWMAA_i |  -5.936714    2.59755    -2.29   0.022    -11.02806   -.8453721
+       STN_tWMN_i |  -2.147609   10.54657    -0.20   0.839    -22.81947    18.52425
+ STN_tMWN_tWMAA_i |   .5090311   7.177932     0.07   0.943    -13.56011    14.57818
+  STN_tMWN_tWMN_i |   8.708713   8.495161     1.03   0.305    -7.942274     25.3597
+             time |   6.142821   1.022002     6.01   0.000      4.13964    8.146002
+              age |   1.103188   .1106014     9.97   0.000      .886403    1.319973
+           agesqr |  -.0162076   .0014245   -11.38   0.000    -.0189997   -.0134155
+        education |  -2.848757   1.510034    -1.89   0.059    -5.808508    .1109942
+         children |  -.3813881   .0619876    -6.15   0.000    -.5028872    -.259889
+   state_inc_1965 |   .0008415   .0004594     1.83   0.067    -.0000589    .0017419
+    deltaStateInc |  -6.430363   2.437113    -2.64   0.008    -11.20724   -1.653487
+            _cons |   11.70555   2.547897     4.59   0.000     6.711525    16.69957
+-----------------------------------------------------------------------------------
+
+.                 ovtest
+
+Ramsey RESET test using powers of the fitted values of erscor50
+       Ho:  model has no omitted variables
+               F(3, 25911) =      3.58
+                  Prob > F =      0.0131
+
+.                 est store er_n_all
+
+. 
+.                 regress occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt shortN STN_wMAA_i STN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMa
+> rrAAInt tMWithinMarrNInt STN_tMWN_i STN_tWMAA_i STN_tWMN_i STN_tMWN_tWMAA_i STN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1, r
+
+Linear regression                               Number of obs     =     25,940
+                                                F(25, 25914)      =     121.90
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.1058
+                                                Root MSE          =     1094.6
+
+-----------------------------------------------------------------------------------
+                  |               Robust
+    occscore_real |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   269.8344   187.1191     1.44   0.149    -96.92939    636.5981
+   willMarryAtAll |   188.9898   40.79557     4.63   0.000     109.0282    268.9514
+       willMarryN |   73.51689   62.35418     1.18   0.238    -48.70076    195.7345
+ MWithinMarrAAInt |  -185.5146    199.866    -0.93   0.353     -577.263    206.2338
+  MWithinMarrNInt |  -13.25874   140.5304    -0.09   0.925     -288.706    262.1886
+           shortN |  -381.9737   216.5278    -1.76   0.078    -806.3802    42.43272
+       STN_wMAA_i |   400.0183   243.4797     1.64   0.100    -77.21539    877.2519
+        STN_wMN_i |  -193.6745   390.6016    -0.50   0.620    -959.2753    571.9264
+    tMWithinNorth |  -22.53225    280.334    -0.08   0.936    -572.0025     526.938
+           tWMAA1 |   41.20619   36.46409     1.13   0.258    -30.26545    112.6778
+            tWMN1 |   203.5272   65.53587     3.11   0.002     75.07322    331.9811
+tMWithinMarrAAInt |   108.3099   300.7259     0.36   0.719    -481.1295    697.7494
+ tMWithinMarrNInt |   93.31135   224.2852     0.42   0.677       -346.3    532.9227
+       STN_tMWN_i |   396.1634   337.7834     1.17   0.241    -265.9109    1058.238
+      STN_tWMAA_i |  -231.9877   107.9636    -2.15   0.032    -443.6024   -20.37307
+       STN_tWMN_i |  -232.0228   421.2307    -0.55   0.582    -1057.658    593.6127
+ STN_tMWN_tWMAA_i |  -48.26492   351.6635    -0.14   0.891     -737.545    641.0151
+  STN_tMWN_tWMN_i |   308.4965   366.0408     0.84   0.399    -408.9637    1025.957
+             time |   867.5325   51.32719    16.90   0.000     766.9284    968.1367
+              age |   42.91331   5.441738     7.89   0.000      32.2472    53.57942
+           agesqr |  -.6975517   .0715371    -9.75   0.000    -.8377684    -.557335
+        education |  -91.46678   68.86966    -1.33   0.184    -226.4551    43.52157
+         children |   -18.7424   2.970406    -6.31   0.000    -24.56456   -12.92024
+   state_inc_1965 |   .0746352   .0224331     3.33   0.001     .0306651    .1186054
+    deltaStateInc |  -420.4996   122.8451    -3.42   0.001    -661.2828   -179.7163
+            _cons |   1899.008   123.9108    15.33   0.000     1656.136     2141.88
+-----------------------------------------------------------------------------------
+
+.                 ovtest
+
+Ramsey RESET test using powers of the fitted values of occscore_real
+       Ho:  model has no omitted variables
+               F(3, 25911) =      1.32
+                  Prob > F =      0.2671
+
+.                 est store occ_n_all
+
+. 
+.                 regress presgl MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt shortN STN_wMAA_i STN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt
+>  tMWithinMarrNInt STN_tMWN_i STN_tWMAA_i STN_tWMN_i STN_tMWN_tWMAA_i STN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1, r
+
+Linear regression                               Number of obs     =     25,940
+                                                F(25, 25914)      =      43.79
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0378
+                                                Root MSE          =      12.56
+
+-----------------------------------------------------------------------------------
+                  |               Robust
+           presgl |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   3.667595   2.247778     1.63   0.103    -.7381738    8.073364
+   willMarryAtAll |  -1.060087   .5603789    -1.89   0.059    -2.158461    .0382864
+       willMarryN |   .6457181   .9486151     0.68   0.496     -1.21362    2.505056
+ MWithinMarrAAInt |  -2.485476   2.395991    -1.04   0.300    -7.181751    2.210799
+  MWithinMarrNInt |    2.12028   2.061671     1.03   0.304     -1.92071     6.16127
+           shortN |  -2.327848    2.75055    -0.85   0.397    -7.719078    3.063383
+       STN_wMAA_i |   6.007969   3.162817     1.90   0.058    -.1913274    12.20727
+        STN_wMN_i |  -3.415353   4.408242    -0.77   0.438    -12.05575    5.225047
+    tMWithinNorth |  -.4374197   3.129726    -0.14   0.889    -6.571856    5.697017
+           tWMAA1 |   1.890529   .5078402     3.72   0.000     .8951339    2.885924
+            tWMN1 |   1.557052   .9767045     1.59   0.111    -.3573427    3.471448
+tMWithinMarrAAInt |   2.005985   3.329453     0.60   0.547    -4.519929    8.531899
+ tMWithinMarrNInt |  -.8801424   2.778638    -0.32   0.751    -6.326427    4.566142
+       STN_tMWN_i |     1.9536   3.969656     0.49   0.623    -5.827146    9.734346
+      STN_tWMAA_i |  -2.342527   1.575148    -1.49   0.137    -5.429905    .7448498
+       STN_tWMN_i |  -.3967475   5.536931    -0.07   0.943    -11.24944    10.45594
+ STN_tMWN_tWMAA_i |  -1.846783   4.084563    -0.45   0.651    -9.852753    6.159186
+  STN_tMWN_tWMN_i |   2.570205   5.352504     0.48   0.631       -7.921    13.06141
+             time |   4.082231   .5645588     7.23   0.000     2.975665    5.188798
+              age |   .4949892   .0621727     7.96   0.000     .3731272    .6168512
+           agesqr |  -.0082512   .0007957   -10.37   0.000    -.0098109   -.0066916
+        education |  -6.255975   .7795096    -8.03   0.000    -7.783857   -4.728093
+         children |  -.3864994   .0323023   -11.97   0.000    -.4498137   -.3231852
+   state_inc_1965 |   .0020495   .0002577     7.95   0.000     .0015445    .0025545
+    deltaStateInc |  -3.363308    1.34672    -2.50   0.013    -6.002954   -.7236616
+            _cons |   16.72728   1.455225    11.49   0.000     13.87495     19.5796
+-----------------------------------------------------------------------------------
+
+.                 ovtest
+
+Ramsey RESET test using powers of the fitted values of presgl
+       Ho:  model has no omitted variables
+               F(3, 25911) =      1.23
+                  Prob > F =      0.2961
+
+.                 est store sgl_n_all
+
+. 
+.                 regress sei MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt shortN STN_wMAA_i STN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tM
+> WithinMarrNInt STN_tMWN_i STN_tWMAA_i STN_tWMN_i STN_tMWN_tWMAA_i STN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1, r
+
+Linear regression                               Number of obs     =     25,940
+                                                F(25, 25914)      =      52.04
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0441
+                                                Root MSE          =     18.915
+
+-----------------------------------------------------------------------------------
+                  |               Robust
+              sei |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   6.093752   3.896469     1.56   0.118    -1.543543    13.73105
+   willMarryAtAll |   -3.37319   .8499148    -3.97   0.000     -5.03907    -1.70731
+       willMarryN |   1.442325   1.454736     0.99   0.321    -1.409037    4.293688
+ MWithinMarrAAInt |  -4.062081   4.091416    -0.99   0.321    -12.08148    3.957322
+  MWithinMarrNInt |   4.446819   3.137466     1.42   0.156    -1.702789    10.59643
+           shortN |  -3.617336   4.525975    -0.80   0.424     -12.4885    5.253826
+       STN_wMAA_i |   9.678301   5.149058     1.88   0.060    -.4141385    19.77074
+        STN_wMN_i |  -7.330604   6.446612    -1.14   0.255    -19.96632    5.305114
+    tMWithinNorth |  -.6625257     5.3666    -0.12   0.902    -11.18136    9.856309
+           tWMAA1 |   3.417119   .7688847     4.44   0.000     1.910062    4.924176
+            tWMN1 |    2.15854   1.498295     1.44   0.150    -.7782006    5.095281
+tMWithinMarrAAInt |   3.457655   5.651941     0.61   0.541    -7.620464    14.53577
+ tMWithinMarrNInt |  -.2289689   4.350279    -0.05   0.958    -8.755758     8.29782
+       STN_tMWN_i |   .8823224   6.493321     0.14   0.892    -11.84495    13.60959
+      STN_tWMAA_i |   -2.94549   2.474201    -1.19   0.234    -7.795062    1.904081
+       STN_tWMN_i |   2.862117   8.219099     0.35   0.728    -13.24777    18.97201
+ STN_tMWN_tWMAA_i |  -2.082668   6.677923    -0.31   0.755    -15.17177    11.00643
+  STN_tMWN_tWMN_i |   1.562903   8.490875     0.18   0.854    -15.07968    18.20549
+             time |   5.113989   .8374353     6.11   0.000     3.472569    6.755408
+              age |   .5259639   .0936357     5.62   0.000     .3424326    .7094951
+           agesqr |  -.0096105    .001189    -8.08   0.000    -.0119411     -.00728
+        education |  -8.959284   .9390448    -9.54   0.000    -10.79986   -7.118704
+         children |  -.6748005   .0463137   -14.57   0.000     -.765578   -.5840231
+   state_inc_1965 |   .0049418   .0003913    12.63   0.000     .0041747    .0057088
+    deltaStateInc |  -2.852696   1.988758    -1.43   0.151    -6.750771    1.045379
+            _cons |   3.067896   2.215515     1.38   0.166    -1.274636    7.410428
+-----------------------------------------------------------------------------------
+
+.                 ovtest
+
+Ramsey RESET test using powers of the fitted values of sei
+       Ho:  model has no omitted variables
+               F(3, 25911) =      4.88
+                  Prob > F =      0.0022
+
+.                 est store sei_n_all
+
+. 
+. /*outreg2 [er_n_all occ_n_all sgl_n_all sei_n_all] using output-n-all, replace alpha(.02, .10, .20)  nonotes
+> outreg2 [er_n_m occ_n_m sgl_n_m sei_n_m] using output-n-m, replace alpha(.02, .10, .20)  nonotes
+> outreg2 [er_n_f occ_n_f sgl_n_f sei_n_f] using output-n-f, replace alpha(.02, .10, .20)  nonotes
+> */
+. 
+end of do-file
+
+. count if shortN==1 & MWithinNorth==1
+  1,071
+
+. count if shortN==1 & MWithinNorth==1 & time==1
+  530
+
+. count if shortN==1 & MWithinNorth==1 & time==0
+  541
+
+. count if shortN==1 & time==0
+  541
+
+. count if MToNorth==1 & longtermN==0 & time==0
+  541
+
+. count if MToNorth==1 & time==0
+  12,982
+
+. count if shortN==1 & statefip==(migplac5==002  | migplac5==004 | migplac5==006 | migplac5==008 | migplac5==009 | migplac5==010 | migplac5==011 | migplac5==015 | migplac5==016 
+> | migplac5==017 | migplac5==018 | migplac5==019 | migplac5==020 | migplac5==023 | migplac5==024 | migplac5==025 | migplac5==026 | migplac5==027 | migplac5==029 | migplac5==030
+>  | migplac5==031 | migplac5==032 | migplac5==033 | migplac5==034 | migplac5==035 | migplac5==036 | migplac5==038 | migplac5==039 | migplac5==041 | migplac5==042 | migplac5==04
+> 4 | migplac5==046 | migplac5==049 | migplac5==050 | migplac5==053 | migplac5==054 | migplac5==055 | migplac5==056)
+  0
+
+. count if shortN==1 & (migplac5==002  | migplac5==004 | migplac5==006 | migplac5==008 | migplac5==009 | migplac5==010 | migplac5==011 | migplac5==015 | migplac5==016 | migplac5
+> ==017 | migplac5==018 | migplac5==019 | migplac5==020 | migplac5==023 | migplac5==024 | migplac5==025 | migplac5==026 | migplac5==027 | migplac5==029 | migplac5==030 | migplac
+> 5==031 | migplac5==032 | migplac5==033 | migplac5==034 | migplac5==035 | migplac5==036 | migplac5==038 | migplac5==039 | migplac5==041 | migplac5==042 | migplac5==044 | migpla
+> c5==046 | migplac5==049 | migplac5==050 | migplac5==053 | migplac5==054 | migplac5==055 | migplac5==056)
+  0
+
+. count if shortN==1 & (statefip==002  | statefip==004 | statefip==006 | statefip==008 | statefip==009 | statefip==010 | statefip==011 | statefip==015 | statefip==016 | statefip
+> ==017 | statefip==018 | statefip==019 | statefip==020 | statefip==023 | statefip==024 | statefip==025 | statefip==026 | statefip==027 | statefip==029 | statefip==030 | statefi
+> p==031 | statefip==032 | statefip==033 | statefip==034 | statefip==035 | statefip==036 | statefip==038 | statefip==039 | statefip==041 | statefip==042 | statefip==044 | statef
+> ip==046 | statefip==049 | statefip==050 | statefip==053 | statefip==054 | statefip==055 | statefip==056)
+  530
+
+. count if (MToNorth==1 & (migplac5==002  | migplac5==004 | migplac5==006 | migplac5==008 | migplac5==009 | migplac5==010 | migplac5==011 | migplac5==015 | migplac5==016 | migpl
+> ac5==017 | migplac5==018 | migplac5==019 | migplac5==020 | migplac5==023 | migplac5==024 | migplac5==025 | migplac5==026 | migplac5==027 | migplac5==029 | migplac5==030 | migp
+> lac5==031 | migplac5==032 | migplac5==033 | migplac5==034 | migplac5==035 | migplac5==036 | migplac5==038 | migplac5==039 | migplac5==041 | migplac5==042 | migplac5==044 | mig
+> plac5==046 | migplac5==049 | migplac5==050 | migplac5==053 | migplac5==054 | migplac5==055 | migplac5==056))
+  24,869
+
+. 
+. count if (migplac5==002  | migplac5==004 | migplac5==006 | migplac5==008 | migplac5==009 | migplac5==010 | migplac5==011 | migplac5==015 | migplac5==016 | migplac5==017 | migp
+> lac5==018 | migplac5==019 | migplac5==020 | migplac5==023 | migplac5==024 | migplac5==025 | migplac5==026 | migplac5==027 | migplac5==029 | migplac5==030 | migplac5==031 | mig
+> plac5==032 | migplac5==033 | migplac5==034 | migplac5==035 | migplac5==036 | migplac5==038 | migplac5==039 | migplac5==041 | migplac5==042 | migplac5==044 | migplac5==046 | mi
+> gplac5==049 | migplac5==050 | migplac5==053 | migplac5==054 | migplac5==055 | migplac5==056) & MToNorth==0
+  374
+
+. 
+. rvfplot
+
+. xtreg occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_wMAA_i LTN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithi
+> nMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, re
+
+Random-effects GLS regression                   Number of obs     =     15,549
+Group variable: id                              Number of groups  =      7,785
+
+R-sq:                                           Obs per group:
+     within  = 0.4642                                         min =          1
+     between = 0.0196                                         avg =        2.0
+     overall = 0.1347                                         max =          2
+
+                                                Wald chi2(25)     =    6869.59
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+-----------------------------------------------------------------------------------
+    occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   247.0225   202.7995     1.22   0.223    -150.4573    644.5022
+   willMarryAtAll |   466.6552   296.3663     1.57   0.115    -114.2122    1047.523
+       willMarryN |  -800.3544   415.7065    -1.93   0.054    -1615.124    14.41538
+ MWithinMarrAAInt |   -107.728   217.8311    -0.49   0.621    -534.6691    319.2131
+  MWithinMarrNInt |  -15.08871   167.1802    -0.09   0.928    -342.7559    312.5784
+        longtermN |   318.1546   269.1741     1.18   0.237     -209.417    845.7262
+       LTN_wMAA_i |  -281.2421   295.0717    -0.95   0.341     -859.572    297.0878
+        LTN_wMN_i |   886.8837   418.1424     2.12   0.034     67.33964    1706.428
+    tMWithinNorth |   382.3453   167.4835     2.28   0.022     54.08377    710.6069
+           tWMAA1 |  -229.7055   98.98903    -2.32   0.020    -423.7204   -35.69055
+            tWMN1 |   583.3602   410.7517     1.42   0.156    -221.6984    1388.419
+tMWithinMarrAAInt |  -114.0311   160.5688    -0.71   0.478    -428.7402    200.6779
+ tMWithinMarrNInt |   551.2871   250.5188     2.20   0.028      60.2793    1042.295
+       LTN_tMWN_i |  -233.1386   231.9286    -1.01   0.315    -687.7104    221.4331
+      LTN_tWMAA_i |   289.2387   105.3657     2.75   0.006     82.72573    495.7516
+       LTN_tWMN_i |  -553.7849   415.9578    -1.33   0.183    -1369.047    261.4774
+ LTN_tMWN_tWMAA_i |   14.78685   236.6613     0.06   0.950    -449.0607    478.6344
+  LTN_tMWN_tWMN_i |  -381.6544   284.2699    -1.34   0.179    -938.8131    175.5043
+             time |   817.4827   40.96385    19.96   0.000      737.195    897.7703
+              age |   48.02294   6.168766     7.78   0.000     35.93238     60.1135
+           agesqr |  -.6671504   .0778285    -8.57   0.000    -.8196915   -.5146093
+        education |  -303.4594   124.1823    -2.44   0.015    -546.8522   -60.06654
+         children |  -10.33579   4.323739    -2.39   0.017    -18.81016    -1.86142
+   state_inc_1965 |   .0885255   .0326403     2.71   0.007     .0245516    .1524994
+    deltaStateInc |  -192.4678   98.58504    -1.95   0.051    -385.6909    .7553256
+            _cons |   1568.276   299.1443     5.24   0.000     981.9636    2154.588
+------------------+----------------------------------------------------------------
+          sigma_u |  815.63416
+          sigma_e |  561.46407
+              rho |  .67848895   (fraction of variance due to u_i)
+-----------------------------------------------------------------------------------
+
+. rvfplot
+last estimates not found
+r(301);
+
+. est store asdf
+
+. rvfplot
+last estimates not found
+r(301);
+
+. rvfplot asdf
+last estimates not found
+r(301);
+
+. rvpplot
+last estimates not found
+r(301);
+
+. xtreg occscore_real MWithinNorth willMarryAtAll willMar
+> ryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_wMAA
+> _i LTN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAI
+> nt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i L
+> TN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr educati
+> on children state_inc_1965 deltaStateInc if MToNorth==1
+>  & dSex==0, re
+
+Random-effects GLS regression                   Number of
+>  obs     =     15,549
+Group variable: id                              Number of
+>  groups  =      7,785
+
+R-sq:                                           Obs per g
+> roup:
+     within  = 0.4642                                    
+>      min =          1
+     between = 0.0196                                    
+>      avg =        2.0
+     overall = 0.1347                                    
+>      max =          2
+
+                                                Wald chi2
+> (25)     =    6869.59
+corr(u_i, X)   = 0 (assumed)                    Prob > ch
+> i2       =     0.0000
+
+---------------------------------------------------------
+> ---------------------
+occscore_r~l |      Coef.   Std. Err.      z    P>|z|    
+>  [95% Con                                              
+>          f. Interval]
+-------------+-------------------------------------------
+> ---------------------
+MWithinNorth |   247.0225   202.7995     1.22   0.223    
+> -150.4573                                              
+>              644.5022
+willMarryA~l |   466.6552   296.3663     1.57   0.115    
+> -114.2122                                              
+>              1047.523
+  willMarryN |  -800.3544   415.7065    -1.93   0.054    
+> -1615.124                                              
+>              14.41538
+MWithin~AInt |   -107.728   217.8311    -0.49   0.621    
+> -534.6691                                              
+>              319.2131
+MWithin~NInt |  -15.08871   167.1802    -0.09   0.928    
+> -342.7559                                              
+>              312.5784
+   longtermN |   318.1546   269.1741     1.18   0.237    
+>  -209.417                                              
+>              845.7262
+  LTN_wMAA_i |  -281.2421   295.0717    -0.95   0.341    
+>  -859.572                                              
+>              297.0878
+   LTN_wMN_i |   886.8837   418.1424     2.12   0.034    
+>  67.33964                                              
+>              1706.428
+tMWithinNo~h |   382.3453   167.4835     2.28   0.022    
+>  54.08377                                              
+>              710.6069
+      tWMAA1 |  -229.7055   98.98903    -2.32   0.020    
+> -423.7204                                              
+>             -35.69055
+       tWMN1 |   583.3602   410.7517     1.42   0.156    
+> -221.6984                                              
+>              1388.419
+tMWithi~AInt |  -114.0311   160.5688    -0.71   0.478    
+> -428.7402                                              
+>              200.6779
+tMWithi~NInt |   551.2871   250.5188     2.20   0.028    
+>   60.2793                                              
+>              1042.295
+  LTN_tMWN_i |  -233.1386   231.9286    -1.01   0.315    
+> -687.7104                                              
+>              221.4331
+ LTN_tWMAA_i |   289.2387   105.3657     2.75   0.006    
+>  82.72573                                              
+>              495.7516
+  LTN_tWMN_i |  -553.7849   415.9578    -1.33   0.183    
+> -1369.047                                              
+>              261.4774
+LTN_tMWN~A_i |   14.78685   236.6613     0.06   0.950    
+> -449.0607                                              
+>              478.6344
+LTN_tMWN~N_i |  -381.6544   284.2699    -1.34   0.179    
+> -938.8131                                              
+>              175.5043
+        time |   817.4827   40.96385    19.96   0.000    
+>   737.195                                              
+>              897.7703
+         age |   48.02294   6.168766     7.78   0.000    
+>  35.93238                                              
+>               60.1135
+      agesqr |  -.6671504   .0778285    -8.57   0.000    
+> -.8196915                                              
+>             -.5146093
+   education |  -303.4594   124.1823    -2.44   0.015    
+> -546.8522                                              
+>             -60.06654
+    children |  -10.33579   4.323739    -2.39   0.017    
+> -18.81016                                              
+>              -1.86142
+state_i~1965 |   .0885255   .0326403     2.71   0.007    
+>  .0245516                                              
+>              .1524994
+deltaState~c |  -192.4678   98.58504    -1.95   0.051    
+> -385.6909                                              
+>              .7553256
+       _cons |   1568.276   299.1443     5.24   0.000    
+>  981.9636                                              
+>              2154.588
+-------------+-------------------------------------------
+> ---------------------
+     sigma_u |  815.63416
+     sigma_e |  561.46407
+         rho |  .67848895   (fraction of variance due to 
+> u_i)
+---------------------------------------------------------
+> ---------------------
+
+. predict resid, resid
+option resid not allowed
+r(198);
+
+. predict resid, residuals
+option residuals not allowed
+r(198);
+
+. predict orhat, xb
+
+. xttest0
+
+Breusch and Pagan Lagrangian multiplier test for random e
+> ffects
+
+        occscore_real[id,t] = Xb + u[id] + e[id,t]
+
+        Estimated results:
+                         |       Var     sd = sqrt(Var)
+                ---------+-----------------------------
+               occscor~l |    1133875       1064.836
+                       e |   315241.9       561.4641
+                       u |   665259.1       815.6342
+
+        Test:   Var(u) = 0
+                             chibar2(01) =  3572.82
+                          Prob > chibar2 =   0.0000
+
+. estat ic
+likelihood information not found in last estimation resul
+> ts
+r(321);
+
+. estat summarize
+
+  Estimation sample xtreg                  Number of obs 
+> =     15,549
+
+  -------------------------------------------------------
+> ------------
+      Variable |         Mean      Std. Dev.         Min 
+>          Max
+  -------------+-----------------------------------------
+> ------------
+  occscore_r~l |     3562.646      1064.836     472.3609 
+>     12438.84
+  MWithinNorth |     .0719017      .2583334            0 
+>            1
+  willMarryA~l |     .9327288      .2504992            0 
+>            1
+    willMarryN |     .1889511      .3914823            0 
+>            1
+  MWithin~AInt |     .0650203      .2465695            0 
+>            1
+  MWithin~NInt |     .0079748      .0889477            0 
+>            1
+     longtermN |     .9574249      .2019036            0 
+>            1
+    LTN_wMAA_i |     .8938839      .3079961            0 
+>            1
+     LTN_wMN_i |     .1870217      .3899415            0 
+>            1
+  tMWithinNo~h |     .0355007      .1850475            0 
+>            1
+        tWMAA1 |     .8898321      .3131089            0 
+>            1
+         tWMN1 |     .1766673      .3813992            0 
+>            1
+  tMWithi~AInt |     .0322207      .1765915            0 
+>            1
+  tMWithi~NInt |     .0039874      .0630218            0 
+>            1
+    LTN_tMWN_i |     .0145347      .1196844            0 
+>            1
+   LTN_tWMAA_i |     .8561322      .3509669            0 
+>            1
+    LTN_tWMN_i |     .1750595      .3800302            0 
+>            1
+  LTN_tMWN~A_i |     .0129912      .1132398            0 
+>            1
+  LTN_tMWN~N_i |     .0030227      .0548977            0 
+>            1
+          time |     .4993247      .5000156            0 
+>            1
+           age |     38.76275      9.905483           18 
+>           59
+        agesqr |     1600.663      770.7127          324 
+>         3481
+     education |     .0069458      .0830541            0 
+>            1
+      children |     2.202007      2.459924            0 
+>           12
+  state_i~1965 |       3253.8      391.4913         1726 
+>         4102
+  deltaState~c |     .2144139      .2458032            0 
+>     1.877173
+  -------------------------------------------------------
+> ------------
+
+. hausman
+You used the old syntax of hausman. Click here to learn
+about the new syntax.
+
+no estimation results were previously stored by hausman
+r(198);
+
+. predict uhat, u
+(45,809 missing values generated)
+
+. predict ehat, e
+(45,809 missing values generated)
+
+. predict uehat, ue
+
+. scatter orhat, uhat
+too few variables specified
+r(102);
+
+. scatter orhat uhat
+
+. scatter orhat ehat
+
+. scatter orhat euhat
+variable euhat not found
+r(111);
+
+. scatter orhat uehat
+
+. scatter orhatt uhat
+variable orhatt not found
+r(111);
+
+. scatter orhat uhat
+
+. help hausman
+
+. xtreg occscore_real MWithinNorth willMarryAtAll willMar
+> ryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_wMAA
+> _i LTN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAI
+> nt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i L
+> TN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr educati
+> on children state_inc_1965 deltaStateInc if MToNorth==1
+>  & dSex==0, re
+
+Random-effects GLS regression                   Number of
+>  obs     =     15,549
+Group variable: id                              Number of
+>  groups  =      7,785
+
+R-sq:                                           Obs per g
+> roup:
+     within  = 0.4642                                    
+>      min =          1
+     between = 0.0196                                    
+>      avg =        2.0
+     overall = 0.1347                                    
+>      max =          2
+
+                                                Wald chi2
+> (25)     =    6869.59
+corr(u_i, X)   = 0 (assumed)                    Prob > ch
+> i2       =     0.0000
+
+---------------------------------------------------------
+> ---------------------
+occscore_r~l |      Coef.   Std. Err.      z    P>|z|    
+>  [95% Con                                              
+>          f. Interval]
+-------------+-------------------------------------------
+> ---------------------
+MWithinNorth |   247.0225   202.7995     1.22   0.223    
+> -150.4573                                              
+>              644.5022
+willMarryA~l |   466.6552   296.3663     1.57   0.115    
+> -114.2122                                              
+>              1047.523
+  willMarryN |  -800.3544   415.7065    -1.93   0.054    
+> -1615.124                                              
+>              14.41538
+MWithin~AInt |   -107.728   217.8311    -0.49   0.621    
+> -534.6691                                              
+>              319.2131
+MWithin~NInt |  -15.08871   167.1802    -0.09   0.928    
+> -342.7559                                              
+>              312.5784
+   longtermN |   318.1546   269.1741     1.18   0.237     -209.417    845.7262
+  LTN_wMAA_i |  -281.2421   295.0717    -0.95   0.341     -859.572    297.0878
+   LTN_wMN_i |   886.8837   418.1424     2.12   0.034     67.33964    1706.428
+tMWithinNo~h |   382.3453   167.4835     2.28   0.022     54.08377    710.6069
+      tWMAA1 |  -229.7055   98.98903    -2.32   0.020    -423.7204   -35.69055
+       tWMN1 |   583.3602   410.7517     1.42   0.156    -221.6984    1388.419
+tMWithi~AInt |  -114.0311   160.5688    -0.71   0.478    -428.7402    200.6779
+tMWithi~NInt |   551.2871   250.5188     2.20   0.028      60.2793    1042.295
+  LTN_tMWN_i |  -233.1386   231.9286    -1.01   0.315    -687.7104    221.4331
+ LTN_tWMAA_i |   289.2387   105.3657     2.75   0.006     82.72573    495.7516
+  LTN_tWMN_i |  -553.7849   415.9578    -1.33   0.183    -1369.047    261.4774
+LTN_tMWN~A_i |   14.78685   236.6613     0.06   0.950    -449.0607    478.6344
+LTN_tMWN~N_i |  -381.6544   284.2699    -1.34   0.179    -938.8131    175.5043
+        time |   817.4827   40.96385    19.96   0.000      737.195    897.7703
+         age |   48.02294   6.168766     7.78   0.000     35.93238     60.1135
+      agesqr |  -.6671504   .0778285    -8.57   0.000    -.8196915   -.5146093
+   education |  -303.4594   124.1823    -2.44   0.015    -546.8522   -60.06654
+    children |  -10.33579   4.323739    -2.39   0.017    -18.81016    -1.86142
+state_i~1965 |   .0885255   .0326403     2.71   0.007     .0245516    .1524994
+deltaState~c |  -192.4678   98.58504    -1.95   0.051    -385.6909    .7553256
+       _cons |   1568.276   299.1443     5.24   0.000     981.9636    2154.588
+-------------+----------------------------------------------------------------
+     sigma_u |  815.63416
+     sigma_e |  561.46407
+         rho |  .67848895   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+
+. est store res
+
+. hausman res
+the two models need to be different
+r(198);
+
+. regress occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_wMAA_i LTN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWit
+> hinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0
+
+      Source |       SS           df       MS      Number of obs   =    15,549
+-------------+----------------------------------   F(25, 15523)    =     97.12
+       Model |  2.3845e+09        25  95379126.6   Prob > F        =    0.0000
+    Residual |  1.5245e+10    15,523  982091.858   R-squared       =    0.1353
+-------------+----------------------------------   Adj R-squared   =    0.1339
+       Total |  1.7629e+10    15,548   1133875.1   Root MSE        =    991.01
+
+-----------------------------------------------------------------------------------
+    occscore_real |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   241.2548    201.186     1.20   0.230    -153.0933    635.6029
+   willMarryAtAll |   349.7161   302.4547     1.16   0.248    -243.1306    942.5627
+       willMarryN |  -317.7725   487.0986    -0.65   0.514    -1272.543    636.9977
+ MWithinMarrAAInt |  -102.4737   216.0916    -0.47   0.635    -526.0385    321.0911
+  MWithinMarrNInt |   .5755126   166.5471     0.00   0.997    -325.8763    327.0274
+        longtermN |   330.4238   268.1491     1.23   0.218    -195.1798    856.0275
+       LTN_wMAA_i |  -218.0293   304.0666    -0.72   0.473    -814.0354    377.9767
+        LTN_wMN_i |   346.2648   491.9971     0.70   0.482     -618.107    1310.637
+    tMWithinNorth |   477.4495   279.1389     1.71   0.087    -69.69533    1024.594
+           tWMAA1 |  -67.45086   133.6931    -0.50   0.614    -329.5049    194.6032
+            tWMN1 |  -148.1569    558.894    -0.27   0.791    -1243.655    947.3407
+tMWithinMarrAAInt |  -76.97436   275.9601    -0.28   0.780    -617.8885    463.9397
+ tMWithinMarrNInt |   765.0204     414.63     1.85   0.065    -47.70284    1577.744
+       LTN_tMWN_i |  -308.0992   396.6233    -0.78   0.437    -1085.527    469.3288
+      LTN_tWMAA_i |   191.7023   142.4874     1.35   0.179    -87.58972    470.9943
+       LTN_tWMN_i |   241.3221   566.2216     0.43   0.670    -868.5384    1351.183
+ LTN_tMWN_tWMAA_i |  -48.09933   411.0597    -0.12   0.907    -853.8245    757.6258
+  LTN_tMWN_tWMN_i |  -596.7315   476.6639    -1.25   0.211    -1531.048    337.5854
+             time |     905.01    56.9803    15.88   0.000      793.322    1016.698
+              age |   46.87937    6.56497     7.14   0.000     34.01127    59.74748
+           agesqr |  -.6574568   .0833827    -7.88   0.000    -.8208967   -.4940169
+        education |  -302.5599   95.87173    -3.16   0.002    -490.4797   -114.6401
+         children |  -13.00631   3.432159    -3.79   0.000    -19.73374   -6.278872
+   state_inc_1965 |   .0796672   .0255313     3.12   0.002      .029623    .1297115
+    deltaStateInc |  -422.7607   135.8464    -3.11   0.002    -689.0354    -156.486
+            _cons |   1614.267   296.5535     5.44   0.000     1032.988    2195.547
+-----------------------------------------------------------------------------------
+
+. est store naive
+
+. hausman res naive
+
+Note: the rank of the differenced variance matrix (23) does not equal the number of coefficients being tested (25); be sure this is what you expect, or there may be problems
+        computing the test.  Examine the output of your estimators for anything unexpected and possibly consider scaling your variables so that the coefficients are on a similar
+        scale.
+
+                 ---- Coefficients ----
+             |      (b)          (B)            (b-B)     sqrt(diag(V_b-V_B))
+             |      res         naive        Difference          S.E.
+-------------+----------------------------------------------------------------
+MWithinNorth |    247.0225     241.2548        5.767662        25.53081
+willMarryA~l |    466.6552     349.7161        116.9391               .
+  willMarryN |   -800.3544    -317.7725       -482.5819               .
+MWithin~AInt |    -107.728    -102.4737       -5.254269         27.4737
+MWithin~NInt |   -15.08871     .5755126       -15.66422        14.53507
+   longtermN |    318.1546     330.4238       -12.26923        23.46799
+  LTN_wMAA_i |   -281.2421    -218.0293       -63.21277               .
+   LTN_wMN_i |    886.8837     346.2648        540.6189               .
+tMWithinNo~h |    382.3453     477.4495        -95.1042               .
+      tWMAA1 |   -229.7055    -67.45086       -162.2546               .
+       tWMN1 |    583.3602    -148.1569        731.5171               .
+tMWithi~AInt |   -114.0311    -76.97436       -37.05677               .
+tMWithi~NInt |    551.2871     765.0204       -213.7332               .
+  LTN_tMWN_i |   -233.1386    -308.0992        74.96055               .
+ LTN_tWMAA_i |    289.2387     191.7023        97.53635               .
+  LTN_tWMN_i |   -553.7849     241.3221       -795.1071               .
+LTN_tMWN~A_i |    14.78685    -48.09933        62.88618               .
+LTN_tMWN~N_i |   -381.6544    -596.7315        215.0771               .
+        time |    817.4827       905.01       -87.52736               .
+         age |    48.02294     46.87937        1.143569               .
+      agesqr |   -.6671504    -.6574568       -.0096936               .
+   education |   -303.4594    -302.5599       -.8994781        78.92942
+    children |   -10.33579    -13.00631        2.670513        2.629638
+state_i~1965 |    .0885255     .0796672        .0088583        .0203358
+deltaState~c |   -192.4678    -422.7607        230.2929               .
+------------------------------------------------------------------------------
+                           b = consistent under Ho and Ha; obtained from xtreg
+          B = inconsistent under Ha, efficient under Ho; obtained from regress
+
+    Test:  Ho:  difference in coefficients not systematic
+
+                 chi2(23) = (b-B)'[(V_b-V_B)^(-1)](b-B)
+                          =   -18.26    chi2<0 ==> model fitted on these
+                                        data fails to meet the asymptotic
+                                        assumptions of the Hausman test;
+                                        see suest for a generalized test
+
+. help suest
+
+. xttest0
+last estimates not found
+r(301);
+
+. xtreg occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_wMAA_i LTN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithi
+> nMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, re
+
+Random-effects GLS regression                   Number of obs     =     15,549
+Group variable: id                              Number of groups  =      7,785
+
+R-sq:                                           Obs per group:
+     within  = 0.4642                                         min =          1
+     between = 0.0196                                         avg =        2.0
+     overall = 0.1347                                         max =          2
+
+                                                Wald chi2(25)     =    6869.59
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+-----------------------------------------------------------------------------------
+    occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   247.0225   202.7995     1.22   0.223    -150.4573    644.5022
+   willMarryAtAll |   466.6552   296.3663     1.57   0.115    -114.2122    1047.523
+       willMarryN |  -800.3544   415.7065    -1.93   0.054    -1615.124    14.41538
+ MWithinMarrAAInt |   -107.728   217.8311    -0.49   0.621    -534.6691    319.2131
+  MWithinMarrNInt |  -15.08871   167.1802    -0.09   0.928    -342.7559    312.5784
+        longtermN |   318.1546   269.1741     1.18   0.237     -209.417    845.7262
+       LTN_wMAA_i |  -281.2421   295.0717    -0.95   0.341     -859.572    297.0878
+        LTN_wMN_i |   886.8837   418.1424     2.12   0.034     67.33964    1706.428
+    tMWithinNorth |   382.3453   167.4835     2.28   0.022     54.08377    710.6069
+           tWMAA1 |  -229.7055   98.98903    -2.32   0.020    -423.7204   -35.69055
+            tWMN1 |   583.3602   410.7517     1.42   0.156    -221.6984    1388.419
+tMWithinMarrAAInt |  -114.0311   160.5688    -0.71   0.478    -428.7402    200.6779
+ tMWithinMarrNInt |   551.2871   250.5188     2.20   0.028      60.2793    1042.295
+       LTN_tMWN_i |  -233.1386   231.9286    -1.01   0.315    -687.7104    221.4331
+      LTN_tWMAA_i |   289.2387   105.3657     2.75   0.006     82.72573    495.7516
+       LTN_tWMN_i |  -553.7849   415.9578    -1.33   0.183    -1369.047    261.4774
+ LTN_tMWN_tWMAA_i |   14.78685   236.6613     0.06   0.950    -449.0607    478.6344
+  LTN_tMWN_tWMN_i |  -381.6544   284.2699    -1.34   0.179    -938.8131    175.5043
+             time |   817.4827   40.96385    19.96   0.000      737.195    897.7703
+              age |   48.02294   6.168766     7.78   0.000     35.93238     60.1135
+           agesqr |  -.6671504   .0778285    -8.57   0.000    -.8196915   -.5146093
+        education |  -303.4594   124.1823    -2.44   0.015    -546.8522   -60.06654
+         children |  -10.33579   4.323739    -2.39   0.017    -18.81016    -1.86142
+   state_inc_1965 |   .0885255   .0326403     2.71   0.007     .0245516    .1524994
+    deltaStateInc |  -192.4678   98.58504    -1.95   0.051    -385.6909    .7553256
+            _cons |   1568.276   299.1443     5.24   0.000     981.9636    2154.588
+------------------+----------------------------------------------------------------
+          sigma_u |  815.63416
+          sigma_e |  561.46407
+              rho |  .67848895   (fraction of variance due to u_i)
+-----------------------------------------------------------------------------------
+
+. set more off
+
+. xttest0
+
+Breusch and Pagan Lagrangian multiplier test for random effects
+
+        occscore_real[id,t] = Xb + u[id] + e[id,t]
+
+        Estimated results:
+                         |       Var     sd = sqrt(Var)
+                ---------+-----------------------------
+               occscor~l |    1133875       1064.836
+                       e |   315241.9       561.4641
+                       u |   665259.1       815.6342
+
+        Test:   Var(u) = 0
+                             chibar2(01) =  3572.82
+                          Prob > chibar2 =   0.0000
+
+. regress occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_wMAA_i LTN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWit
+> hinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, re
+option re not allowed
+r(198);
+
+. regress occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_wMAA_i LTN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWit
+> hinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0
+
+      Source |       SS           df       MS      Number of obs   =    15,549
+-------------+----------------------------------   F(25, 15523)    =     97.12
+       Model |  2.3845e+09        25  95379126.6   Prob > F        =    0.0000
+    Residual |  1.5245e+10    15,523  982091.858   R-squared       =    0.1353
+-------------+----------------------------------   Adj R-squared   =    0.1339
+       Total |  1.7629e+10    15,548   1133875.1   Root MSE        =    991.01
+
+-----------------------------------------------------------------------------------
+    occscore_real |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   241.2548    201.186     1.20   0.230    -153.0933    635.6029
+   willMarryAtAll |   349.7161   302.4547     1.16   0.248    -243.1306    942.5627
+       willMarryN |  -317.7725   487.0986    -0.65   0.514    -1272.543    636.9977
+ MWithinMarrAAInt |  -102.4737   216.0916    -0.47   0.635    -526.0385    321.0911
+  MWithinMarrNInt |   .5755126   166.5471     0.00   0.997    -325.8763    327.0274
+        longtermN |   330.4238   268.1491     1.23   0.218    -195.1798    856.0275
+       LTN_wMAA_i |  -218.0293   304.0666    -0.72   0.473    -814.0354    377.9767
+        LTN_wMN_i |   346.2648   491.9971     0.70   0.482     -618.107    1310.637
+    tMWithinNorth |   477.4495   279.1389     1.71   0.087    -69.69533    1024.594
+           tWMAA1 |  -67.45086   133.6931    -0.50   0.614    -329.5049    194.6032
+            tWMN1 |  -148.1569    558.894    -0.27   0.791    -1243.655    947.3407
+tMWithinMarrAAInt |  -76.97436   275.9601    -0.28   0.780    -617.8885    463.9397
+ tMWithinMarrNInt |   765.0204     414.63     1.85   0.065    -47.70284    1577.744
+       LTN_tMWN_i |  -308.0992   396.6233    -0.78   0.437    -1085.527    469.3288
+      LTN_tWMAA_i |   191.7023   142.4874     1.35   0.179    -87.58972    470.9943
+       LTN_tWMN_i |   241.3221   566.2216     0.43   0.670    -868.5384    1351.183
+ LTN_tMWN_tWMAA_i |  -48.09933   411.0597    -0.12   0.907    -853.8245    757.6258
+  LTN_tMWN_tWMN_i |  -596.7315   476.6639    -1.25   0.211    -1531.048    337.5854
+             time |     905.01    56.9803    15.88   0.000      793.322    1016.698
+              age |   46.87937    6.56497     7.14   0.000     34.01127    59.74748
+           agesqr |  -.6574568   .0833827    -7.88   0.000    -.8208967   -.4940169
+        education |  -302.5599   95.87173    -3.16   0.002    -490.4797   -114.6401
+         children |  -13.00631   3.432159    -3.79   0.000    -19.73374   -6.278872
+   state_inc_1965 |   .0796672   .0255313     3.12   0.002      .029623    .1297115
+    deltaStateInc |  -422.7607   135.8464    -3.11   0.002    -689.0354    -156.486
+            _cons |   1614.267   296.5535     5.44   0.000     1032.988    2195.547
+-----------------------------------------------------------------------------------
+
+. predict resid, resid
+
+. scatter MWithinNorth resid
+
+. scatter occscore_real resid
+
+. xtreg occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_wMAA_i LTN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithi
+> nMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, re
+
+Random-effects GLS regression                   Number of obs     =     15,549
+Group variable: id                              Number of groups  =      7,785
+
+R-sq:                                           Obs per group:
+     within  = 0.4642                                         min =          1
+     between = 0.0196                                         avg =        2.0
+     overall = 0.1347                                         max =          2
+
+                                                Wald chi2(25)     =    6869.59
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+-----------------------------------------------------------------------------------
+    occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   247.0225   202.7995     1.22   0.223    -150.4573    644.5022
+   willMarryAtAll |   466.6552   296.3663     1.57   0.115    -114.2122    1047.523
+       willMarryN |  -800.3544   415.7065    -1.93   0.054    -1615.124    14.41538
+ MWithinMarrAAInt |   -107.728   217.8311    -0.49   0.621    -534.6691    319.2131
+  MWithinMarrNInt |  -15.08871   167.1802    -0.09   0.928    -342.7559    312.5784
+        longtermN |   318.1546   269.1741     1.18   0.237     -209.417    845.7262
+       LTN_wMAA_i |  -281.2421   295.0717    -0.95   0.341     -859.572    297.0878
+        LTN_wMN_i |   886.8837   418.1424     2.12   0.034     67.33964    1706.428
+    tMWithinNorth |   382.3453   167.4835     2.28   0.022     54.08377    710.6069
+           tWMAA1 |  -229.7055   98.98903    -2.32   0.020    -423.7204   -35.69055
+            tWMN1 |   583.3602   410.7517     1.42   0.156    -221.6984    1388.419
+tMWithinMarrAAInt |  -114.0311   160.5688    -0.71   0.478    -428.7402    200.6779
+ tMWithinMarrNInt |   551.2871   250.5188     2.20   0.028      60.2793    1042.295
+       LTN_tMWN_i |  -233.1386   231.9286    -1.01   0.315    -687.7104    221.4331
+      LTN_tWMAA_i |   289.2387   105.3657     2.75   0.006     82.72573    495.7516
+       LTN_tWMN_i |  -553.7849   415.9578    -1.33   0.183    -1369.047    261.4774
+ LTN_tMWN_tWMAA_i |   14.78685   236.6613     0.06   0.950    -449.0607    478.6344
+  LTN_tMWN_tWMN_i |  -381.6544   284.2699    -1.34   0.179    -938.8131    175.5043
+             time |   817.4827   40.96385    19.96   0.000      737.195    897.7703
+              age |   48.02294   6.168766     7.78   0.000     35.93238     60.1135
+           agesqr |  -.6671504   .0778285    -8.57   0.000    -.8196915   -.5146093
+        education |  -303.4594   124.1823    -2.44   0.015    -546.8522   -60.06654
+         children |  -10.33579   4.323739    -2.39   0.017    -18.81016    -1.86142
+   state_inc_1965 |   .0885255   .0326403     2.71   0.007     .0245516    .1524994
+    deltaStateInc |  -192.4678   98.58504    -1.95   0.051    -385.6909    .7553256
+            _cons |   1568.276   299.1443     5.24   0.000     981.9636    2154.588
+------------------+----------------------------------------------------------------
+          sigma_u |  815.63416
+          sigma_e |  561.46407
+              rho |  .67848895   (fraction of variance due to u_i)
+-----------------------------------------------------------------------------------
+
+. scatter uhat occscore_real
+
+. drop uhat
+
+. predicit uhat, u
+command predicit is unrecognized
+r(199);
+
+. predict uhat, u
+(45,809 missing values generated)
+
+. scatt uhat occscore_real
+command scatt is unrecognized
+r(199);
+
+. scatter uhat occscore_real
+
+. drop orhat
+
+. drop ehat
+
+. predict orhat, xb
+
+. predict ehat, e
+(45,809 missing values generated)
+
+. scatter orhat uhat
+
+. scatter occscore_real ehat
+
+. est store re
+
+. xtreg occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_wMAA_i LTN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithi
+> nMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, fe
+note: MWithinNorth omitted because of collinearity
+note: willMarryAtAll omitted because of collinearity
+note: willMarryN omitted because of collinearity
+note: MWithinMarrAAInt omitted because of collinearity
+note: MWithinMarrNInt omitted because of collinearity
+note: longtermN omitted because of collinearity
+note: LTN_wMAA_i omitted because of collinearity
+note: LTN_wMN_i omitted because of collinearity
+note: age omitted because of collinearity
+note: education omitted because of collinearity
+note: state_inc_1965 omitted because of collinearity
+
+Fixed-effects (within) regression               Number of obs     =     15,549
+Group variable: id                              Number of groups  =      7,785
+
+R-sq:                                           Obs per group:
+     within  = 0.4648                                         min =          1
+     between = 0.0013                                         avg =        2.0
+     overall = 0.0523                                         max =          2
+
+                                                F(14,7750)        =     480.85
+corr(u_i, Xb)  = -0.3751                        Prob > F          =     0.0000
+
+-----------------------------------------------------------------------------------
+    occscore_real |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |          0  (omitted)
+   willMarryAtAll |          0  (omitted)
+       willMarryN |          0  (omitted)
+ MWithinMarrAAInt |          0  (omitted)
+  MWithinMarrNInt |          0  (omitted)
+        longtermN |          0  (omitted)
+       LTN_wMAA_i |          0  (omitted)
+        LTN_wMN_i |          0  (omitted)
+    tMWithinNorth |   338.0738   171.5645     1.97   0.049     1.761002    674.3867
+           tWMAA1 |  -375.4667   113.0185    -3.32   0.001    -597.0134   -153.9199
+            tWMN1 |   867.5188    448.819     1.93   0.053    -12.28763    1747.325
+tMWithinMarrAAInt |  -132.6382   162.3981    -0.82   0.414    -450.9824     185.706
+ tMWithinMarrNInt |   455.1227   257.3867     1.77   0.077    -49.42468    959.6701
+       LTN_tMWN_i |   -199.282   234.9825    -0.85   0.396    -659.9112    261.3472
+      LTN_tWMAA_i |    342.932   116.0198     2.96   0.003     115.5019    570.3621
+       LTN_tWMN_i |  -866.4087   454.3736    -1.91   0.057    -1757.104    24.28622
+ LTN_tMWN_tWMAA_i |   45.74282   238.2057     0.19   0.848    -421.2046    512.6902
+  LTN_tMWN_tWMN_i |  -286.7846   290.5479    -0.99   0.324     -856.337    282.7679
+             time |   1024.023   60.09443    17.04   0.000      906.222    1141.825
+              age |          0  (omitted)
+           agesqr |  -.6829381   .1012185    -6.75   0.000    -.8813537   -.4845224
+        education |          0  (omitted)
+         children |   33.40343   18.27478     1.83   0.068    -2.420075    69.22693
+   state_inc_1965 |          0  (omitted)
+    deltaStateInc |  -85.84149   106.9937    -0.80   0.422    -295.5781    123.8951
+            _cons |   4121.875   154.8354    26.62   0.000     3818.356    4425.394
+------------------+----------------------------------------------------------------
+          sigma_u |   1032.966
+          sigma_e |  561.46407
+              rho |  .77193743   (fraction of variance due to u_i)
+-----------------------------------------------------------------------------------
+F test that all u_i=0: F(7784, 7750) = 5.25                  Prob > F = 0.0000
+
+. est store re
+
+. est store fe
+
+. xtreg occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_wMAA_i LTN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithi
+> nMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, re
+
+Random-effects GLS regression                   Number of obs     =     15,549
+Group variable: id                              Number of groups  =      7,785
+
+R-sq:                                           Obs per group:
+     within  = 0.4642                                         min =          1
+     between = 0.0196                                         avg =        2.0
+     overall = 0.1347                                         max =          2
+
+                                                Wald chi2(25)     =    6869.59
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+-----------------------------------------------------------------------------------
+    occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   247.0225   202.7995     1.22   0.223    -150.4573    644.5022
+   willMarryAtAll |   466.6552   296.3663     1.57   0.115    -114.2122    1047.523
+       willMarryN |  -800.3544   415.7065    -1.93   0.054    -1615.124    14.41538
+ MWithinMarrAAInt |   -107.728   217.8311    -0.49   0.621    -534.6691    319.2131
+  MWithinMarrNInt |  -15.08871   167.1802    -0.09   0.928    -342.7559    312.5784
+        longtermN |   318.1546   269.1741     1.18   0.237     -209.417    845.7262
+       LTN_wMAA_i |  -281.2421   295.0717    -0.95   0.341     -859.572    297.0878
+        LTN_wMN_i |   886.8837   418.1424     2.12   0.034     67.33964    1706.428
+    tMWithinNorth |   382.3453   167.4835     2.28   0.022     54.08377    710.6069
+           tWMAA1 |  -229.7055   98.98903    -2.32   0.020    -423.7204   -35.69055
+            tWMN1 |   583.3602   410.7517     1.42   0.156    -221.6984    1388.419
+tMWithinMarrAAInt |  -114.0311   160.5688    -0.71   0.478    -428.7402    200.6779
+ tMWithinMarrNInt |   551.2871   250.5188     2.20   0.028      60.2793    1042.295
+       LTN_tMWN_i |  -233.1386   231.9286    -1.01   0.315    -687.7104    221.4331
+      LTN_tWMAA_i |   289.2387   105.3657     2.75   0.006     82.72573    495.7516
+       LTN_tWMN_i |  -553.7849   415.9578    -1.33   0.183    -1369.047    261.4774
+ LTN_tMWN_tWMAA_i |   14.78685   236.6613     0.06   0.950    -449.0607    478.6344
+  LTN_tMWN_tWMN_i |  -381.6544   284.2699    -1.34   0.179    -938.8131    175.5043
+             time |   817.4827   40.96385    19.96   0.000      737.195    897.7703
+              age |   48.02294   6.168766     7.78   0.000     35.93238     60.1135
+           agesqr |  -.6671504   .0778285    -8.57   0.000    -.8196915   -.5146093
+        education |  -303.4594   124.1823    -2.44   0.015    -546.8522   -60.06654
+         children |  -10.33579   4.323739    -2.39   0.017    -18.81016    -1.86142
+   state_inc_1965 |   .0885255   .0326403     2.71   0.007     .0245516    .1524994
+    deltaStateInc |  -192.4678   98.58504    -1.95   0.051    -385.6909    .7553256
+            _cons |   1568.276   299.1443     5.24   0.000     981.9636    2154.588
+------------------+----------------------------------------------------------------
+          sigma_u |  815.63416
+          sigma_e |  561.46407
+              rho |  .67848895   (fraction of variance due to u_i)
+-----------------------------------------------------------------------------------
+
+. est store re
+
+. hausman fe re
+
+Note: the rank of the differenced variance matrix (13) does not equal the number of coefficients being tested (14); be sure this is what you expect, or there may be problems
+        computing the test.  Examine the output of your estimators for anything unexpected and possibly consider scaling your variables so that the coefficients are on a similar
+        scale.
+
+                 ---- Coefficients ----
+             |      (b)          (B)            (b-B)     sqrt(diag(V_b-V_B))
+             |       fe           re         Difference          S.E.
+-------------+----------------------------------------------------------------
+tMWithinNo~h |    338.0738     382.3453       -44.27151         37.1978
+      tWMAA1 |   -375.4667    -229.7055       -145.7612        54.53762
+       tWMN1 |    867.5188     583.3602        284.1586        180.8908
+tMWithi~AInt |   -132.6382    -114.0311       -18.60708        24.30667
+tMWithi~NInt |    455.1227     551.2871       -96.16443        59.06117
+  LTN_tMWN_i |    -199.282    -233.1386        33.85666        37.76087
+ LTN_tWMAA_i |     342.932     289.2387        53.69339        48.56606
+  LTN_tWMN_i |   -866.4087    -553.7849       -312.6238        182.8509
+LTN_tMWN~A_i |    45.74282     14.78685        30.95597        27.08082
+LTN_tMWN~N_i |   -286.7846    -381.6544        94.86988        60.07292
+        time |    1024.023     817.4827        206.5406        43.96934
+      agesqr |   -.6829381    -.6671504       -.0157877        .0647141
+    children |    33.40343    -10.33579        43.73922        17.75592
+deltaState~c |   -85.84149    -192.4678        106.6263        41.57701
+------------------------------------------------------------------------------
+                           b = consistent under Ho and Ha; obtained from xtreg
+            B = inconsistent under Ha, efficient under Ho; obtained from xtreg
+
+    Test:  Ho:  difference in coefficients not systematic
+
+                 chi2(13) = (b-B)'[(V_b-V_B)^(-1)](b-B)
+                          =        1.48
+                Prob>chi2 =      1.0000
+                (V_b-V_B is not positive definite)
+
+. xtreg occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_wMAA_i LTN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithi
+> nMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, re
+
+Random-effects GLS regression                   Number of obs     =     15,549
+Group variable: id                              Number of groups  =      7,785
+
+R-sq:                                           Obs per group:
+     within  = 0.4642                                         min =          1
+     between = 0.0196                                         avg =        2.0
+     overall = 0.1347                                         max =          2
+
+                                                Wald chi2(25)     =    6869.59
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+-----------------------------------------------------------------------------------
+    occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |   247.0225   202.7995     1.22   0.223    -150.4573    644.5022
+   willMarryAtAll |   466.6552   296.3663     1.57   0.115    -114.2122    1047.523
+       willMarryN |  -800.3544   415.7065    -1.93   0.054    -1615.124    14.41538
+ MWithinMarrAAInt |   -107.728   217.8311    -0.49   0.621    -534.6691    319.2131
+  MWithinMarrNInt |  -15.08871   167.1802    -0.09   0.928    -342.7559    312.5784
+        longtermN |   318.1546   269.1741     1.18   0.237     -209.417    845.7262
+       LTN_wMAA_i |  -281.2421   295.0717    -0.95   0.341     -859.572    297.0878
+        LTN_wMN_i |   886.8837   418.1424     2.12   0.034     67.33964    1706.428
+    tMWithinNorth |   382.3453   167.4835     2.28   0.022     54.08377    710.6069
+           tWMAA1 |  -229.7055   98.98903    -2.32   0.020    -423.7204   -35.69055
+            tWMN1 |   583.3602   410.7517     1.42   0.156    -221.6984    1388.419
+tMWithinMarrAAInt |  -114.0311   160.5688    -0.71   0.478    -428.7402    200.6779
+ tMWithinMarrNInt |   551.2871   250.5188     2.20   0.028      60.2793    1042.295
+       LTN_tMWN_i |  -233.1386   231.9286    -1.01   0.315    -687.7104    221.4331
+      LTN_tWMAA_i |   289.2387   105.3657     2.75   0.006     82.72573    495.7516
+       LTN_tWMN_i |  -553.7849   415.9578    -1.33   0.183    -1369.047    261.4774
+ LTN_tMWN_tWMAA_i |   14.78685   236.6613     0.06   0.950    -449.0607    478.6344
+  LTN_tMWN_tWMN_i |  -381.6544   284.2699    -1.34   0.179    -938.8131    175.5043
+             time |   817.4827   40.96385    19.96   0.000      737.195    897.7703
+              age |   48.02294   6.168766     7.78   0.000     35.93238     60.1135
+           agesqr |  -.6671504   .0778285    -8.57   0.000    -.8196915   -.5146093
+        education |  -303.4594   124.1823    -2.44   0.015    -546.8522   -60.06654
+         children |  -10.33579   4.323739    -2.39   0.017    -18.81016    -1.86142
+   state_inc_1965 |   .0885255   .0326403     2.71   0.007     .0245516    .1524994
+    deltaStateInc |  -192.4678   98.58504    -1.95   0.051    -385.6909    .7553256
+            _cons |   1568.276   299.1443     5.24   0.000     981.9636    2154.588
+------------------+----------------------------------------------------------------
+          sigma_u |  815.63416
+          sigma_e |  561.46407
+              rho |  .67848895   (fraction of variance due to u_i)
+-----------------------------------------------------------------------------------
+
+. xttest0
+
+Breusch and Pagan Lagrangian multiplier test for random effects
+
+        occscore_real[id,t] = Xb + u[id] + e[id,t]
+
+        Estimated results:
+                         |       Var     sd = sqrt(Var)
+                ---------+-----------------------------
+               occscor~l |    1133875       1064.836
+                       e |   315241.9       561.4641
+                       u |   665259.1       815.6342
+
+        Test:   Var(u) = 0
+                             chibar2(01) =  3572.82
+                          Prob > chibar2 =   0.0000
+
+. ssc install xttest3
+checking xttest3 consistency and verifying not already installed...
+installing into /Users/max/Library/Application Support/Stata/ado/plus/...
+installation complete.
+
+. xttest3
+last estimates not xtreg, fe
+r(301);
+
+. xtgls occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_wMAA_i LTN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithi
+> nMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, igls pan
+> els(heteroskedastic)
+matsize too small - should be at least 7785
+r(908);
+
+. set matsize 200
+
+. xtgls occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_wMAA_i LTN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithi
+> nMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, igls pan
+> els(heteroskedastic)
+matsize too small - should be at least 7785
+r(908);
+
+. set matsize 7785
+matsize must be between 10 and 800
+r(198);
+
+. set matsize 800
+
+. xtgls occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_wMAA_i LTN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithi
+> nMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, igls pan
+> els(heteroskedastic)
+matsize too small - should be at least 7785
+r(908);
+
+. help xtunitroot
+
+. 
