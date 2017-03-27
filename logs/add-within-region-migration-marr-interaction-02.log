@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/max/Documents/500_data/logs/add-within-region-migration-marr-interaction-02.log
+  log type:  text
+ opened on:  26 Mar 2017, 23:59:05
+
+. regress erscor50 MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age agesqr educatio
+> n children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, r
+
+Linear regression                               Number of obs     =     15,549
+                                                F(17, 15531)      =      23.28
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0232
+                                                Root MSE          =     22.343
+
+-----------------------------------------------------------------------------------
+                  |               Robust
+         erscor50 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+     MWithinNorth |    5.38603   3.072301     1.75   0.080     -.636038     11.4081
+   willMarryAtAll |   4.098533   1.154895     3.55   0.000     1.834803    6.362263
+       willMarryN |   1.501837   1.832482     0.82   0.412    -2.090042    5.093716
+ MWithinMarrAAInt |   -4.84436    3.20977    -1.51   0.131    -11.13588    1.447164
+  MWithinMarrNInt |   .8518287   3.387898     0.25   0.801    -5.788847    7.492504
+    tMWithinNorth |   1.548827   4.346763     0.36   0.722    -6.971336    10.06899
+           tWMAA1 |   2.324452   1.001158     2.32   0.020      .362065    4.286839
+            tWMN1 |   .8512107   1.892592     0.45   0.653     -2.85849    4.560911
+tMWithinMarrAAInt |   .2405894    4.44056     0.05   0.957    -8.463427    8.944606
+ tMWithinMarrNInt |   2.459921   4.759739     0.52   0.605    -6.869724    11.78957
+             time |   6.361594   .9003371     7.07   0.000     4.596829     8.12636
+              age |   1.350308   .1440769     9.37   0.000       1.0679    1.632715
+           agesqr |   -.018294   .0018398    -9.94   0.000    -.0219003   -.0146878
+        education |   -6.31137   1.655335    -3.81   0.000    -9.556019   -3.066721
+         children |  -.2444325   .0746771    -3.27   0.001    -.3908083   -.0980567
+   state_inc_1965 |   .0010313   .0005493     1.88   0.060    -.0000454    .0021079
+    deltaStateInc |  -6.258582   2.028504    -3.09   0.002    -10.23469   -2.282477
+            _cons |   9.977731   3.237029     3.08   0.002     3.632776    16.32268
+-----------------------------------------------------------------------------------
+
+. 
+. * Above fixes error in specification code for N-migrant males
+
+. log off
+      name:  <unnamed>
+       log:  /Users/max/Documents/500_data/logs/add-within-region-migration-marr-interaction-02.log
+  log type:  text
+ paused on:  26 Mar 2017, 23:59:39
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

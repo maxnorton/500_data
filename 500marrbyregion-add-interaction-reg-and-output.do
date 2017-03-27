@@ -17,7 +17,7 @@ replace tMWithinMarrNInt = tMWithinSouth*tWMN1 if MToNorth==0
 
 * MIGRANTS TO NORTH
 	* ==MALE
-		regress erscor50 MWithinNorth willMarryAtAll willMarryN tMWithinMarrAAInt tMWithinMarrNInt tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, r
+		regress erscor50 MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, r
 		est store er_n_m
 
 		regress occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, r
