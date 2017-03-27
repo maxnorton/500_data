@@ -13,6 +13,8 @@ Linear regression                               Number of obs     =     15,549
                                                 R-squared         =     0.0232
                                                 Root MSE          =     22.343
 
+* EXCEL ID 2.3
+
 -----------------------------------------------------------------------------------
                   |               Robust
          erscor50 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]

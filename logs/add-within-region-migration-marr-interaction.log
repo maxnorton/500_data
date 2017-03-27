@@ -9580,6 +9580,8 @@ end of do-file
 note: tMWithinMarrAAInt omitted because of collinearity
 note: tMWithinMarrNInt omitted because of collinearity
 
+* Erroneous, not in Excel
+
 Linear regression                               Number of obs     =     15,549
                                                 F(15, 15533)      =      26.24
                                                 Prob > F          =     0.0000
@@ -9615,6 +9617,8 @@ tMWithinMarrAAInt |          0  (omitted)
 . 
 .                 regress occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt tim
 > e age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, r
+
+* EXCEL ID 2.4
 
 Linear regression                               Number of obs     =     15,549
                                                 F(17, 15531)      =     140.78
@@ -9652,6 +9656,8 @@ tMWithinMarrAAInt |  -97.69348   191.5886    -0.51   0.610    -473.2296    277.8
 .                 regress presgl MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age a
 > gesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, r
 
+* EXCEL ID 2.5
+
 Linear regression                               Number of obs     =     15,549
                                                 F(17, 15531)      =      29.07
                                                 Prob > F          =     0.0000
@@ -9687,6 +9693,8 @@ tMWithinMarrAAInt |   .5439898   2.499674     0.22   0.828    -4.355662    5.443
 . 
 .                 regress sei MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age ages
 > qr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, r
+
+* EXCEL ID 2.6
 
 Linear regression                               Number of obs     =     15,549
                                                 F(17, 15531)      =      33.53
@@ -9725,6 +9733,8 @@ tMWithinMarrAAInt |   -.681326   3.910283    -0.17   0.862    -8.345936    6.983
 .                 regress erscor50 MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age
 >  agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==1, r
 
+* EXCEL ID 2.8
+
 Linear regression                               Number of obs     =     10,391
                                                 F(17, 10373)      =      32.72
                                                 Prob > F          =     0.0000
@@ -9760,6 +9770,8 @@ tMWithinMarrAAInt |   3.044729   4.630177     0.66   0.511     -6.03131    12.12
 . 
 .                 regress occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt tim
 > e age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==1, r
+
+* EXCEL ID 2.9
 
 Linear regression                               Number of obs     =     10,391
                                                 F(17, 10373)      =      75.93
@@ -9797,6 +9809,8 @@ tMWithinMarrAAInt |   191.0822   244.8169     0.78   0.435    -288.8061    670.9
 .                 regress presgl MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age a
 > gesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==1, r
 
+* EXCEL ID 2.10
+
 Linear regression                               Number of obs     =     10,391
                                                 F(17, 10373)      =      44.54
                                                 Prob > F          =     0.0000
@@ -9832,6 +9846,8 @@ tMWithinMarrAAInt |   1.522663   2.953304     0.52   0.606    -4.266383    7.311
 . 
 .                 regress sei MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age ages
 > qr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==1, r
+
+* EXCEL ID 2.11
 
 Linear regression                               Number of obs     =     10,391
                                                 F(17, 10373)      =      52.67
@@ -9870,6 +9886,8 @@ tMWithinMarrAAInt |   5.712025   4.744565     1.20   0.229    -3.588237    15.01
 .                 regress erscor50 MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age
 >  agesqr education children state_inc_1965 deltaStateInc if MToNorth==1, r
 
+* EXCEL ID 2.13
+
 Linear regression                               Number of obs     =     25,940
                                                 F(17, 25922)      =      41.90
                                                 Prob > F          =     0.0000
@@ -9905,6 +9923,8 @@ tMWithinMarrAAInt |    1.70611   3.348634     0.51   0.610    -4.857397    8.269
 . 
 .                 regress occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt tim
 > e age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1, r
+
+* EXCEL ID 2.14
 
 Linear regression                               Number of obs     =     25,940
                                                 F(17, 25922)      =     176.74
@@ -9942,6 +9962,8 @@ tMWithinMarrAAInt |   56.89498   162.9444     0.35   0.727    -262.4851     376.
 .                 regress presgl MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age a
 > gesqr education children state_inc_1965 deltaStateInc if MToNorth==1, r
 
+* EXCEL ID 2.15
+
 Linear regression                               Number of obs     =     25,940
                                                 F(17, 25922)      =      63.88
                                                 Prob > F          =     0.0000
@@ -9977,6 +9999,8 @@ tMWithinMarrAAInt |    .620088   1.942887     0.32   0.750    -3.188078    4.428
 . 
 .                 regress sei MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age ages
 > qr education children state_inc_1965 deltaStateInc if MToNorth==1, r
+
+* EXCEL ID 2.16
 
 Linear regression                               Number of obs     =     25,940
                                                 F(17, 25922)      =      75.86
@@ -10017,6 +10041,8 @@ tMWithinMarrAAInt |   1.816083   3.112023     0.58   0.560    -4.283654     7.91
 .                 regress erscor50 MWithinSouth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinSouth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age
 >  agesqr education children state_inc_1965 deltaStateInc if MToNorth==0 & dSex==0, r
 
+* EXCEL ID 2.18
+
 Linear regression                               Number of obs     =     21,172
                                                 F(17, 21154)      =      31.97
                                                 Prob > F          =     0.0000
@@ -10052,6 +10078,8 @@ tMWithinMarrAAInt |   10.01362   6.303616     1.59   0.112    -2.341947    22.36
 . 
 .                 regress occscore_real MWithinSouth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinSouth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt tim
 > e age agesqr education children state_inc_1965 deltaStateInc if MToNorth==0 & dSex==0, r
+
+* EXCEL ID 2.19
 
 Linear regression                               Number of obs     =     21,172
                                                 F(17, 21154)      =     176.46
@@ -10089,6 +10117,8 @@ tMWithinMarrAAInt |   498.6561   293.5558     1.70   0.089    -76.73556    1074.
 .                 regress presgl MWithinSouth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinSouth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age a
 > gesqr education children state_inc_1965 deltaStateInc if MToNorth==0 & dSex==0, r
 
+* EXCEL ID 2.20
+
 Linear regression                               Number of obs     =     21,172
                                                 F(17, 21154)      =      25.81
                                                 Prob > F          =     0.0000
@@ -10124,6 +10154,8 @@ tMWithinMarrAAInt |   2.362459   3.351514     0.70   0.481    -4.206764    8.931
 . 
 .                 regress sei MWithinSouth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinSouth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age ages
 > qr education children state_inc_1965 deltaStateInc if MToNorth==0 & dSex==0, r
+
+* EXCEL ID 2.21
 
 Linear regression                               Number of obs     =     21,172
                                                 F(17, 21154)      =      39.27
@@ -10162,6 +10194,8 @@ tMWithinMarrAAInt |   3.499224   4.963422     0.71   0.481    -6.229461    13.22
 .                 regress erscor50 MWithinSouth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinSouth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age
 >  agesqr education children state_inc_1965 deltaStateInc if MToNorth==0 & dSex==1, r
 
+* EXCEL ID 2.23
+
 Linear regression                               Number of obs     =     14,246
                                                 F(17, 14228)      =      65.63
                                                 Prob > F          =     0.0000
@@ -10197,6 +10231,8 @@ tMWithinMarrAAInt |  -.2579087   8.776132    -0.03   0.977    -17.46027    16.94
 . 
 .                 regress occscore_real MWithinSouth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinSouth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt tim
 > e age agesqr education children state_inc_1965 deltaStateInc if MToNorth==0 & dSex==1, r
+
+* EXCEL ID 2.24
 
 Linear regression                               Number of obs     =     14,246
                                                 F(17, 14228)      =      94.23
@@ -10234,6 +10270,8 @@ tMWithinMarrAAInt |  -20.61728   479.0693    -0.04   0.966    -959.6556    918.4
 .                 regress presgl MWithinSouth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinSouth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age a
 > gesqr education children state_inc_1965 deltaStateInc if MToNorth==0 & dSex==1, r
 
+* EXCEL ID 2.25
+
 Linear regression                               Number of obs     =     14,246
                                                 F(17, 14228)      =      73.44
                                                 Prob > F          =     0.0000
@@ -10269,6 +10307,8 @@ tMWithinMarrAAInt |  -.0197551   4.275505    -0.00   0.996    -8.400304    8.360
 . 
 .                 regress sei MWithinSouth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinSouth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age ages
 > qr education children state_inc_1965 deltaStateInc if MToNorth==0 & dSex==1, r
+
+* EXCEL ID 2.26
 
 Linear regression                               Number of obs     =     14,246
                                                 F(17, 14228)      =      82.29
@@ -10307,6 +10347,8 @@ tMWithinMarrAAInt |  -3.797076   6.765865    -0.56   0.575    -17.05905    9.464
 .                 regress erscor50 MWithinSouth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinSouth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age
 >  agesqr education children state_inc_1965 deltaStateInc if MToNorth==0, r
 
+* EXCEL ID 2.28
+
 Linear regression                               Number of obs     =     35,418
                                                 F(17, 35400)      =      57.92
                                                 Prob > F          =     0.0000
@@ -10342,6 +10384,8 @@ tMWithinMarrAAInt |   6.338442   5.269219     1.20   0.229    -3.989392    16.66
 . 
 .                 regress occscore_real MWithinSouth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinSouth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt tim
 > e age agesqr education children state_inc_1965 deltaStateInc if MToNorth==0, r
+
+* EXCEL ID 2.29
 
 Linear regression                               Number of obs     =     35,418
                                                 F(17, 35400)      =     202.37
@@ -10379,6 +10423,8 @@ tMWithinMarrAAInt |   344.1111   272.7455     1.26   0.207    -190.4787    878.7
 .                 regress presgl MWithinSouth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinSouth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age a
 > gesqr education children state_inc_1965 deltaStateInc if MToNorth==0, r
 
+* EXCEL ID 2.30
+
 Linear regression                               Number of obs     =     35,418
                                                 F(17, 35400)      =      70.92
                                                 Prob > F          =     0.0000
@@ -10414,6 +10460,8 @@ tMWithinMarrAAInt |   1.540958   2.649758     0.58   0.561     -3.65265    6.734
 . 
 .                 regress sei MWithinSouth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt tMWithinSouth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt time age ages
 > qr education children state_inc_1965 deltaStateInc if MToNorth==0, r
+
+* EXCEL ID 2.31
 
 Linear regression                               Number of obs     =     35,418
                                                 F(17, 35400)      =     100.89

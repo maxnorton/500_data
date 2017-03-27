@@ -9568,7 +9568,7 @@ r(198);
 . count if MWithinSouth==1 & MWithinNorth==1
   0
 
-* EXCEL ID 19
+* EXCEL ID 1.19
 
 . regress occscore MWithinSouth tMWithinSouth willMarryAtAll willMarryS tWMAA1 tWMS1 time age agesqr dSex education children state_inc_1965 deltaStateInc if dSex==0 & MToNorth==
 > 0
@@ -9601,7 +9601,7 @@ state_inc_1965 |   .0006099     .00016     3.81   0.000     .0002962    .0009235
          _cons |   6.557839   .7520181     8.72   0.000     5.083827    8.031852
 --------------------------------------------------------------------------------
 
-* EXCEL ID 20
+* EXCEL ID 1.20
 
 . regress occscore MWithinSouth tMWithinSouth willMarryAtAll willMarryN tWMAA1 tWMN1 time age agesqr dSex education children state_inc_1965 deltaStateInc if dSex==0 & MToNorth==
 > 0
