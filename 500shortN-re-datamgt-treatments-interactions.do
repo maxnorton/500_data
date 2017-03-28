@@ -20,11 +20,15 @@ replace tMShortN = (MShortN==1 & time==1)
 
 generate MW_WMAA = 0
 generate MW_WMN = 0
+generate MR_WMAA = 0
+generate MR_WMN = 0
 generate MSN_WMAA = 0
 generate MSN_WMN = 0
 
 generate tMW_tWMAA = 0
 generate tMW_tWMN = 0
+generate tMR_tWMAA = 0
+generate tMR_tWMN = 0
 generate tMSN_tWMAA = 0
 generate tMSN_tWMN = 0
 
@@ -36,6 +40,11 @@ replace tMW_tWMAA = tMWithinNorth*tWMAA if MToNorth==1
 replace tMW_tWMAA = tMWithinSouth*tWMAA if MToNorth==0
 replace tMW_tWMN = tMWithinNorth*tWMN if MToNorth==1
 replace tMW_tWMN = tMWithinSouth*tWMN if MToNorth==0
+
+replace MR_WMAA = MReturn*WMAA
+replace MR_WMN = MReturn*WMN
+replace tMR_tWMAA = tMReturn*tWMAA
+replace tMR_tWMN = tMReturn*tWMN
 
 replace MSN_WMAA = MShortN*WMAA
 replace MSN_WMN = MShortN*WMN

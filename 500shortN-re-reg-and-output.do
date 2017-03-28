@@ -1,92 +1,88 @@
-*TO-DO: check justification for use of robust standard errors
-
-
-/* As specified below, Stata will automatically omit longtermN, LTN_wMAA_i, LTN_MWN_wMN_i.
-	To eliminate this problem, I drop LTN_MWN_i, LTN_MWN_wMAA_i, LTN_MWN_wMN_i from the regression.
-	Ramsey RESET suggests I can also drop LTN_tMWN_i for some regressions, but not all, so I don't. I also retain LTN_tMWN_tWMAA_i and LTN_tWMN_tWMN_i.
-
 * MIGRANTS TO NORTH
 	* ==MALE
-		regress erscor50 MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, r
+		xtreg erscor50 MShortN MReturn MWithinNorth WMAA WMN MW_WMAA MW_WMN MR_WMAA MR_WMN MSN_WMAA MSN_WMN tMWithinNorth tMReturn tWMAA tWMN tMW_tWMAA tMW_tWMN tMR_tWMAA tMR_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, re
 		est store er_n_m
 
-		regress occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, r
-		est store occ_n_m
-
-		regress presgl MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, r
-		est store sgl_n_m
-
-		regress sei MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, r
-		est store sei_n_m
-
-	* ==FEMALE
-		regress erscor50 MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==1, r
-		est store er_n_f
-
-		regress occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==1, r
-		est store occ_n_f
-
-		regress presgl MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==1, r
-		est store sgl_n_f
-
-		regress sei MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==1, r
-		est store sei_n_f
-
-	* ==BOTH GENDERS
-		regress erscor50 MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1, r
-		est store er_n_all
-
-		regress occscore_real MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1, r
-		est store occ_n_all
-
-		regress presgl MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1, r
-		est store sgl_n_all
-
-		regress sei MWithinNorth willMarryAtAll willMarryN MWithinMarrAAInt MWithinMarrNInt longtermN LTN_MWN_i LTN_wMAA_i LTN_wMN_i LTN_MWN_wMAA_i LTN_MWN_wMN_i tMWithinNorth tWMAA1 tWMN1 tMWithinMarrAAInt tMWithinMarrNInt LTN_tMWN_i LTN_tWMAA_i LTN_tWMN_i LTN_tMWN_tWMAA_i LTN_tMWN_tWMN_i time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1, r
-		est store sei_n_all
-*/
-
-* MIGRANTS TO NORTH
-	* ==MALE
-		xtreg erscor50 MShortN MWithinNorth WMAA WMN MW_WMAA MW_WMN MSN_WMAA MSN_WMN tMWithinNorth tWMAA tWMN tMW_tWMAA tMW_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, re
-		est store er_n_m
-
-		xtreg occscore_real MShortN MWithinNorth WMAA WMN MW_WMAA MW_WMN MSN_WMAA MSN_WMN tMWithinNorth tWMAA tWMN tMW_tWMAA tMW_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, re
+		xtreg occscore_real MShortN MReturn MWithinNorth WMAA WMN MW_WMAA MW_WMN MR_WMAA MR_WMN MSN_WMAA MSN_WMN tMWithinNorth tMReturn tWMAA tWMN tMW_tWMAA tMW_tWMN tMR_tWMAA tMR_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, re
 		est store occ_n_m
 		
-		xtreg presgl MShortN MWithinNorth WMAA WMN MW_WMAA MW_WMN MSN_WMAA MSN_WMN tMWithinNorth tWMAA tWMN tMW_tWMAA tMW_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, re
+		xtreg presgl MShortN MReturn MWithinNorth WMAA WMN MW_WMAA MW_WMN MR_WMAA MR_WMN MSN_WMAA MSN_WMN tMWithinNorth tMReturn tWMAA tWMN tMW_tWMAA tMW_tWMN tMR_tWMAA tMR_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, re
 		est store sgl_n_m
 
-		xtreg sei MShortN MWithinNorth WMAA WMN MW_WMAA MW_WMN MSN_WMAA MSN_WMN tMWithinNorth tWMAA tWMN tMW_tWMAA tMW_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, re
+		xtreg sei MShortN MReturn MWithinNorth WMAA WMN MW_WMAA MW_WMN MR_WMAA MR_WMN MSN_WMAA MSN_WMN tMWithinNorth tMReturn tWMAA tWMN tMW_tWMAA tMW_tWMN tMR_tWMAA tMR_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, re
 		est store sei_n_m
 
 	* ==FEMALE
-		xtreg erscor50 MShortN MWithinNorth WMAA WMN MW_WMAA MW_WMN MSN_WMAA MSN_WMN tMWithinNorth tWMAA tWMN tMW_tWMAA tMW_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==1, re
+		xtreg erscor50 MShortN MReturn MWithinNorth WMAA WMN MW_WMAA MW_WMN MR_WMAA MR_WMN MSN_WMAA MSN_WMN tMWithinNorth tMReturn tWMAA tWMN tMW_tWMAA tMW_tWMN tMR_tWMAA tMR_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==1, re
 		est store er_n_f
 
-		xtreg occscore_real MShortN MWithinNorth WMAA WMN MW_WMAA MW_WMN MSN_WMAA MSN_WMN tMWithinNorth tWMAA tWMN tMW_tWMAA tMW_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==1, re
+		xtreg occscore_real MShortN MReturn MWithinNorth WMAA WMN MW_WMAA MW_WMN MR_WMAA MR_WMN MSN_WMAA MSN_WMN tMWithinNorth tMReturn tWMAA tWMN tMW_tWMAA tMW_tWMN tMR_tWMAA tMR_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==1, re
 		est store occ_n_f
 
-		xtreg presgl MShortN MWithinNorth WMAA WMN MW_WMAA MW_WMN MSN_WMAA MSN_WMN tMWithinNorth tWMAA tWMN tMW_tWMAA tMW_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==1, re
+		xtreg presgl MShortN MReturn MWithinNorth WMAA WMN MW_WMAA MW_WMN MR_WMAA MR_WMN MSN_WMAA MSN_WMN tMWithinNorth tMReturn tWMAA tWMN tMW_tWMAA tMW_tWMN tMR_tWMAA tMR_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==1, re
 		est store sgl_n_f
 
-		xtreg sei MShortN MWithinNorth WMAA WMN MW_WMAA MW_WMN MSN_WMAA MSN_WMN tMWithinNorth tWMAA tWMN tMW_tWMAA tMW_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==1, re
+		xtreg sei MShortN MReturn MWithinNorth WMAA WMN MW_WMAA MW_WMN MR_WMAA MR_WMN MSN_WMAA MSN_WMN tMWithinNorth tMReturn tWMAA tWMN tMW_tWMAA tMW_tWMN tMR_tWMAA tMR_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==1, re
 		est store sei_n_f
 
 	* ==BOTH GENDERS
-		xtreg erscor50 MShortN MWithinNorth WMAA WMN MW_WMAA MW_WMN MSN_WMAA MSN_WMN tMWithinNorth tWMAA tWMN tMW_tWMAA tMW_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1, re
+		xtreg erscor50 MShortN MReturn MWithinNorth WMAA WMN MW_WMAA MW_WMN MR_WMAA MR_WMN MSN_WMAA MSN_WMN tMWithinNorth tMReturn tWMAA tWMN tMW_tWMAA tMW_tWMN tMR_tWMAA tMR_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1, re
 		est store er_n_all
 
-		xtreg occscore_real MShortN MWithinNorth WMAA WMN MW_WMAA MW_WMN MSN_WMAA MSN_WMN tMWithinNorth tWMAA tWMN tMW_tWMAA tMW_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1, re
+		xtreg occscore_real MShortN MReturn MWithinNorth WMAA WMN MW_WMAA MW_WMN MR_WMAA MR_WMN MSN_WMAA MSN_WMN tMWithinNorth tMReturn tWMAA tWMN tMW_tWMAA tMW_tWMN tMR_tWMAA tMR_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1, re
 		est store occ_n_all
 
-		xtreg presgl MShortN MWithinNorth WMAA WMN MW_WMAA MW_WMN MSN_WMAA MSN_WMN tMWithinNorth tWMAA tWMN tMW_tWMAA tMW_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1, re
+		xtreg presgl MShortN MReturn MWithinNorth WMAA WMN MW_WMAA MW_WMN MR_WMAA MR_WMN MSN_WMAA MSN_WMN tMWithinNorth tMReturn tWMAA tWMN tMW_tWMAA tMW_tWMN tMR_tWMAA tMR_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1, re
 		est store sgl_n_all
 
-		xtreg sei MShortN MWithinNorth WMAA WMN MW_WMAA MW_WMN MSN_WMAA MSN_WMN tMWithinNorth tWMAA tWMN tMW_tWMAA tMW_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1, re
+		xtreg sei MShortN MReturn MWithinNorth WMAA WMN MW_WMAA MW_WMN MR_WMAA MR_WMN MSN_WMAA MSN_WMN tMWithinNorth tMReturn tWMAA tWMN tMW_tWMAA tMW_tWMN tMR_tWMAA tMR_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1, re
 		est store sei_n_all
 
-/*outreg2 [er_n_all occ_n_all sgl_n_all sei_n_all] using output-n-all, replace alpha(.02, .10, .20)  nonotes
+		
+* REMAINING SOUTHERNERS
+	* ==MALE
+		xtreg erscor50 MWithinNorth WMAA WMN MW_WMAA MW_WMN tMWithinSouth tWMAA tWMN tMW_tWMAA tMW_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==0 & dSex==0, re
+		est store er_s_m
+
+		xtreg occscore_real MWithinNorth WMAA WMN MW_WMAA MW_WMN tMWithinSouth tWMAA tWMN tMW_tWMAA tMW_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==0 & dSex==0, re
+		est store occ_s_m
+		
+		xtreg presgl MWithinNorth WMAA WMN MW_WMAA MW_WMN tMWithinSouth tWMAA tWMN tMW_tWMAA tMW_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==0 & dSex==0, re
+		est store sgl_s_m
+
+		xtreg sei MWithinNorth WMAA WMN MW_WMAA MW_WMN tMWithinSouth tWMAA tWMN tMW_tWMAA tMW_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==0 & dSex==0, re
+		est store sei_s_m
+
+	* ==FEMALE
+		xtreg erscor50 MWithinNorth WMAA WMN MW_WMAA MW_WMN tMWithinSouth tWMAA tWMN tMW_tWMAA tMW_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==0 & dSex==1, re
+		est store er_s_f
+
+		xtreg occscore_real MWithinNorth WMAA WMN MW_WMAA MW_WMN tMWithinSouth tWMAA tWMN tMW_tWMAA tMW_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==0 & dSex==1, re
+		est store occ_s_f
+
+		xtreg presgl MWithinNorth WMAA WMN MW_WMAA MW_WMN tMWithinSouth tWMAA tWMN tMW_tWMAA tMW_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==0 & dSex==1, re
+		est store sgl_s_f
+
+		xtreg sei MWithinNorth WMAA WMN MW_WMAA MW_WMN tMWithinSouth tWMAA tWMN tMW_tWMAA tMW_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==0 & dSex==1, re
+		est store sei_s_f
+
+	* ==BOTH GENDERS
+		xtreg erscor50 MWithinNorth WMAA WMN MW_WMAA MW_WMN tMWithinSouth tWMAA tWMN tMW_tWMAA tMW_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==0, re
+		est store er_s_all
+
+		xtreg occscore_real MWithinNorth WMAA WMN MW_WMAA MW_WMN tMWithinSouth tWMAA tWMN tMW_tWMAA tMW_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==0, re
+		est store occ_s_all
+
+		xtreg presgl MWithinNorth WMAA WMN MW_WMAA MW_WMN tMWithinSouth tWMAA tWMN tMW_tWMAA tMW_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==0, re
+		est store sgl_s_all
+
+		xtreg sei MWithinNorth WMAA WMN MW_WMAA MW_WMN tMWithinSouth tWMAA tWMN tMW_tWMAA tMW_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==0, re
+		est store sei_s_all
+		
+outreg2 [er_n_all occ_n_all sgl_n_all sei_n_all] using output-n-all, replace alpha(.02, .10, .20)  nonotes
 outreg2 [er_n_m occ_n_m sgl_n_m sei_n_m] using output-n-m, replace alpha(.02, .10, .20)  nonotes
 outreg2 [er_n_f occ_n_f sgl_n_f sei_n_f] using output-n-f, replace alpha(.02, .10, .20)  nonotes
-*/
+
+outreg2 [er_s_all occ_s_all sgl_s_all sei_s_all] using output-n-all, replace alpha(.02, .10, .20)  nonotes
+outreg2 [er_s_m occ_s_m sgl_s_m sei_s_m] using output-n-m, replace alpha(.02, .10, .20)  nonotes
+outreg2 [er_s_f occ_s_f sgl_s_f sei_s_f] using output-n-f, replace alpha(.02, .10, .20)  nonotes
