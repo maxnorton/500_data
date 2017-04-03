@@ -1,0 +1,1796 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/max/Documents/500_data/logs/redesign-stage-one.log
+  log type:  text
+ opened on:  31 Mar 2017, 11:12:58
+
+. regress occscore_real  tMToNorth tMWithinSouth MToNorth MWithinSouth tWillMarryN tWillMarryS willMarryN willMarryS time age agesqr dSex education children state_in
+> c_1965 deltaStateInc, r
+variable tWillMarryN not found
+r(111);
+
+. 
+. xtreg occscore_real  tMToNorth tMWithinSouth MToNorth MWithinSouth tWMN tWMS WMN WMS time age agesqr dSex education children state_inc_1965 deltaStateInc, re
+
+Random-effects GLS regression                   Number of obs     =     58,518
+Group variable: id                              Number of groups  =     29,259
+
+R-sq:                                           Obs per group:
+     within  = 0.3574                                         min =          2
+     between = 0.3097                                         avg =        2.0
+     overall = 0.3184                                         max =          2
+
+                                                Wald chi2(16)     =   29391.38
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+     tMToNorth |   266.9879    34.8548     7.66   0.000     198.6737     335.302
+ tMWithinSouth |   91.30614   57.46419     1.59   0.112     -21.3216    203.9339
+      MToNorth |  -47.22233   35.93409    -1.31   0.189    -117.6518    23.20719
+  MWithinSouth |   66.19919   68.75152     0.96   0.336    -68.55132    200.9497
+          tWMN |   130.7745    49.3385     2.65   0.008     34.07287    227.4762
+          tWMS |   89.71951   20.83309     4.31   0.000     48.88741    130.5516
+           WMN |   82.80368   51.76714     1.60   0.110    -18.65804    184.2654
+           WMS |   98.95801   22.81733     4.34   0.000     54.23686    143.6792
+          time |   708.9572   20.95117    33.84   0.000     667.8937    750.0208
+           age |   48.22304   3.099081    15.56   0.000     42.14895    54.29713
+        agesqr |  -.6276483    .039429   -15.92   0.000    -.7049277   -.5503688
+          dSex |  -968.6602   11.51604   -84.11   0.000    -991.2312   -946.0891
+     education |    100.474   1.640104    61.26   0.000      97.2595    103.6886
+      children |  -18.87916   2.071674    -9.11   0.000    -22.93956   -14.81875
+state_inc_1965 |   .0404223   .0173183     2.33   0.020      .006479    .0743656
+ deltaStateInc |   -209.461   41.65287    -5.03   0.000    -291.0991   -127.8228
+         _cons |   900.0236   73.39675    12.26   0.000     756.1686    1043.879
+---------------+----------------------------------------------------------------
+       sigma_u |  808.20263
+       sigma_e |   587.3302
+           rho |  .65440328   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+
+. xtreg occscore_real  tMToNorth tMWithinSouth MToNorth MShortN MWithinSouth WMN WMAA tWMN tWMAA time age agesqr dSex education children state_inc_1965 deltaStateInc
+> , re
+
+Random-effects GLS regression                   Number of obs     =     58,518
+Group variable: id                              Number of groups  =     29,259
+
+R-sq:                                           Obs per group:
+     within  = 0.3573                                         min =          2
+     between = 0.3068                                         avg =        2.0
+     overall = 0.3160                                         max =          2
+
+                                                Wald chi2(17)     =   29203.14
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+     tMToNorth |   351.4471   41.93873     8.38   0.000     269.2487    433.6455
+ tMWithinSouth |   109.4812   57.70322     1.90   0.058    -3.615072    222.5774
+      MToNorth |  -168.9913   48.29629    -3.50   0.000    -263.6503   -74.33228
+       MShortN |   198.2965   57.54516     3.45   0.001      85.5101     311.083
+  MWithinSouth |   45.87951   68.88125     0.67   0.505    -89.12526    180.8843
+           WMN |   10.72773   53.69317     0.20   0.842    -94.50895    115.9644
+          WMAA |   129.7951   26.04421     4.98   0.000     78.74936    180.8408
+          tWMN |   64.66477   51.92197     1.25   0.213    -37.10042      166.43
+         tWMAA |   54.25542   19.23234     2.82   0.005     16.56073    91.95011
+          time |   756.0502   24.31555    31.09   0.000     708.3926    803.7078
+           age |   47.04168   3.135696    15.00   0.000     40.89583    53.18754
+        agesqr |  -.6205111   .0397632   -15.61   0.000    -.6984456   -.5425766
+          dSex |  -1008.135   11.14629   -90.45   0.000    -1029.981   -986.2882
+     education |   102.0725   1.637491    62.33   0.000     98.86303    105.2819
+      children |  -13.11435   2.025835    -6.47   0.000    -17.08491   -9.143787
+state_inc_1965 |   .0597459    .018333     3.26   0.001     .0238139    .0956779
+ deltaStateInc |  -300.5223   49.32417    -6.09   0.000    -397.1959   -203.8487
+         _cons |    831.835    75.8469    10.97   0.000     683.1778    980.4922
+---------------+----------------------------------------------------------------
+       sigma_u |  810.07982
+       sigma_e |  587.35138
+           rho |  .65543561   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+
+. xtreg occscore_real  tMToNorth tMReturn tMWithinSouth MToNorth MReturn MShortN MWithinSouth WMN WMAA tWMN tWMAA time age agesqr dSex education children state_inc_1
+> 965 deltaStateInc, re
+
+Random-effects GLS regression                   Number of obs     =     58,518
+Group variable: id                              Number of groups  =     29,259
+
+R-sq:                                           Obs per group:
+     within  = 0.3573                                         min =          2
+     between = 0.3069                                         avg =        2.0
+     overall = 0.3161                                         max =          2
+
+                                                Wald chi2(19)     =   29210.77
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+     tMToNorth |   348.4591   49.33071     7.06   0.000     251.7727    445.1455
+      tMReturn |   57.71323   73.62113     0.78   0.433    -86.58154     202.008
+ tMWithinSouth |    109.372   57.75603     1.89   0.058    -3.827734    222.5717
+      MToNorth |  -163.6292   55.18062    -2.97   0.003    -271.7813    -55.4772
+       MReturn |  -180.6021   75.11047    -2.40   0.016    -327.8159   -33.38829
+       MShortN |   192.9616   59.80131     3.23   0.001     75.75323      310.17
+  MWithinSouth |   45.35546   68.88273     0.66   0.510    -89.65222    180.3631
+           WMN |   6.866289   53.71557     0.13   0.898    -98.41429    112.1469
+          WMAA |   130.8987   26.05713     5.02   0.000     79.82762    181.9697
+          tWMN |   66.86445   51.92905     1.29   0.198    -34.91462    168.6435
+         tWMAA |   53.12595     19.252     2.76   0.006     15.39273    90.85918
+          time |   754.1814   24.56491    30.70   0.000     706.0351    802.3278
+           age |   46.87208   3.139207    14.93   0.000     40.71935    53.02481
+        agesqr |  -.6189654   .0398106   -15.55   0.000    -.6969926   -.5409381
+          dSex |  -1008.065    11.1459   -90.44   0.000     -1029.91    -986.219
+     education |   102.0665   1.637429    62.33   0.000     98.85719    105.2758
+      children |  -13.10193   2.025826    -6.47   0.000    -17.07248   -9.131388
+state_inc_1965 |   .0603125   .0183354     3.29   0.001     .0243757    .0962493
+ deltaStateInc |  -296.6947    50.0813    -5.92   0.000    -394.8522   -198.5372
+         _cons |   834.5297   75.92064    10.99   0.000     685.7279    983.3314
+---------------+----------------------------------------------------------------
+       sigma_u |  810.07692
+       sigma_e |  587.35937
+           rho |  .65542785   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+
+. xtreg occscore_real  tMToNorth tMReturn tMWithinNorth tMWithinSouth MToNorth MWithinNorth MReturn MShortN MWithinSouth WMN WMAA tWMN tWMAA time age agesqr dSex edu
+> cation children state_inc_1965 deltaStateInc, re
+
+Random-effects GLS regression                   Number of obs     =     58,518
+Group variable: id                              Number of groups  =     29,259
+
+R-sq:                                           Obs per group:
+     within  = 0.3575                                         min =          2
+     between = 0.3070                                         avg =        2.0
+     overall = 0.3162                                         max =          2
+
+                                                Wald chi2(21)     =   29225.60
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+     tMToNorth |   341.3121   49.40008     6.91   0.000     244.4897    438.1345
+      tMReturn |   57.89823   73.61445     0.79   0.432    -86.38345    202.1799
+ tMWithinNorth |   111.5868    44.4151     2.51   0.012     24.53483    198.6388
+ tMWithinSouth |   108.3949   57.75174     1.88   0.061    -4.796387    221.5863
+      MToNorth |  -157.6887   55.25719    -2.85   0.004    -265.9908    -49.3866
+  MWithinNorth |   44.02952   53.73641     0.82   0.413    -61.29191     149.351
+       MReturn |  -178.4843   75.12721    -2.38   0.018     -325.731   -31.23771
+       MShortN |   186.7986   59.88624     3.12   0.002     69.42373    304.1735
+  MWithinSouth |   45.10703   68.87911     0.65   0.513    -89.89355    180.1076
+           WMN |   8.546191   53.72153     0.16   0.874    -96.74607    113.8385
+          WMAA |   131.1182   26.05548     5.03   0.000     80.05045     182.186
+          tWMN |   64.87045   51.93616     1.25   0.212    -36.92257    166.6635
+         tWMAA |     53.004    19.2504     2.75   0.006     15.27391    90.73408
+          time |   746.0362   24.75093    30.14   0.000     697.5252    794.5471
+           age |   46.66909   3.140789    14.86   0.000     40.51326    52.82492
+        agesqr |   -.615658   .0398306   -15.46   0.000    -.6937246   -.5375913
+          dSex |  -1008.067   11.14533   -90.45   0.000    -1029.912   -986.2227
+     education |   102.0333   1.637511    62.31   0.000     98.82384    105.2428
+      children |  -13.05869   2.025762    -6.45   0.000    -17.02911   -9.088275
+state_inc_1965 |   .0593425   .0183456     3.23   0.001     .0233858    .0952991
+ deltaStateInc |  -283.0726   50.34642    -5.62   0.000    -381.7497   -184.3954
+         _cons |   839.9123   75.93563    11.06   0.000     691.0812    988.7434
+---------------+----------------------------------------------------------------
+       sigma_u |  810.04238
+       sigma_e |   587.3041
+           rho |   .6554511   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+
+. xtreg occscore_real  tMToNorth tMReturn tMWithinNorth tMWithinSouth tWMAA tWMN tMW_tWMAA tMW_tWMN tMR_tWMAA tMR_tWMN tMSN_tWMAA tMSN_tWMN MToNorth MWithinNorth MRe
+> turn MShortN MWithinSouth WMN WMAA time age agesqr dSex education children state_inc_1965 deltaStateInc, re
+
+Random-effects GLS regression                   Number of obs     =     58,518
+Group variable: id                              Number of groups  =     29,259
+
+R-sq:                                           Obs per group:
+     within  = 0.3578                                         min =          2
+     between = 0.3070                                         avg =        2.0
+     overall = 0.3163                                         max =          2
+
+                                                Wald chi2(27)     =   29244.25
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+     tMToNorth |   395.3293   107.6953     3.67   0.000     184.2504    606.4081
+      tMReturn |   118.2098   196.6948     0.60   0.548     -267.305    503.7246
+ tMWithinNorth |  -71.09048   107.4722    -0.66   0.508     -281.732    139.5511
+ tMWithinSouth |  -49.72773   117.6636    -0.42   0.673    -280.3441    180.8886
+         tWMAA |   54.14456   19.26932     2.81   0.005     16.37739    91.91173
+          tWMN |   47.70116   52.25835     0.91   0.361    -54.72332    150.1256
+     tMW_tWMAA |    161.863   110.4389     1.47   0.143    -54.59328    378.3193
+      tMW_tWMN |   219.1154   100.1875     2.19   0.029     22.75157    415.4792
+     tMR_tWMAA |  -33.34054   176.2769    -0.19   0.850     -378.837    312.1559
+      tMR_tWMN |   420.7748   247.0056     1.70   0.088    -63.34719    904.8968
+    tMSN_tWMAA |  -75.74096   107.6079    -0.70   0.482    -286.6486    135.1667
+     tMSN_tWMN |   274.2433   159.3913     1.72   0.085    -38.15798    586.6446
+      MToNorth |  -210.2703   110.5267    -1.90   0.057    -426.8988    6.358119
+  MWithinNorth |   43.77343   53.73614     0.81   0.415    -61.54747    149.0943
+       MReturn |  -178.9811   75.12674    -2.38   0.017    -326.2268   -31.73544
+       MShortN |   239.6376   112.9172     2.12   0.034     18.32391    460.9514
+  MWithinSouth |   45.51046   68.87861     0.66   0.509    -89.48914    180.5101
+           WMN |   17.70829   53.83411     0.33   0.742    -87.80462    123.2212
+          WMAA |   129.1284   26.07932     4.95   0.000     78.01384    180.2429
+          time |   745.6582   24.78167    30.09   0.000      697.087    794.2294
+           age |    46.7021   3.142045    14.86   0.000     40.54381     52.8604
+        agesqr |  -.6160499    .039846   -15.46   0.000    -.6941466   -.5379533
+          dSex |  -1008.228   11.14584   -90.46   0.000    -1030.074   -986.3828
+     education |   102.0387   1.637599    62.31   0.000     98.82905    105.2483
+      children |  -13.05324   2.025818    -6.44   0.000    -17.02377   -9.082706
+state_inc_1965 |   .0590638   .0183464     3.22   0.001     .0231054    .0950221
+ deltaStateInc |   -282.186   50.41359    -5.60   0.000    -380.9949   -183.3772
+         _cons |   840.7114   75.93418    11.07   0.000     691.8831    989.5397
+---------------+----------------------------------------------------------------
+       sigma_u |  810.09844
+       sigma_e |  587.21046
+           rho |  .65555436   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+
+. xttest0
+
+Breusch and Pagan Lagrangian multiplier test for random effects
+
+        occscore_real[id,t] = Xb + u[id] + e[id,t]
+
+        Estimated results:
+                         |       Var     sd = sqrt(Var)
+                ---------+-----------------------------
+               occscor~l |    1464805       1210.291
+                       e |   344816.1       587.2105
+                       u |   656259.5       810.0984
+
+        Test:   Var(u) = 0
+                             chibar2(01) = 12550.58
+                          Prob > chibar2 =   0.0000
+
+. xtreg occscore_real  tMToNorth tMReturn tMWithinNorth tMWithinSouth tWMAA MToNorth MWithinNorth MReturn MShortN MWithinSouth WMAA time age agesqr dSex education ch
+> ildren state_inc_1965 deltaStateInc, re
+
+Random-effects GLS regression                   Number of obs     =     58,518
+Group variable: id                              Number of groups  =     29,259
+
+R-sq:                                           Obs per group:
+     within  = 0.3575                                         min =          2
+     between = 0.3067                                         avg =        2.0
+     overall = 0.3160                                         max =          2
+
+                                                Wald chi2(19)     =   29210.88
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+     tMToNorth |   343.5998   49.35687     6.96   0.000     246.8621    440.3375
+      tMReturn |   57.10062    73.6028     0.78   0.438    -87.15821    201.3595
+ tMWithinNorth |   112.7751   44.40105     2.54   0.011     25.75068    199.7996
+ tMWithinSouth |   107.9134   57.74391     1.87   0.062    -5.262591    221.0894
+         tWMAA |   59.64966   18.28221     3.26   0.001     23.81719    95.48213
+      MToNorth |  -147.4881   55.07298    -2.68   0.007    -255.4292   -39.54703
+  MWithinNorth |   43.63832   53.74201     0.81   0.417    -61.69409    148.9707
+       MReturn |  -184.6273   75.09015    -2.46   0.014    -331.8013   -37.45335
+       MShortN |   178.1775   59.75415     2.98   0.003      61.0615    295.2934
+  MWithinSouth |   46.39975   68.88873     0.67   0.501    -88.61968    181.4192
+          WMAA |   129.7109   25.35286     5.12   0.000     80.02018    179.4016
+          time |   748.3551   24.69333    30.31   0.000     699.9571    796.7531
+           age |   46.61761   3.140837    14.84   0.000     40.46168    52.77354
+        agesqr |  -.6159869    .039832   -15.46   0.000    -.6940562   -.5379177
+          dSex |   -1010.88   11.11391   -90.96   0.000    -1032.663   -989.0972
+     education |   102.3692   1.634538    62.63   0.000     99.16552    105.5728
+      children |  -12.97811    2.02583    -6.41   0.000    -16.94866   -9.007554
+state_inc_1965 |   .0571038   .0183385     3.11   0.002      .021161    .0930465
+ deltaStateInc |   -287.011    50.2249    -5.71   0.000      -385.45    -188.572
+         _cons |   840.9341   75.94636    11.07   0.000      692.082    989.7862
+---------------+----------------------------------------------------------------
+       sigma_u |  810.42171
+       sigma_e |  587.29407
+           rho |  .65567023   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+
+. xtreg occscore_real  tMToNorth tMShortN tMReturn tMWithinNorth tMWithinSouth tWMAA MToNorth MWithinNorth MReturn MShortN MWithinSouth WMAA time age agesqr dSex edu
+> cation children state_inc_1965 deltaStateInc, re
+note: MShortN omitted because of collinearity
+
+Random-effects GLS regression                   Number of obs     =     58,518
+Group variable: id                              Number of groups  =     29,259
+
+R-sq:                                           Obs per group:
+     within  = 0.3575                                         min =          2
+     between = 0.3067                                         avg =        2.0
+     overall = 0.3160                                         max =          2
+
+                                                Wald chi2(19)     =   29210.88
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+     tMToNorth |   165.4223   49.77856     3.32   0.001     67.85812    262.9865
+      tMShortN |   178.1775   59.75415     2.98   0.003      61.0615    295.2934
+      tMReturn |  -121.0769   82.75361    -1.46   0.143     -283.271    41.11725
+ tMWithinNorth |   112.7751   44.40105     2.54   0.011     25.75068    199.7996
+ tMWithinSouth |   107.9134   57.74391     1.87   0.062    -5.262591    221.0894
+         tWMAA |   59.64966   18.28221     3.26   0.001     23.81719    95.48213
+      MToNorth |   30.68938   45.22161     0.68   0.497    -57.94335    119.3221
+  MWithinNorth |   43.63832   53.74201     0.81   0.417    -61.69409    148.9707
+       MReturn |  -184.6273   75.09015    -2.46   0.014    -331.8013   -37.45335
+       MShortN |          0  (omitted)
+  MWithinSouth |   46.39975   68.88873     0.67   0.501    -88.61968    181.4192
+          WMAA |   129.7109   25.35286     5.12   0.000     80.02018    179.4016
+          time |   748.3551   24.69333    30.31   0.000     699.9571    796.7531
+           age |   46.61761   3.140837    14.84   0.000     40.46168    52.77354
+        agesqr |  -.6159869    .039832   -15.46   0.000    -.6940562   -.5379177
+          dSex |   -1010.88   11.11391   -90.96   0.000    -1032.663   -989.0972
+     education |   102.3692   1.634538    62.63   0.000     99.16552    105.5728
+      children |  -12.97811    2.02583    -6.41   0.000    -16.94866   -9.007554
+state_inc_1965 |   .0571038   .0183385     3.11   0.002      .021161    .0930465
+ deltaStateInc |   -287.011    50.2249    -5.71   0.000      -385.45    -188.572
+         _cons |   840.9341   75.94636    11.07   0.000      692.082    989.7862
+---------------+----------------------------------------------------------------
+       sigma_u |  810.42171
+       sigma_e |  587.29407
+           rho |  .65567023   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+
+. corr MShortN tMShortN
+(obs=58,518)
+
+             |  MShortN tMShortN
+-------------+------------------
+     MShortN |   1.0000
+    tMShortN |   0.7040   1.0000
+
+
+. xtreg occscore_real  tMToNorth tMShortN tMWithinNorth tMWithinSouth tWMAA MToNorth MWithinNorth MReturn MShortN MWithinSouth WMAA time age agesqr dSex education ch
+> ildren state_inc_1965 deltaStateInc, re
+
+Random-effects GLS regression                   Number of obs     =     58,518
+Group variable: id                              Number of groups  =     29,259
+
+R-sq:                                           Obs per group:
+     within  = 0.3575                                         min =          2
+     between = 0.3067                                         avg =        2.0
+     overall = 0.3160                                         max =          2
+
+                                                Wald chi2(19)     =   29210.88
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+     tMToNorth |   286.4992   65.57897     4.37   0.000     157.9667    415.0316
+      tMShortN |   57.10062    73.6028     0.78   0.438    -87.15821    201.3595
+ tMWithinNorth |   112.7751   44.40105     2.54   0.011     25.75068    199.7996
+ tMWithinSouth |   107.9134   57.74391     1.87   0.062    -5.262591    221.0894
+         tWMAA |   59.64966   18.28221     3.26   0.001     23.81719    95.48213
+      MToNorth |  -90.38747   69.66973    -1.30   0.195    -226.9376    46.16269
+  MWithinNorth |   43.63832   53.74201     0.81   0.417    -61.69409    148.9707
+       MReturn |  -184.6273   75.09015    -2.46   0.014    -331.8013   -37.45335
+       MShortN |   121.0769   82.75361     1.46   0.143    -41.11725     283.271
+  MWithinSouth |   46.39975   68.88873     0.67   0.501    -88.61968    181.4192
+          WMAA |   129.7109   25.35286     5.12   0.000     80.02018    179.4016
+          time |   748.3551   24.69333    30.31   0.000     699.9571    796.7531
+           age |   46.61761   3.140837    14.84   0.000     40.46168    52.77354
+        agesqr |  -.6159869    .039832   -15.46   0.000    -.6940562   -.5379177
+          dSex |   -1010.88   11.11391   -90.96   0.000    -1032.663   -989.0972
+     education |   102.3692   1.634538    62.63   0.000     99.16552    105.5728
+      children |  -12.97811    2.02583    -6.41   0.000    -16.94866   -9.007554
+state_inc_1965 |   .0571038   .0183385     3.11   0.002      .021161    .0930465
+ deltaStateInc |   -287.011    50.2249    -5.71   0.000      -385.45    -188.572
+         _cons |   840.9341   75.94636    11.07   0.000      692.082    989.7862
+---------------+----------------------------------------------------------------
+       sigma_u |  810.42171
+       sigma_e |  587.29407
+           rho |  .65567023   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+
+. est store re
+
+. xtreg occscore_real  tMToNorth tMShortN tMWithinNorth tMWithinSouth tWMAA MToNorth MWithinNorth MReturn MShortN MWithinSouth WMAA time age agesqr dSex education ch
+> ildren state_inc_1965 deltaStateInc, fe
+note: MToNorth omitted because of collinearity
+note: MWithinNorth omitted because of collinearity
+note: MReturn omitted because of collinearity
+note: MShortN omitted because of collinearity
+note: MWithinSouth omitted because of collinearity
+note: WMAA omitted because of collinearity
+note: age omitted because of collinearity
+note: dSex omitted because of collinearity
+note: education omitted because of collinearity
+note: state_inc_1965 omitted because of collinearity
+
+Fixed-effects (within) regression               Number of obs     =     58,518
+Group variable: id                              Number of groups  =     29,259
+
+R-sq:                                           Obs per group:
+     within  = 0.3577                                         min =          2
+     between = 0.0208                                         avg =        2.0
+     overall = 0.0549                                         max =          2
+
+                                                F(9,29250)        =    1810.32
+corr(u_i, Xb)  = -0.3297                        Prob > F          =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+     tMToNorth |   268.8702   65.98057     4.07   0.000     139.5453    398.1951
+      tMShortN |   33.65728   73.76931     0.46   0.648    -110.9339    178.2484
+ tMWithinNorth |   113.3444   44.44039     2.55   0.011     26.23927    200.4496
+ tMWithinSouth |   90.91345   57.84814     1.57   0.116    -22.47151    204.2984
+         tWMAA |   9.029934   25.20488     0.36   0.720    -40.37276    58.43263
+      MToNorth |          0  (omitted)
+  MWithinNorth |          0  (omitted)
+       MReturn |          0  (omitted)
+       MShortN |          0  (omitted)
+  MWithinSouth |          0  (omitted)
+          WMAA |          0  (omitted)
+          time |   1017.041   33.49682    30.36   0.000     951.3859    1082.696
+           age |          0  (omitted)
+        agesqr |  -.7657521   .0524584   -14.60   0.000    -.8685729   -.6629313
+          dSex |          0  (omitted)
+     education |          0  (omitted)
+      children |   3.350383   9.981413     0.34   0.737    -16.21364     22.9144
+state_inc_1965 |          0  (omitted)
+ deltaStateInc |   -236.325   52.96273    -4.46   0.000    -340.1344   -132.5157
+         _cons |   3641.644   83.81758    43.45   0.000     3477.358     3805.93
+---------------+----------------------------------------------------------------
+       sigma_u |  1166.1181
+       sigma_e |  587.29407
+           rho |  .79767404   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+F test that all u_i=0: F(29258, 29250) = 6.54                Prob > F = 0.0000
+
+. est store fe
+
+. hausman fe re
+
+                 ---- Coefficients ----
+             |      (b)          (B)            (b-B)     sqrt(diag(V_b-V_B))
+             |       fe           re         Difference          S.E.
+-------------+----------------------------------------------------------------
+   tMToNorth |    268.8702     286.4992       -17.62899        7.268755
+    tMShortN |    33.65728     57.10062       -23.44334        4.953703
+tMWithinNo~h |    113.3444     112.7751        .5692958        1.869408
+tMWithinSo~h |    90.91345     107.9134       -16.99995        3.470956
+       tWMAA |    9.029934     59.64966       -50.61973         17.3507
+        time |    1017.041     748.3551        268.6861        22.63353
+      agesqr |   -.7657521    -.6159869       -.1497652        .0341364
+    children |    3.350383    -12.97811        16.32849        9.773669
+deltaState~c |    -236.325     -287.011        50.68596        16.80804
+------------------------------------------------------------------------------
+                           b = consistent under Ho and Ha; obtained from xtreg
+            B = inconsistent under Ha, efficient under Ho; obtained from xtreg
+
+    Test:  Ho:  difference in coefficients not systematic
+
+                  chi2(9) = (b-B)'[(V_b-V_B)^(-1)](b-B)
+                          =    -4.58    chi2<0 ==> model fitted on these
+                                        data fails to meet the asymptotic
+                                        assumptions of the Hausman test;
+                                        see suest for a generalized test
+
+. hausman re fe
+
+                 ---- Coefficients ----
+             |      (b)          (B)            (b-B)     sqrt(diag(V_b-V_B))
+             |       re           fe         Difference          S.E.
+-------------+----------------------------------------------------------------
+   tMToNorth |    286.4992     268.8702        17.62899               .
+    tMShortN |    57.10062     33.65728        23.44334               .
+tMWithinNo~h |    112.7751     113.3444       -.5692958               .
+tMWithinSo~h |    107.9134     90.91345        16.99995               .
+       tWMAA |    59.64966     9.029934        50.61973               .
+        time |    748.3551     1017.041       -268.6861               .
+      agesqr |   -.6159869    -.7657521        .1497652               .
+    children |   -12.97811     3.350383       -16.32849               .
+deltaState~c |    -287.011     -236.325       -50.68596               .
+------------------------------------------------------------------------------
+                           b = consistent under Ho and Ha; obtained from xtreg
+            B = inconsistent under Ha, efficient under Ho; obtained from xtreg
+
+    Test:  Ho:  difference in coefficients not systematic
+
+                  chi2(9) = (b-B)'[(V_b-V_B)^(-1)](b-B)
+                          =        4.58
+                Prob>chi2 =      0.8691
+                (V_b-V_B is not positive definite)
+
+. xtreg occscore_real  tMToNorth tMShortN tMWithinNorth tMWithinSouth tWMAA MToNorth MWithinNorth MReturn MShortN MWithinSouth WMAA time age agesqr dSex education ch
+> ildren state_inc_1965 deltaStateInc, re
+
+Random-effects GLS regression                   Number of obs     =     58,518
+Group variable: id                              Number of groups  =     29,259
+
+R-sq:                                           Obs per group:
+     within  = 0.3575                                         min =          2
+     between = 0.3067                                         avg =        2.0
+     overall = 0.3160                                         max =          2
+
+                                                Wald chi2(19)     =   29210.88
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+     tMToNorth |   286.4992   65.57897     4.37   0.000     157.9667    415.0316
+      tMShortN |   57.10062    73.6028     0.78   0.438    -87.15821    201.3595
+ tMWithinNorth |   112.7751   44.40105     2.54   0.011     25.75068    199.7996
+ tMWithinSouth |   107.9134   57.74391     1.87   0.062    -5.262591    221.0894
+         tWMAA |   59.64966   18.28221     3.26   0.001     23.81719    95.48213
+      MToNorth |  -90.38747   69.66973    -1.30   0.195    -226.9376    46.16269
+  MWithinNorth |   43.63832   53.74201     0.81   0.417    -61.69409    148.9707
+       MReturn |  -184.6273   75.09015    -2.46   0.014    -331.8013   -37.45335
+       MShortN |   121.0769   82.75361     1.46   0.143    -41.11725     283.271
+  MWithinSouth |   46.39975   68.88873     0.67   0.501    -88.61968    181.4192
+          WMAA |   129.7109   25.35286     5.12   0.000     80.02018    179.4016
+          time |   748.3551   24.69333    30.31   0.000     699.9571    796.7531
+           age |   46.61761   3.140837    14.84   0.000     40.46168    52.77354
+        agesqr |  -.6159869    .039832   -15.46   0.000    -.6940562   -.5379177
+          dSex |   -1010.88   11.11391   -90.96   0.000    -1032.663   -989.0972
+     education |   102.3692   1.634538    62.63   0.000     99.16552    105.5728
+      children |  -12.97811    2.02583    -6.41   0.000    -16.94866   -9.007554
+state_inc_1965 |   .0571038   .0183385     3.11   0.002      .021161    .0930465
+ deltaStateInc |   -287.011    50.2249    -5.71   0.000      -385.45    -188.572
+         _cons |   840.9341   75.94636    11.07   0.000      692.082    989.7862
+---------------+----------------------------------------------------------------
+       sigma_u |  810.42171
+       sigma_e |  587.29407
+           rho |  .65567023   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+
+. hausman fe
+
+                 ---- Coefficients ----
+             |      (b)          (B)            (b-B)     sqrt(diag(V_b-V_B))
+             |       fe           .          Difference          S.E.
+-------------+----------------------------------------------------------------
+   tMToNorth |    268.8702     286.4992       -17.62899        7.268755
+    tMShortN |    33.65728     57.10062       -23.44334        4.953703
+tMWithinNo~h |    113.3444     112.7751        .5692958        1.869408
+tMWithinSo~h |    90.91345     107.9134       -16.99995        3.470956
+       tWMAA |    9.029934     59.64966       -50.61973         17.3507
+        time |    1017.041     748.3551        268.6861        22.63353
+      agesqr |   -.7657521    -.6159869       -.1497652        .0341364
+    children |    3.350383    -12.97811        16.32849        9.773669
+deltaState~c |    -236.325     -287.011        50.68596        16.80804
+------------------------------------------------------------------------------
+                           b = consistent under Ho and Ha; obtained from xtreg
+            B = inconsistent under Ha, efficient under Ho; obtained from xtreg
+
+    Test:  Ho:  difference in coefficients not systematic
+
+                  chi2(9) = (b-B)'[(V_b-V_B)^(-1)](b-B)
+                          =    -4.58    chi2<0 ==> model fitted on these
+                                        data fails to meet the asymptotic
+                                        assumptions of the Hausman test;
+                                        see suest for a generalized test
+
+. suest fe re, noomitted
+xtreg is not supported by suest
+r(322);
+
+. help suest
+
+. help regress
+
+. help xtreg
+
+. xtset
+       panel variable:  id (strongly balanced)
+        time variable:  time, 0 to 1
+                delta:  1 unit
+
+. xtreg occscore_real  tMToNorth tMShortN tMWithinNorth tMWithinSouth tWMAA MToNorth MWithinNorth MReturn MShortN MWithinSouth WMAA time age agesqr dSex education ch
+> ildren state_inc_1965 deltaStateInc, re
+
+Random-effects GLS regression                   Number of obs     =     58,518
+Group variable: id                              Number of groups  =     29,259
+
+R-sq:                                           Obs per group:
+     within  = 0.3575                                         min =          2
+     between = 0.3067                                         avg =        2.0
+     overall = 0.3160                                         max =          2
+
+                                                Wald chi2(19)     =   29210.88
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+     tMToNorth |   286.4992   65.57897     4.37   0.000     157.9667    415.0316
+      tMShortN |   57.10062    73.6028     0.78   0.438    -87.15821    201.3595
+ tMWithinNorth |   112.7751   44.40105     2.54   0.011     25.75068    199.7996
+ tMWithinSouth |   107.9134   57.74391     1.87   0.062    -5.262591    221.0894
+         tWMAA |   59.64966   18.28221     3.26   0.001     23.81719    95.48213
+      MToNorth |  -90.38747   69.66973    -1.30   0.195    -226.9376    46.16269
+  MWithinNorth |   43.63832   53.74201     0.81   0.417    -61.69409    148.9707
+       MReturn |  -184.6273   75.09015    -2.46   0.014    -331.8013   -37.45335
+       MShortN |   121.0769   82.75361     1.46   0.143    -41.11725     283.271
+  MWithinSouth |   46.39975   68.88873     0.67   0.501    -88.61968    181.4192
+          WMAA |   129.7109   25.35286     5.12   0.000     80.02018    179.4016
+          time |   748.3551   24.69333    30.31   0.000     699.9571    796.7531
+           age |   46.61761   3.140837    14.84   0.000     40.46168    52.77354
+        agesqr |  -.6159869    .039832   -15.46   0.000    -.6940562   -.5379177
+          dSex |   -1010.88   11.11391   -90.96   0.000    -1032.663   -989.0972
+     education |   102.3692   1.634538    62.63   0.000     99.16552    105.5728
+      children |  -12.97811    2.02583    -6.41   0.000    -16.94866   -9.007554
+state_inc_1965 |   .0571038   .0183385     3.11   0.002      .021161    .0930465
+ deltaStateInc |   -287.011    50.2249    -5.71   0.000      -385.45    -188.572
+         _cons |   840.9341   75.94636    11.07   0.000      692.082    989.7862
+---------------+----------------------------------------------------------------
+       sigma_u |  810.42171
+       sigma_e |  587.29407
+           rho |  .65567023   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+
+. est store re
+
+. xtreg occscore_real  tMToNorth tMShortN tMWithinNorth tMWithinSouth tWMAA MToNorth MWithinNorth MReturn MShortN MWithinSouth WMAA time age agesqr dSex education ch
+> ildren state_inc_1965 deltaStateInc, fe
+note: MToNorth omitted because of collinearity
+note: MWithinNorth omitted because of collinearity
+note: MReturn omitted because of collinearity
+note: MShortN omitted because of collinearity
+note: MWithinSouth omitted because of collinearity
+note: WMAA omitted because of collinearity
+note: age omitted because of collinearity
+note: dSex omitted because of collinearity
+note: education omitted because of collinearity
+note: state_inc_1965 omitted because of collinearity
+
+Fixed-effects (within) regression               Number of obs     =     58,518
+Group variable: id                              Number of groups  =     29,259
+
+R-sq:                                           Obs per group:
+     within  = 0.3577                                         min =          2
+     between = 0.0208                                         avg =        2.0
+     overall = 0.0549                                         max =          2
+
+                                                F(9,29250)        =    1810.32
+corr(u_i, Xb)  = -0.3297                        Prob > F          =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+     tMToNorth |   268.8702   65.98057     4.07   0.000     139.5453    398.1951
+      tMShortN |   33.65728   73.76931     0.46   0.648    -110.9339    178.2484
+ tMWithinNorth |   113.3444   44.44039     2.55   0.011     26.23927    200.4496
+ tMWithinSouth |   90.91345   57.84814     1.57   0.116    -22.47151    204.2984
+         tWMAA |   9.029934   25.20488     0.36   0.720    -40.37276    58.43263
+      MToNorth |          0  (omitted)
+  MWithinNorth |          0  (omitted)
+       MReturn |          0  (omitted)
+       MShortN |          0  (omitted)
+  MWithinSouth |          0  (omitted)
+          WMAA |          0  (omitted)
+          time |   1017.041   33.49682    30.36   0.000     951.3859    1082.696
+           age |          0  (omitted)
+        agesqr |  -.7657521   .0524584   -14.60   0.000    -.8685729   -.6629313
+          dSex |          0  (omitted)
+     education |          0  (omitted)
+      children |   3.350383   9.981413     0.34   0.737    -16.21364     22.9144
+state_inc_1965 |          0  (omitted)
+ deltaStateInc |   -236.325   52.96273    -4.46   0.000    -340.1344   -132.5157
+         _cons |   3641.644   83.81758    43.45   0.000     3477.358     3805.93
+---------------+----------------------------------------------------------------
+       sigma_u |  1166.1181
+       sigma_e |  587.29407
+           rho |  .79767404   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+F test that all u_i=0: F(29258, 29250) = 6.54                Prob > F = 0.0000
+
+. est store fe
+
+. hausman fe re
+
+                 ---- Coefficients ----
+             |      (b)          (B)            (b-B)     sqrt(diag(V_b-V_B))
+             |       fe           re         Difference          S.E.
+-------------+----------------------------------------------------------------
+   tMToNorth |    268.8702     286.4992       -17.62899        7.268755
+    tMShortN |    33.65728     57.10062       -23.44334        4.953703
+tMWithinNo~h |    113.3444     112.7751        .5692958        1.869408
+tMWithinSo~h |    90.91345     107.9134       -16.99995        3.470956
+       tWMAA |    9.029934     59.64966       -50.61973         17.3507
+        time |    1017.041     748.3551        268.6861        22.63353
+      agesqr |   -.7657521    -.6159869       -.1497652        .0341364
+    children |    3.350383    -12.97811        16.32849        9.773669
+deltaState~c |    -236.325     -287.011        50.68596        16.80804
+------------------------------------------------------------------------------
+                           b = consistent under Ho and Ha; obtained from xtreg
+            B = inconsistent under Ha, efficient under Ho; obtained from xtreg
+
+    Test:  Ho:  difference in coefficients not systematic
+
+                  chi2(9) = (b-B)'[(V_b-V_B)^(-1)](b-B)
+                          =    -4.58    chi2<0 ==> model fitted on these
+                                        data fails to meet the asymptotic
+                                        assumptions of the Hausman test;
+                                        see suest for a generalized test
+
+. xtreg occscore_real  tMShortN tMWithinSouth tWMAA MShortN MWIthinSouth WMAA time age agesqr dSex education children state_inc_1965 deltaStateInc, re
+variable MWIthinSouth not found
+r(111);
+
+. xtreg occscore_real  tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time age agesqr dSex education children state_inc_1965 deltaStateInc, re
+
+Random-effects GLS regression                   Number of obs     =     58,518
+Group variable: id                              Number of groups  =     29,259
+
+R-sq:                                           Obs per group:
+     within  = 0.3570                                         min =          2
+     between = 0.3040                                         avg =        2.0
+     overall = 0.3137                                         max =          2
+
+                                                Wald chi2(14)     =   29013.85
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+      tMShortN |   314.8654   48.06539     6.55   0.000     220.6589    409.0718
+ tMWithinSouth |   99.67898   57.69369     1.73   0.084    -13.39858    212.7565
+         tWMAA |   58.05902    18.2854     3.18   0.001     22.22029    93.89775
+       MShortN |   26.10114   45.28415     0.58   0.564    -62.65415    114.8564
+  MWithinSouth |   41.12568   68.99121     0.60   0.551    -94.09461     176.346
+          WMAA |   133.3857   25.37924     5.26   0.000     83.64334    183.1281
+          time |   724.9736    22.9113    31.64   0.000     680.0683    769.8789
+           age |   47.31719   3.140422    15.07   0.000     41.16207     53.4723
+        agesqr |  -.6199213   .0398336   -15.56   0.000    -.6979937    -.541849
+          dSex |  -1014.441   11.12856   -91.16   0.000    -1036.252   -992.6291
+     education |   103.1433   1.635725    63.06   0.000     99.93737    106.3493
+      children |  -13.07598   2.029304    -6.44   0.000    -17.05334   -9.098618
+state_inc_1965 |   .2002641   .0099643    20.10   0.000     .1807344    .2197938
+ deltaStateInc |  -242.3865   46.76021    -5.18   0.000    -334.0348   -150.7382
+         _cons |   504.7858   67.23755     7.51   0.000     373.0027     636.569
+---------------+----------------------------------------------------------------
+       sigma_u |  812.15303
+       sigma_e |  587.51656
+           rho |  .65646237   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+
+. est store re
+
+. xtreg occscore_real  tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time age agesqr dSex education children state_inc_1965 deltaStateInc, fe
+note: MShortN omitted because of collinearity
+note: MWithinSouth omitted because of collinearity
+note: WMAA omitted because of collinearity
+note: age omitted because of collinearity
+note: dSex omitted because of collinearity
+note: education omitted because of collinearity
+note: state_inc_1965 omitted because of collinearity
+
+Fixed-effects (within) regression               Number of obs     =     58,518
+Group variable: id                              Number of groups  =     29,259
+
+R-sq:                                           Obs per group:
+     within  = 0.3572                                         min =          2
+     between = 0.0109                                         avg =        2.0
+     overall = 0.0416                                         max =          2
+
+                                                F(7,29252)        =    2322.34
+corr(u_i, Xb)  = -0.3463                        Prob > F          =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+      tMShortN |    264.166   49.26677     5.36   0.000     167.6009     360.731
+ tMWithinSouth |   80.04059   57.79937     1.38   0.166    -33.24878      193.33
+         tWMAA |   7.533981   25.20811     0.30   0.765    -41.87505    56.94301
+       MShortN |          0  (omitted)
+  MWithinSouth |          0  (omitted)
+          WMAA |          0  (omitted)
+          time |   987.8536   31.83636    31.03   0.000      925.453    1050.254
+           age |          0  (omitted)
+        agesqr |  -.7640275   .0523912   -14.58   0.000    -.8667167   -.6613383
+          dSex |          0  (omitted)
+     education |          0  (omitted)
+      children |   2.925684   9.984559     0.29   0.770     -16.6445    22.49587
+state_inc_1965 |          0  (omitted)
+ deltaStateInc |   -176.364   49.54415    -3.56   0.000    -273.4728   -79.25526
+         _cons |   3747.555   80.33809    46.65   0.000     3590.089    3905.021
+---------------+----------------------------------------------------------------
+       sigma_u |  1182.8262
+       sigma_e |  587.51656
+           rho |  .80210691   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+F test that all u_i=0: F(29258, 29252) = 6.67                Prob > F = 0.0000
+
+. est store fe
+
+. hausman fe re
+
+                 ---- Coefficients ----
+             |      (b)          (B)            (b-B)     sqrt(diag(V_b-V_B))
+             |       fe           re         Difference          S.E.
+-------------+----------------------------------------------------------------
+    tMShortN |     264.166     314.8654        -50.6994        10.81353
+tMWithinSo~h |    80.04059     99.67898       -19.63839        3.493504
+       tWMAA |    7.533981     58.05902       -50.52504        17.35202
+        time |    987.8536     724.9736          262.88        22.10488
+      agesqr |   -.7640275    -.6199213       -.1441062        .0340313
+    children |    2.925684    -13.07598        16.00167        9.776162
+deltaState~c |    -176.364    -242.3865        66.02246        16.37391
+------------------------------------------------------------------------------
+                           b = consistent under Ho and Ha; obtained from xtreg
+            B = inconsistent under Ha, efficient under Ho; obtained from xtreg
+
+    Test:  Ho:  difference in coefficients not systematic
+
+                  chi2(7) = (b-B)'[(V_b-V_B)^(-1)](b-B)
+                          =    -1.82    chi2<0 ==> model fitted on these
+                                        data fails to meet the asymptotic
+                                        assumptions of the Hausman test;
+                                        see suest for a generalized test
+
+. count if (MToNorth==1 & MShortN==0)
+  23,062
+
+. count if !(MToNorth==1 & MShortN==0)
+  35,456
+
+. xtreg occscore_real  tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time age agesqr dSex education children state_inc_1965 deltaStateInc if !(MToNorth==1 &
+>  MShortN==0), re
+
+Random-effects GLS regression                   Number of obs     =     35,456
+Group variable: id                              Number of groups  =     17,728
+
+R-sq:                                           Obs per group:
+     within  = 0.3330                                         min =          2
+     between = 0.3056                                         avg =        2.0
+     overall = 0.3105                                         max =          2
+
+                                                Wald chi2(14)     =   16644.12
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+      tMShortN |   227.7425   62.41887     3.65   0.000     105.4038    350.0812
+ tMWithinSouth |   91.12858   59.39586     1.53   0.125    -25.28517    207.5423
+         tWMAA |   53.36751   23.43575     2.28   0.023     7.434271    99.30074
+       MShortN |   23.29394   45.89844     0.51   0.612    -66.66535    113.2532
+  MWithinSouth |   30.89192   69.71984     0.44   0.658    -105.7565    167.5403
+          WMAA |   160.2696   32.19532     4.98   0.000     97.16791    223.3713
+          time |   619.2985   44.31602    13.97   0.000     532.4407    706.1563
+           age |   47.40792   4.016946    11.80   0.000     39.53485    55.28098
+        agesqr |  -.6135555   .0510898   -12.01   0.000    -.7136896   -.5134214
+          dSex |  -1084.863    14.4693   -74.98   0.000    -1113.222   -1056.504
+     education |   104.5689   2.023962    51.67   0.000      100.602    108.5358
+      children |  -16.28477   2.448025    -6.65   0.000    -21.08281   -11.48673
+state_inc_1965 |   .0512885    .025848     1.98   0.047     .0006274    .1019497
+ deltaStateInc |  -71.42214   82.70221    -0.86   0.388    -233.5155    90.67121
+         _cons |    823.128   99.36189     8.28   0.000     628.3822    1017.874
+---------------+----------------------------------------------------------------
+       sigma_u |  814.54179
+       sigma_e |  598.82655
+           rho |  .64915056   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+
+. xtreg occscore_real  tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time age agesqr dSex education children state_inc_1965 deltaStateInc if !(MToNorth==1 &
+>  MShortN==0), fe
+note: MShortN omitted because of collinearity
+note: MWithinSouth omitted because of collinearity
+note: WMAA omitted because of collinearity
+note: age omitted because of collinearity
+note: dSex omitted because of collinearity
+note: education omitted because of collinearity
+note: state_inc_1965 omitted because of collinearity
+
+Fixed-effects (within) regression               Number of obs     =     35,456
+Group variable: id                              Number of groups  =     17,728
+
+R-sq:                                           Obs per group:
+     within  = 0.3333                                         min =          2
+     between = 0.0158                                         avg =        2.0
+     overall = 0.0452                                         max =          2
+
+                                                F(7,17721)        =    1265.59
+corr(u_i, Xb)  = -0.3404                        Prob > F          =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+      tMShortN |    127.207   66.36479     1.92   0.055    -2.874455    257.2885
+ tMWithinSouth |   63.72726   59.65312     1.07   0.285     -53.1987    180.6532
+         tWMAA |   25.24412   32.67133     0.77   0.440    -38.79488    89.28312
+       MShortN |          0  (omitted)
+  MWithinSouth |          0  (omitted)
+          WMAA |          0  (omitted)
+          time |   832.3948    55.5105    15.00   0.000     723.5888    941.2008
+           age |          0  (omitted)
+        agesqr |  -.7599328   .0678859   -11.19   0.000    -.8929958   -.6268699
+          dSex |          0  (omitted)
+     education |          0  (omitted)
+      children |  -14.47253   12.11725    -1.19   0.232    -38.22351    9.278464
+state_inc_1965 |          0  (omitted)
+ deltaStateInc |   84.26425    90.8925     0.93   0.354    -93.89394    262.4224
+         _cons |   3612.031   102.8958    35.10   0.000     3410.345    3813.716
+---------------+----------------------------------------------------------------
+       sigma_u |  1182.8263
+       sigma_e |  598.82655
+           rho |  .79598391   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+F test that all u_i=0: F(17727, 17721) = 6.56                Prob > F = 0.0000
+
+. hausman fe re
+
+                 ---- Coefficients ----
+             |      (b)          (B)            (b-B)     sqrt(diag(V_b-V_B))
+             |       fe           re         Difference          S.E.
+-------------+----------------------------------------------------------------
+    tMShortN |     264.166     314.8654        -50.6994        10.81353
+tMWithinSo~h |    80.04059     99.67898       -19.63839        3.493504
+       tWMAA |    7.533981     58.05902       -50.52504        17.35202
+        time |    987.8536     724.9736          262.88        22.10488
+      agesqr |   -.7640275    -.6199213       -.1441062        .0340313
+    children |    2.925684    -13.07598        16.00167        9.776162
+deltaState~c |    -176.364    -242.3865        66.02246        16.37391
+------------------------------------------------------------------------------
+                           b = consistent under Ho and Ha; obtained from xtreg
+            B = inconsistent under Ha, efficient under Ho; obtained from xtreg
+
+    Test:  Ho:  difference in coefficients not systematic
+
+                  chi2(7) = (b-B)'[(V_b-V_B)^(-1)](b-B)
+                          =    -1.82    chi2<0 ==> model fitted on these
+                                        data fails to meet the asymptotic
+                                        assumptions of the Hausman test;
+                                        see suest for a generalized test
+
+. help areg
+
+. areg occscore_real  tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time age agesqr dSex education children state_inc_1965 deltaStateInc if !(MToNorth==1 & 
+> MShortN==0), re
+option re not allowed
+r(198);
+
+. help areg
+
+. help suest
+
+. help xtreg
+
+. hausman re fe
+
+                 ---- Coefficients ----
+             |      (b)          (B)            (b-B)     sqrt(diag(V_b-V_B))
+             |       re           fe         Difference          S.E.
+-------------+----------------------------------------------------------------
+    tMShortN |    314.8654      264.166         50.6994               .
+tMWithinSo~h |    99.67898     80.04059        19.63839               .
+       tWMAA |    58.05902     7.533981        50.52504               .
+        time |    724.9736     987.8536         -262.88               .
+      agesqr |   -.6199213    -.7640275        .1441062               .
+    children |   -13.07598     2.925684       -16.00167               .
+deltaState~c |   -242.3865     -176.364       -66.02246               .
+------------------------------------------------------------------------------
+                           b = consistent under Ho and Ha; obtained from xtreg
+            B = inconsistent under Ha, efficient under Ho; obtained from xtreg
+
+    Test:  Ho:  difference in coefficients not systematic
+
+                  chi2(7) = (b-B)'[(V_b-V_B)^(-1)](b-B)
+                          =        1.82
+                Prob>chi2 =      0.9693
+                (V_b-V_B is not positive definite)
+
+. xtreg occscore_real  tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time deltaStateInc if !(MToNorth==1 & MShortN==0), re
+
+Random-effects GLS regression                   Number of obs     =     35,456
+Group variable: id                              Number of groups  =     17,728
+
+R-sq:                                           Obs per group:
+     within  = 0.3280                                         min =          2
+     between = 0.0069                                         avg =        2.0
+     overall = 0.0651                                         max =          2
+
+                                                Wald chi2(8)      =    8752.43
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+-------------------------------------------------------------------------------
+occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+--------------+----------------------------------------------------------------
+     tMShortN |   305.6351   63.62497     4.80   0.000     180.9325    430.3378
+tMWithinSouth |   137.0466   59.69236     2.30   0.022     20.05172    254.0415
+        tWMAA |   18.65411   22.49871     0.83   0.407    -25.44256    62.75078
+      MShortN |   192.0938   52.85569     3.63   0.000     88.49851     295.689
+ MWithinSouth |   250.3542   80.81841     3.10   0.002     91.95299    408.7553
+         WMAA |   215.6305   35.80951     6.02   0.000     145.4452    285.8159
+         time |   648.7052   45.39286    14.29   0.000     559.7368    737.6736
+deltaStateInc |  -124.8403   85.15412    -1.47   0.143    -291.7393    42.05873
+        _cons |    2326.17   27.53061    84.49   0.000     2272.211    2380.129
+--------------+----------------------------------------------------------------
+      sigma_u |  1009.5075
+      sigma_e |  600.94607
+          rho |  .73835292   (fraction of variance due to u_i)
+-------------------------------------------------------------------------------
+
+. est store re
+
+. xtreg occscore_real  tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time deltaStateInc if !(MToNorth==1 & MShortN==0), fe
+note: MShortN omitted because of collinearity
+note: MWithinSouth omitted because of collinearity
+note: WMAA omitted because of collinearity
+
+Fixed-effects (within) regression               Number of obs     =     35,456
+Group variable: id                              Number of groups  =     17,728
+
+R-sq:                                           Obs per group:
+     within  = 0.3285                                         min =          2
+     between = 0.0026                                         avg =        2.0
+     overall = 0.0613                                         max =          2
+
+                                                F(5,17723)        =    1734.00
+corr(u_i, Xb)  = 0.0023                         Prob > F          =     0.0000
+
+-------------------------------------------------------------------------------
+occscore_real |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+--------------+----------------------------------------------------------------
+     tMShortN |   166.5353   66.50699     2.50   0.012     36.17514    296.8956
+tMWithinSouth |   96.70846   59.78598     1.62   0.106     -20.4779    213.8948
+        tWMAA |   87.47238   24.08349     3.63   0.000     40.26638    134.6784
+      MShortN |          0  (omitted)
+ MWithinSouth |          0  (omitted)
+         WMAA |          0  (omitted)
+         time |   528.4622   48.54335    10.89   0.000     433.3125    623.6119
+deltaStateInc |   93.80552   91.20281     1.03   0.304    -84.96092     272.572
+        _cons |   2473.446   20.53592   120.44   0.000     2433.194    2513.698
+--------------+----------------------------------------------------------------
+      sigma_u |  1100.8065
+      sigma_e |  600.94607
+          rho |  .77040269   (fraction of variance due to u_i)
+-------------------------------------------------------------------------------
+F test that all u_i=0: F(17727, 17723) = 6.70                Prob > F = 0.0000
+
+. hausman fe re
+
+                 ---- Coefficients ----
+             |      (b)          (B)            (b-B)     sqrt(diag(V_b-V_B))
+             |       fe           re         Difference          S.E.
+-------------+----------------------------------------------------------------
+    tMShortN |     264.166     305.6351       -41.46918               .
+tMWithinSo~h |    80.04059     137.0466         -57.006               .
+       tWMAA |    7.533981     18.65411       -11.12013         11.3691
+        time |    987.8536     648.7052        339.1485               .
+deltaState~c |    -176.364    -124.8403       -51.52375               .
+------------------------------------------------------------------------------
+                           b = consistent under Ho and Ha; obtained from xtreg
+            B = inconsistent under Ha, efficient under Ho; obtained from xtreg
+
+    Test:  Ho:  difference in coefficients not systematic
+
+                  chi2(5) = (b-B)'[(V_b-V_B)^(-1)](b-B)
+                          =      251.77
+                Prob>chi2 =      0.0000
+                (V_b-V_B is not positive definite)
+
+. help est
+
+. occscore_real  tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time deltaStateInc if !(MToNorth==1 & MShortN==0)
+command occscore_real is unrecognized
+r(199);
+
+. reg occscore_real  tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time deltaStateInc if !(MToNorth==1 & MShortN==0)
+
+      Source |       SS           df       MS      Number of obs   =    35,456
+-------------+----------------------------------   F(8, 35447)     =    316.53
+       Model |  3.5060e+09         8   438251344   Prob > F        =    0.0000
+    Residual |  4.9079e+10    35,447  1384564.89   R-squared       =    0.0667
+-------------+----------------------------------   Adj R-squared   =    0.0665
+       Total |  5.2585e+10    35,455   1483138.7   Root MSE        =    1176.7
+
+-------------------------------------------------------------------------------
+occscore_real |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+--------------+----------------------------------------------------------------
+     tMShortN |   706.4973   106.1803     6.65   0.000     498.3807     914.614
+tMWithinSouth |    253.253   115.6554     2.19   0.029     26.56485    479.9412
+        tWMAA |  -179.3047   33.41059    -5.37   0.000    -244.7905   -113.8189
+      MShortN |   167.4266   52.94475     3.16   0.002     63.65323    271.1999
+ MWithinSouth |   222.3479   80.89406     2.75   0.006     63.79306    380.9028
+         WMAA |   404.7254   38.65464    10.47   0.000     328.9612    480.4897
+         time |    995.239   67.84598    14.67   0.000     862.2588    1128.219
+deltaStateInc |  -755.0162   126.2557    -5.98   0.000    -1002.481   -507.5511
+        _cons |   2320.068   21.71428   106.85   0.000     2277.507    2362.628
+-------------------------------------------------------------------------------
+
+. predict r resid
+(option xb assumed; fitted values)
+too many variables specified
+r(103);
+
+. help predict
+
+. predict resid, r
+
+. corr r tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time deltaStateInc if !(MToNorth==1 & MShortN==0)
+r ambiguous abbreviation
+r(111);
+
+. corr resid tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time deltaStateInc if !(MToNorth==1 & MShortN==0)
+(obs=35,456)
+
+             |    resid tMShortN tMWi~uth    tWMAA  MShortN MWit~uth     WMAA     time deltaS~c
+-------------+---------------------------------------------------------------------------------
+       resid |   1.0000
+    tMShortN |  -0.0000   1.0000
+tMWithinSo~h |  -0.0000  -0.0095   1.0000
+       tWMAA |   0.0000   0.0073   0.0139   1.0000
+     MShortN |  -0.0000   0.7019  -0.0135  -0.0397   1.0000
+MWithinSouth |  -0.0000  -0.0134   0.7049  -0.0155  -0.0191   1.0000
+        WMAA |   0.0000  -0.0076   0.0058   0.8211  -0.0108   0.0083   1.0000
+        time |  -0.0000   0.1210   0.0781   0.1143   0.0000   0.0000   0.0000   1.0000
+deltaState~c |  -0.0000   0.3596   0.1073   0.1069   0.1739   0.0233  -0.0024   0.9530   1.0000
+
+
+. reg occscore_real  tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time age agesqr dSex education children state_inc_1965 deltaStateInc
+
+      Source |       SS           df       MS      Number of obs   =    58,518
+-------------+----------------------------------   F(14, 58503)    =   1911.78
+       Model |  2.6906e+10        14  1.9218e+09   Prob > F        =    0.0000
+    Residual |  5.8810e+10    58,503  1005255.47   R-squared       =    0.3139
+-------------+----------------------------------   Adj R-squared   =    0.3137
+       Total |  8.5716e+10    58,517  1464805.37   Root MSE        =    1002.6
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+      tMShortN |   427.4262   76.90709     5.56   0.000      276.688    578.1645
+ tMWithinSouth |   134.3567    98.0028     1.37   0.170    -57.72927    326.4426
+         tWMAA |   94.62764   24.38256     3.88   0.000     46.83772    142.4176
+       MShortN |    16.8499   45.13695     0.37   0.709    -71.61872    105.3185
+  MWithinSouth |   33.33463   68.90581     0.48   0.629    -101.7211    168.3903
+          WMAA |   102.7639   26.81862     3.83   0.000     50.19927    155.3285
+          time |   801.5942   32.94699    24.33   0.000     737.0179    866.1704
+           age |    37.8214    3.29627    11.47   0.000     31.36069     44.2821
+        agesqr |  -.4987549   .0420982   -11.85   0.000    -.5812676   -.4162423
+          dSex |  -1014.381   8.651558  -117.25   0.000    -1031.338   -997.4235
+     education |    103.173   1.272576    81.07   0.000     100.6787    105.6672
+      children |  -13.21347   1.612006    -8.20   0.000    -16.37301   -10.05393
+state_inc_1965 |    .191613   .0083269    23.01   0.000     .1752923    .2079338
+ deltaStateInc |  -408.3226   66.99691    -6.09   0.000    -539.6369   -277.0084
+         _cons |   698.7343   65.63187    10.65   0.000     570.0955    827.3731
+--------------------------------------------------------------------------------
+
+. drop resid
+
+. predict resid, r
+
+. corr r tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time age agesqr dSex education children state_inc_1965 deltaStateInc
+r ambiguous abbreviation
+r(111);
+
+. corr resid tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time age agesqr dSex education children state_inc_1965 deltaStateInc
+(obs=58,518)
+
+             |    resid tMShortN tMWi~uth    tWMAA  MShortN MWit~uth     WMAA     time      age   agesqr     dSex educat~n children sta~1965 deltaS~c
+-------------+---------------------------------------------------------------------------------------------------------------------------------------
+       resid |   1.0000
+    tMShortN |   0.0000   1.0000
+tMWithinSo~h |  -0.0000  -0.0057   1.0000
+       tWMAA |  -0.0000   0.0039   0.0099   1.0000
+     MShortN |   0.0000   0.7040  -0.0081  -0.0341   1.0000
+MWithinSouth |   0.0000  -0.0081   0.7058  -0.0140  -0.0115   1.0000
+        WMAA |  -0.0000  -0.0076   0.0036   0.8220  -0.0108   0.0052   1.0000
+        time |   0.0000   0.0940   0.0607   0.1110   0.0000   0.0000   0.0000   1.0000
+         age |  -0.0000  -0.0447  -0.0225   0.2855  -0.0966  -0.0532   0.1639   0.2474   1.0000
+      agesqr |  -0.0000  -0.0452  -0.0226   0.2572  -0.0908  -0.0497   0.1527   0.2459   0.9913   1.0000
+        dSex |   0.0000  -0.0026  -0.0127  -0.0142  -0.0038  -0.0181  -0.0489   0.0000   0.0105   0.0086   1.0000
+   education |  -0.0000   0.0329   0.0129  -0.0569   0.0467   0.0183  -0.0286   0.0000  -0.2779  -0.2810   0.1778   1.0000
+    children |  -0.0000  -0.0074  -0.0060   0.2933  -0.0181  -0.0149   0.2196   0.0206   0.1073   0.0866   0.0152  -0.1782   1.0000
+state_i~1965 |   0.0000  -0.0802  -0.0517   0.0144  -0.1139  -0.0733   0.0106   0.0000   0.0112   0.0064   0.0094   0.1758  -0.1522   1.0000
+deltaState~c |   0.0000   0.3183   0.0989   0.1003   0.1637   0.0299  -0.0039   0.9345   0.2122   0.2112   0.0006  -0.0194   0.0369  -0.1401   1.0000
+
+
+. help hausman
+
+. help ovtest
+
+. estat ovtest
+
+Ramsey RESET test using powers of the fitted values of occscore_real
+       Ho:  model has no omitted variables
+               F(3, 58500) =    127.05
+                  Prob > F =      0.0000
+
+. help gls
+
+. stgls occscore_real  tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time age agesqr dSex education children state_inc_1965 deltaStateInc
+command stgls is unrecognized
+r(199);
+
+. xtgls occscore_real  tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time age agesqr dSex education children state_inc_1965 deltaStateInc
+matsize too small - should be at least 29259
+r(908);
+
+. help predict
+
+. xtreg occscore_real tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time age agesqr dSex education children state_inc_1965 deltaStateInc if !(MToNorth==1 & 
+> MShortN==0), re
+
+Random-effects GLS regression                   Number of obs     =     35,456
+Group variable: id                              Number of groups  =     17,728
+
+R-sq:                                           Obs per group:
+     within  = 0.3330                                         min =          2
+     between = 0.3056                                         avg =        2.0
+     overall = 0.3105                                         max =          2
+
+                                                Wald chi2(14)     =   16644.12
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+      tMShortN |   227.7425   62.41887     3.65   0.000     105.4038    350.0812
+ tMWithinSouth |   91.12858   59.39586     1.53   0.125    -25.28517    207.5423
+         tWMAA |   53.36751   23.43575     2.28   0.023     7.434271    99.30074
+       MShortN |   23.29394   45.89844     0.51   0.612    -66.66535    113.2532
+  MWithinSouth |   30.89192   69.71984     0.44   0.658    -105.7565    167.5403
+          WMAA |   160.2696   32.19532     4.98   0.000     97.16791    223.3713
+          time |   619.2985   44.31602    13.97   0.000     532.4407    706.1563
+           age |   47.40792   4.016946    11.80   0.000     39.53485    55.28098
+        agesqr |  -.6135555   .0510898   -12.01   0.000    -.7136896   -.5134214
+          dSex |  -1084.863    14.4693   -74.98   0.000    -1113.222   -1056.504
+     education |   104.5689   2.023962    51.67   0.000      100.602    108.5358
+      children |  -16.28477   2.448025    -6.65   0.000    -21.08281   -11.48673
+state_inc_1965 |   .0512885    .025848     1.98   0.047     .0006274    .1019497
+ deltaStateInc |  -71.42214   82.70221    -0.86   0.388    -233.5155    90.67121
+         _cons |    823.128   99.36189     8.28   0.000     628.3822    1017.874
+---------------+----------------------------------------------------------------
+       sigma_u |  814.54179
+       sigma_e |  598.82655
+           rho |  .64915056   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+
+. predict uhat, u
+(23,062 missing values generated)
+
+. predict ehat, e
+(23,062 missing values generated)
+
+. corr uhat ehat tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time age agesqr dSex education children state_inc_1965 deltaStateInc if !(MToNorth==1 & MShor
+> tN==0)
+(obs=35,456)
+
+             |     uhat     ehat tMShortN tMWi~uth    tWMAA  MShortN MWit~uth     WMAA     time      age   agesqr     dSex educat~n children sta~1965 deltaS~c
+-------------+------------------------------------------------------------------------------------------------------------------------------------------------
+        uhat |   1.0000
+        ehat |   0.4189   1.0000
+    tMShortN |  -0.0000  -0.0000   1.0000
+tMWithinSo~h |  -0.0000   0.0000  -0.0095   1.0000
+       tWMAA |   0.0020   0.0000   0.0073   0.0139   1.0000
+     MShortN |  -0.0000   0.0000   0.7019  -0.0135  -0.0397   1.0000
+MWithinSouth |  -0.0000  -0.0000  -0.0134   0.7049  -0.0155  -0.0191   1.0000
+        WMAA |  -0.0000   0.0000  -0.0076   0.0058   0.8211  -0.0108   0.0083   1.0000
+        time |   0.0000  -0.0000   0.1210   0.0781   0.1143   0.0000   0.0000   0.0000   1.0000
+         age |  -0.0000   0.0000  -0.0533  -0.0263   0.2880  -0.1180  -0.0643   0.1617   0.2437   1.0000
+      agesqr |   0.0020   0.0000  -0.0546  -0.0268   0.2590  -0.1118  -0.0606   0.1507   0.2413   0.9912   1.0000
+        dSex |   0.0000   0.0000  -0.0038  -0.0166  -0.0010  -0.0054  -0.0236  -0.0376   0.0000   0.0288   0.0246   1.0000
+   education |   0.0000   0.0000   0.0559   0.0257  -0.0558   0.0796   0.0365  -0.0206   0.0000  -0.2926  -0.2941   0.1935   1.0000
+    children |   0.0002   0.0000  -0.0209  -0.0149   0.3096  -0.0388  -0.0288   0.2300   0.0218   0.1464   0.1244   0.0343  -0.1840   1.0000
+state_i~1965 |  -0.0000   0.0000  -0.0412  -0.0263   0.0091  -0.0588  -0.0373   0.0038   0.0000  -0.0211  -0.0221   0.0183   0.0638  -0.0839   1.0000
+deltaState~c |  -0.0034  -0.0000   0.3596   0.1073   0.1069   0.1739   0.0233  -0.0024   0.9530   0.2082   0.2059  -0.0009   0.0083   0.0168  -0.0274   1.0000
+
+
+. help predict
+
+. predict xb yhat
+(option xb assumed; fitted values)
+too many variables specified
+r(103);
+
+. predict yhat, xb
+
+. scatter yhat ehat
+
+. scatter yhat uhat
+
+. scatter occscore_real uhat
+
+. reg occscore_real  tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time age agesqr dSex education children state_inc_1965 deltaStateInc
+
+      Source |       SS           df       MS      Number of obs   =    58,518
+-------------+----------------------------------   F(14, 58503)    =   1911.78
+       Model |  2.6906e+10        14  1.9218e+09   Prob > F        =    0.0000
+    Residual |  5.8810e+10    58,503  1005255.47   R-squared       =    0.3139
+-------------+----------------------------------   Adj R-squared   =    0.3137
+       Total |  8.5716e+10    58,517  1464805.37   Root MSE        =    1002.6
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+      tMShortN |   427.4262   76.90709     5.56   0.000      276.688    578.1645
+ tMWithinSouth |   134.3567    98.0028     1.37   0.170    -57.72927    326.4426
+         tWMAA |   94.62764   24.38256     3.88   0.000     46.83772    142.4176
+       MShortN |    16.8499   45.13695     0.37   0.709    -71.61872    105.3185
+  MWithinSouth |   33.33463   68.90581     0.48   0.629    -101.7211    168.3903
+          WMAA |   102.7639   26.81862     3.83   0.000     50.19927    155.3285
+          time |   801.5942   32.94699    24.33   0.000     737.0179    866.1704
+           age |    37.8214    3.29627    11.47   0.000     31.36069     44.2821
+        agesqr |  -.4987549   .0420982   -11.85   0.000    -.5812676   -.4162423
+          dSex |  -1014.381   8.651558  -117.25   0.000    -1031.338   -997.4235
+     education |    103.173   1.272576    81.07   0.000     100.6787    105.6672
+      children |  -13.21347   1.612006    -8.20   0.000    -16.37301   -10.05393
+state_inc_1965 |    .191613   .0083269    23.01   0.000     .1752923    .2079338
+ deltaStateInc |  -408.3226   66.99691    -6.09   0.000    -539.6369   -277.0084
+         _cons |   698.7343   65.63187    10.65   0.000     570.0955    827.3731
+--------------------------------------------------------------------------------
+
+. rvfplot
+
+. predict yhat_ols, xb
+
+. scatter yhat_ols ehat
+
+. scatter yhat_ols uhat
+
+. corr yhat yhat_ols uhat
+(obs=35,456)
+
+             |     yhat yhat_ols     uhat
+-------------+---------------------------
+        yhat |   1.0000
+    yhat_ols |   0.9969   1.0000
+        uhat |  -0.0013  -0.0005   1.0000
+
+
+. xtreg occscore_real tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time age agesqr dSex education children state_inc_1965 deltaStateInc if !(MToNorth==1 & 
+> MShortN==0), re
+
+Random-effects GLS regression                   Number of obs     =     35,456
+Group variable: id                              Number of groups  =     17,728
+
+R-sq:                                           Obs per group:
+     within  = 0.3330                                         min =          2
+     between = 0.3056                                         avg =        2.0
+     overall = 0.3105                                         max =          2
+
+                                                Wald chi2(14)     =   16644.12
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+      tMShortN |   227.7425   62.41887     3.65   0.000     105.4038    350.0812
+ tMWithinSouth |   91.12858   59.39586     1.53   0.125    -25.28517    207.5423
+         tWMAA |   53.36751   23.43575     2.28   0.023     7.434271    99.30074
+       MShortN |   23.29394   45.89844     0.51   0.612    -66.66535    113.2532
+  MWithinSouth |   30.89192   69.71984     0.44   0.658    -105.7565    167.5403
+          WMAA |   160.2696   32.19532     4.98   0.000     97.16791    223.3713
+          time |   619.2985   44.31602    13.97   0.000     532.4407    706.1563
+           age |   47.40792   4.016946    11.80   0.000     39.53485    55.28098
+        agesqr |  -.6135555   .0510898   -12.01   0.000    -.7136896   -.5134214
+          dSex |  -1084.863    14.4693   -74.98   0.000    -1113.222   -1056.504
+     education |   104.5689   2.023962    51.67   0.000      100.602    108.5358
+      children |  -16.28477   2.448025    -6.65   0.000    -21.08281   -11.48673
+state_inc_1965 |   .0512885    .025848     1.98   0.047     .0006274    .1019497
+ deltaStateInc |  -71.42214   82.70221    -0.86   0.388    -233.5155    90.67121
+         _cons |    823.128   99.36189     8.28   0.000     628.3822    1017.874
+---------------+----------------------------------------------------------------
+       sigma_u |  814.54179
+       sigma_e |  598.82655
+           rho |  .64915056   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+
+. reg occscore_real  tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time age agesqr dSex education children state_inc_1965 deltaStateInc
+
+      Source |       SS           df       MS      Number of obs   =    58,518
+-------------+----------------------------------   F(14, 58503)    =   1911.78
+       Model |  2.6906e+10        14  1.9218e+09   Prob > F        =    0.0000
+    Residual |  5.8810e+10    58,503  1005255.47   R-squared       =    0.3139
+-------------+----------------------------------   Adj R-squared   =    0.3137
+       Total |  8.5716e+10    58,517  1464805.37   Root MSE        =    1002.6
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+      tMShortN |   427.4262   76.90709     5.56   0.000      276.688    578.1645
+ tMWithinSouth |   134.3567    98.0028     1.37   0.170    -57.72927    326.4426
+         tWMAA |   94.62764   24.38256     3.88   0.000     46.83772    142.4176
+       MShortN |    16.8499   45.13695     0.37   0.709    -71.61872    105.3185
+  MWithinSouth |   33.33463   68.90581     0.48   0.629    -101.7211    168.3903
+          WMAA |   102.7639   26.81862     3.83   0.000     50.19927    155.3285
+          time |   801.5942   32.94699    24.33   0.000     737.0179    866.1704
+           age |    37.8214    3.29627    11.47   0.000     31.36069     44.2821
+        agesqr |  -.4987549   .0420982   -11.85   0.000    -.5812676   -.4162423
+          dSex |  -1014.381   8.651558  -117.25   0.000    -1031.338   -997.4235
+     education |    103.173   1.272576    81.07   0.000     100.6787    105.6672
+      children |  -13.21347   1.612006    -8.20   0.000    -16.37301   -10.05393
+state_inc_1965 |    .191613   .0083269    23.01   0.000     .1752923    .2079338
+ deltaStateInc |  -408.3226   66.99691    -6.09   0.000    -539.6369   -277.0084
+         _cons |   698.7343   65.63187    10.65   0.000     570.0955    827.3731
+--------------------------------------------------------------------------------
+
+. help corr
+
+. predict r_ols, residuals
+
+. corr r_ols F.r_ols if time==0
+(obs=29,259)
+
+             |                 F.
+             |    r_ols    r_ols
+-------------+------------------
+       r_ols |
+         --. |   1.0000
+         F1. |   0.6682   1.0000
+
+
+. reg occscore_real  tMShortN tMWithinSouth tWMAA MShortN MWithinSouth time age agesqr dSex education children state_inc_1965 deltaStateInc
+
+      Source |       SS           df       MS      Number of obs   =    58,518
+-------------+----------------------------------   F(13, 58504)    =   2057.23
+       Model |  2.6891e+10        13  2.0685e+09   Prob > F        =    0.0000
+    Residual |  5.8825e+10    58,504  1005490.58   R-squared       =    0.3137
+-------------+----------------------------------   Adj R-squared   =    0.3136
+       Total |  8.5716e+10    58,517  1464805.37   Root MSE        =    1002.7
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+      tMShortN |   420.2615   76.89334     5.47   0.000     269.5502    570.9728
+ tMWithinSouth |   125.1696   97.98492     1.28   0.201     -66.8813    317.2205
+         tWMAA |   171.2249   13.96284    12.26   0.000     143.8577    198.5922
+       MShortN |   22.63651   45.11695     0.50   0.616    -65.79292    111.0659
+  MWithinSouth |   41.77924   68.87861     0.61   0.544    -93.22316    176.7816
+          time |   797.3608   32.93231    24.21   0.000     732.8133    861.9083
+           age |   35.63032   3.246674    10.97   0.000     29.26682    41.99382
+        agesqr |  -.4724001   .0415374   -11.37   0.000    -.5538136   -.3909866
+          dSex |  -1016.536   8.634256  -117.73   0.000     -1033.46   -999.6132
+     education |   103.2751   1.272446    81.16   0.000     100.7811    105.7691
+      children |  -13.32194   1.611946    -8.26   0.000    -16.48136   -10.16252
+state_inc_1965 |   .1915987   .0083279    23.01   0.000     .1752761    .2079214
+ deltaStateInc |  -409.0332   67.00448    -6.10   0.000    -540.3623   -277.7041
+         _cons |   770.3712   62.92022    12.24   0.000     647.0473    893.6951
+--------------------------------------------------------------------------------
+
+. ovtest
+
+Ramsey RESET test using powers of the fitted values of occscore_real
+       Ho:  model has no omitted variables
+               F(3, 58501) =    127.89
+                  Prob > F =      0.0000
+
+. reg occscore_real  tMShortN tMWithinSouth tWMAA MShortN MWithinSouth WMAA time age agesqr dSex education children state_inc_1965 deltaStateInc
+
+      Source |       SS           df       MS      Number of obs   =    58,518
+-------------+----------------------------------   F(14, 58503)    =   1911.78
+       Model |  2.6906e+10        14  1.9218e+09   Prob > F        =    0.0000
+    Residual |  5.8810e+10    58,503  1005255.47   R-squared       =    0.3139
+-------------+----------------------------------   Adj R-squared   =    0.3137
+       Total |  8.5716e+10    58,517  1464805.37   Root MSE        =    1002.6
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+      tMShortN |   427.4262   76.90709     5.56   0.000      276.688    578.1645
+ tMWithinSouth |   134.3567    98.0028     1.37   0.170    -57.72927    326.4426
+         tWMAA |   94.62764   24.38256     3.88   0.000     46.83772    142.4176
+       MShortN |    16.8499   45.13695     0.37   0.709    -71.61872    105.3185
+  MWithinSouth |   33.33463   68.90581     0.48   0.629    -101.7211    168.3903
+          WMAA |   102.7639   26.81862     3.83   0.000     50.19927    155.3285
+          time |   801.5942   32.94699    24.33   0.000     737.0179    866.1704
+           age |    37.8214    3.29627    11.47   0.000     31.36069     44.2821
+        agesqr |  -.4987549   .0420982   -11.85   0.000    -.5812676   -.4162423
+          dSex |  -1014.381   8.651558  -117.25   0.000    -1031.338   -997.4235
+     education |    103.173   1.272576    81.07   0.000     100.6787    105.6672
+      children |  -13.21347   1.612006    -8.20   0.000    -16.37301   -10.05393
+state_inc_1965 |    .191613   .0083269    23.01   0.000     .1752923    .2079338
+ deltaStateInc |  -408.3226   66.99691    -6.09   0.000    -539.6369   -277.0084
+         _cons |   698.7343   65.63187    10.65   0.000     570.0955    827.3731
+--------------------------------------------------------------------------------
+
+. ovtest
+
+Ramsey RESET test using powers of the fitted values of occscore_real
+       Ho:  model has no omitted variables
+               F(3, 58500) =    127.05
+                  Prob > F =      0.0000
+
+. xtreg occscore_real  tMToNorth tMReturn tMWithinNorth tMWithinSouth MToNorth MWithinNorth MReturn MShortN MWithinSouth WMN WMAA tWMN tWMAA time age agesqr dSex edu
+> cation children state_inc_1965 deltaStateInc, re
+
+Random-effects GLS regression                   Number of obs     =     58,518
+Group variable: id                              Number of groups  =     29,259
+
+R-sq:                                           Obs per group:
+     within  = 0.3575                                         min =          2
+     between = 0.3070                                         avg =        2.0
+     overall = 0.3162                                         max =          2
+
+                                                Wald chi2(21)     =   29225.60
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+     tMToNorth |   341.3121   49.40008     6.91   0.000     244.4897    438.1345
+      tMReturn |   57.89823   73.61445     0.79   0.432    -86.38345    202.1799
+ tMWithinNorth |   111.5868    44.4151     2.51   0.012     24.53483    198.6388
+ tMWithinSouth |   108.3949   57.75174     1.88   0.061    -4.796387    221.5863
+      MToNorth |  -157.6887   55.25719    -2.85   0.004    -265.9908    -49.3866
+  MWithinNorth |   44.02952   53.73641     0.82   0.413    -61.29191     149.351
+       MReturn |  -178.4843   75.12721    -2.38   0.018     -325.731   -31.23771
+       MShortN |   186.7986   59.88624     3.12   0.002     69.42373    304.1735
+  MWithinSouth |   45.10703   68.87911     0.65   0.513    -89.89355    180.1076
+           WMN |   8.546191   53.72153     0.16   0.874    -96.74607    113.8385
+          WMAA |   131.1182   26.05548     5.03   0.000     80.05045     182.186
+          tWMN |   64.87045   51.93616     1.25   0.212    -36.92257    166.6635
+         tWMAA |     53.004    19.2504     2.75   0.006     15.27391    90.73408
+          time |   746.0362   24.75093    30.14   0.000     697.5252    794.5471
+           age |   46.66909   3.140789    14.86   0.000     40.51326    52.82492
+        agesqr |   -.615658   .0398306   -15.46   0.000    -.6937246   -.5375913
+          dSex |  -1008.067   11.14533   -90.45   0.000    -1029.912   -986.2227
+     education |   102.0333   1.637511    62.31   0.000     98.82384    105.2428
+      children |  -13.05869   2.025762    -6.45   0.000    -17.02911   -9.088275
+state_inc_1965 |   .0593425   .0183456     3.23   0.001     .0233858    .0952991
+ deltaStateInc |  -283.0726   50.34642    -5.62   0.000    -381.7497   -184.3954
+         _cons |   839.9123   75.93563    11.06   0.000     691.0812    988.7434
+---------------+----------------------------------------------------------------
+       sigma_u |  810.04238
+       sigma_e |   587.3041
+           rho |   .6554511   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+
+. xtreg occscore_real  tMToNorth tMReturn tMWithinNorth tMWithinSouth MToNorth MWithinNorth MReturn MShortN MWithinSouth WMN WMAA tWMN tWMAA time age agesqr dSex edu
+> cation children state_inc_1965 deltaStateInc
+
+Random-effects GLS regression                   Number of obs     =     58,518
+Group variable: id                              Number of groups  =     29,259
+
+R-sq:                                           Obs per group:
+     within  = 0.3575                                         min =          2
+     between = 0.3070                                         avg =        2.0
+     overall = 0.3162                                         max =          2
+
+                                                Wald chi2(21)     =   29225.60
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+     tMToNorth |   341.3121   49.40008     6.91   0.000     244.4897    438.1345
+      tMReturn |   57.89823   73.61445     0.79   0.432    -86.38345    202.1799
+ tMWithinNorth |   111.5868    44.4151     2.51   0.012     24.53483    198.6388
+ tMWithinSouth |   108.3949   57.75174     1.88   0.061    -4.796387    221.5863
+      MToNorth |  -157.6887   55.25719    -2.85   0.004    -265.9908    -49.3866
+  MWithinNorth |   44.02952   53.73641     0.82   0.413    -61.29191     149.351
+       MReturn |  -178.4843   75.12721    -2.38   0.018     -325.731   -31.23771
+       MShortN |   186.7986   59.88624     3.12   0.002     69.42373    304.1735
+  MWithinSouth |   45.10703   68.87911     0.65   0.513    -89.89355    180.1076
+           WMN |   8.546191   53.72153     0.16   0.874    -96.74607    113.8385
+          WMAA |   131.1182   26.05548     5.03   0.000     80.05045     182.186
+          tWMN |   64.87045   51.93616     1.25   0.212    -36.92257    166.6635
+         tWMAA |     53.004    19.2504     2.75   0.006     15.27391    90.73408
+          time |   746.0362   24.75093    30.14   0.000     697.5252    794.5471
+           age |   46.66909   3.140789    14.86   0.000     40.51326    52.82492
+        agesqr |   -.615658   .0398306   -15.46   0.000    -.6937246   -.5375913
+          dSex |  -1008.067   11.14533   -90.45   0.000    -1029.912   -986.2227
+     education |   102.0333   1.637511    62.31   0.000     98.82384    105.2428
+      children |  -13.05869   2.025762    -6.45   0.000    -17.02911   -9.088275
+state_inc_1965 |   .0593425   .0183456     3.23   0.001     .0233858    .0952991
+ deltaStateInc |  -283.0726   50.34642    -5.62   0.000    -381.7497   -184.3954
+         _cons |   839.9123   75.93563    11.06   0.000     691.0812    988.7434
+---------------+----------------------------------------------------------------
+       sigma_u |  810.04238
+       sigma_e |   587.3041
+           rho |   .6554511   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+
+. reg occscore_real  tMToNorth tMReturn tMWithinNorth tMWithinSouth MToNorth MWithinNorth MReturn MShortN MWithinSouth WMN WMAA tWMN tWMAA time age agesqr dSex educa
+> tion children state_inc_1965 deltaStateInc
+
+      Source |       SS           df       MS      Number of obs   =    58,518
+-------------+----------------------------------   F(21, 58496)    =   1289.47
+       Model |  2.7124e+10        21  1.2916e+09   Prob > F        =    0.0000
+    Residual |  5.8592e+10    58,496   1001648.8   R-squared       =    0.3164
+-------------+----------------------------------   Adj R-squared   =    0.3162
+       Total |  8.5716e+10    58,517  1464805.37   Root MSE        =    1000.8
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+     tMToNorth |   433.9218   78.84877     5.50   0.000     279.3779    588.4658
+      tMReturn |   98.55944   124.8267     0.79   0.430    -146.1014    343.2203
+ tMWithinNorth |   99.44924   75.51097     1.32   0.188    -48.55259    247.4511
+ tMWithinSouth |   139.7279   97.95304     1.43   0.154     -52.2605    331.7163
+      MToNorth |  -255.6429   82.41039    -3.10   0.002    -417.1677   -94.11821
+  MWithinNorth |   50.07137   53.57772     0.93   0.350     -54.9412    155.0839
+       MReturn |  -178.0194   75.01496    -2.37   0.018    -325.0491   -30.98976
+       MShortN |   275.6466   67.83791     4.06   0.000      142.684    408.6092
+  MWithinSouth |   35.44704   68.80031     0.52   0.606    -99.40188     170.296
+           WMN |  -127.7237   68.16091    -1.87   0.061    -261.3194    5.871966
+          WMAA |   116.9632   27.91255     4.19   0.000     62.25448    171.6719
+          tWMN |   210.2145   70.03755     3.00   0.003     72.94054    347.4884
+         tWMAA |   72.50274   25.64094     2.83   0.005     22.24637    122.7591
+          time |   808.1004   35.89845    22.51   0.000     737.7393    878.4615
+           age |    36.8587   3.292399    11.20   0.000     30.40559    43.31182
+        agesqr |  -.4902624   .0420407   -11.66   0.000    -.5726623   -.4078625
+          dSex |  -1007.895   8.666847  -116.29   0.000    -1024.882   -990.9081
+     education |   102.0757   1.274246    80.11   0.000     99.57815    104.5732
+      children |  -13.17537   1.609521    -8.19   0.000    -16.33004    -10.0207
+state_inc_1965 |   .0567256   .0143272     3.96   0.000     .0286442     .084807
+ deltaStateInc |  -417.4142   72.82331    -5.73   0.000    -560.1482   -274.6802
+         _cons |   1024.793   70.83646    14.47   0.000     885.9536    1163.633
+--------------------------------------------------------------------------------
+
+. corr MToNorth willMarryAA
+variable willMarryAA not found
+r(111);
+
+. corr MToNorth WMAA
+(obs=58,518)
+
+             | MToNorth     WMAA
+-------------+------------------
+    MToNorth |   1.0000
+        WMAA |   0.0175   1.0000
+
+
+. corr tMToNorth tWMAA
+(obs=58,518)
+
+             | tMToNo~h    tWMAA
+-------------+------------------
+   tMToNorth |   1.0000
+       tWMAA |   0.0254   1.0000
+
+
+. corr MWithinSouth WMAA
+(obs=58,518)
+
+             | MWit~uth     WMAA
+-------------+------------------
+MWithinSouth |   1.0000
+        WMAA |   0.0052   1.0000
+
+
+. corr MWithinSouth tWMAA
+(obs=58,518)
+
+             | MWit~uth    tWMAA
+-------------+------------------
+MWithinSouth |   1.0000
+       tWMAA |  -0.0140   1.0000
+
+
+. xtreg occscore_real MShortN MReturn MWithinNorth WMAA WMN MW_WMAA MW_WMN MR_WMAA MR_WMN MSN_WMAA MSN_WMN tMWithinNorth tMReturn tWMAA tWMN tMW_tWMAA tMW_tWMN tMR_t
+> WMAA tMR_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, re
+
+Random-effects GLS regression                   Number of obs     =     14,506
+Group variable: id                              Number of groups  =      7,253
+
+R-sq:                                           Obs per group:
+     within  = 0.4641                                         min =          2
+     between = 0.1007                                         avg =        2.0
+     overall = 0.1958                                         max =          2
+
+                                                Wald chi2(28)     =    7079.24
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+       MShortN |   13.54691   180.4381     0.08   0.940    -340.1052     367.199
+       MReturn |  -513.9078   288.8864    -1.78   0.075    -1080.115    52.29916
+  MWithinNorth |   132.3208   206.5358     0.64   0.522     -272.482    537.1235
+          WMAA |   196.4227   56.62215     3.47   0.001     85.44534    307.4001
+           WMN |  -9.167916   67.88217    -0.14   0.893    -142.2145    123.8787
+       MW_WMAA |  -71.74256   221.0602    -0.32   0.746    -505.0126    361.5275
+        MW_WMN |   65.63305   165.2692     0.40   0.691    -258.2885    389.5546
+       MR_WMAA |   403.8059   306.6923     1.32   0.188    -197.2999    1004.912
+        MR_WMN |   -722.862   373.5676    -1.94   0.053    -1455.041     9.31694
+      MSN_WMAA |  -174.0928   186.5555    -0.93   0.351    -539.7349    191.5493
+       MSN_WMN |  -302.0272   261.6338    -1.15   0.248      -814.82    210.7657
+ tMWithinNorth |   242.7713   169.2248     1.43   0.151    -88.90328    574.4459
+      tMReturn |  -109.9277   241.4178    -0.46   0.649    -583.0978    363.2424
+         tWMAA |   12.83915   38.04873     0.34   0.736    -61.73499    87.41329
+          tWMN |   49.11318   65.82372     0.75   0.456    -79.89895    178.1253
+     tMW_tWMAA |  -162.3101   181.1247    -0.90   0.370     -517.308    192.6879
+      tMW_tWMN |   132.3727   136.9863     0.97   0.334    -136.1155    400.8609
+     tMR_tWMAA |  -120.5987   253.7001    -0.48   0.635    -617.8417    376.6444
+      tMR_tWMN |   486.6335   311.2363     1.56   0.118    -123.3784    1096.645
+    tMSN_tWMAA |   123.0628   82.05438     1.50   0.134    -37.76081    283.8864
+     tMSN_tWMN |   674.8799   218.0655     3.09   0.002     247.4794     1102.28
+          time |   717.8632   37.60425    19.09   0.000     644.1603    791.5662
+           age |   51.70122   6.232092     8.30   0.000     39.48654    63.91589
+        agesqr |  -.5977716   .0787361    -7.59   0.000    -.7520914   -.4434517
+     education |    82.3548   3.229693    25.50   0.000     76.02472    88.68488
+      children |   -.226879   4.241939    -0.05   0.957    -8.540927    8.087169
+state_inc_1965 |   .0539495   .0319476     1.69   0.091    -.0086666    .1165655
+ deltaStateInc |  -54.92378   88.85257    -0.62   0.536    -229.0716    119.2241
+         _cons |   902.6822   166.7773     5.41   0.000     575.8047     1229.56
+---------------+----------------------------------------------------------------
+       sigma_u |  763.94208
+       sigma_e |  559.36125
+           rho |  .65098982   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+
+. 
+. xtreg occscore_real MShortN MReturn MWithinNorth WMAA WMN MW_WMAA MW_WMN MR_WMAA MR_WMN MSN_WMAA MSN_WMN tMShortN tMReturn tMWithinNorth tWMAA tWMN tMW_tWMAA tMW_t
+> WMN tMR_tWMAA tMR_tWMN tMSN_tWMAA tMSN_tWMN time age agesqr education children state_inc_1965 deltaStateInc if MToNorth==1 & dSex==0, re
+
+Random-effects GLS regression                   Number of obs     =     14,506
+Group variable: id                              Number of groups  =      7,253
+
+R-sq:                                           Obs per group:
+     within  = 0.4644                                         min =          2
+     between = 0.1009                                         avg =        2.0
+     overall = 0.1961                                         max =          2
+
+                                                Wald chi2(29)     =    7088.08
+corr(u_i, X)   = 0 (assumed)                    Prob > chi2       =     0.0000
+
+--------------------------------------------------------------------------------
+ occscore_real |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+       MShortN |  -160.0696   194.6755    -0.82   0.411    -541.6266    221.4874
+       MReturn |  -515.7317   288.8574    -1.79   0.074    -1081.882    50.41844
+  MWithinNorth |   130.9313   206.5153     0.63   0.526    -273.8313    535.6939
+          WMAA |   194.3721   56.62147     3.43   0.001     83.39604    305.3481
+           WMN |  -8.627217   67.86926    -0.13   0.899    -141.6485    124.3941
+       MW_WMAA |  -70.68772   221.0378    -0.32   0.749    -503.9139    362.5385
+        MW_WMN |   64.92864   165.2522     0.39   0.694    -258.9598     388.817
+       MR_WMAA |    405.163   306.6609     1.32   0.186    -195.8814    1006.207
+        MR_WMN |  -722.8852   373.5286    -1.94   0.053    -1454.988    9.217353
+      MSN_WMAA |  -5.873498   199.5387    -0.03   0.977    -396.9621    385.2151
+       MSN_WMN |   -301.976   261.6064    -1.15   0.248    -814.7152    210.7632
+      tMShortN |   406.4899   171.1902     2.37   0.018     70.96318    742.0165
+      tMReturn |  -143.6609   241.7765    -0.59   0.552    -617.5342    330.2124
+ tMWithinNorth |   247.7277   169.1962     1.46   0.143    -83.89071    579.3462
+         tWMAA |   15.24728    38.0542     0.40   0.689    -59.33757    89.83214
+          tWMN |   48.54925   65.80977     0.74   0.461    -80.43553     177.534
+     tMW_tWMAA |  -169.8819   181.1084    -0.94   0.348    -524.8478    185.0839
+      tMW_tWMN |   143.2735   137.0296     1.05   0.296    -125.2997    411.8466
+     tMR_tWMAA |  -119.5925   253.6382    -0.47   0.637    -616.7142    377.5291
+      tMR_tWMN |   490.3403   311.1638     1.58   0.115    -119.5295     1100.21
+    tMSN_tWMAA |   -210.605    162.708    -1.29   0.196    -529.5067    108.2967
+     tMSN_tWMN |    665.826   218.0453     3.05   0.002      238.465    1093.187
+          time |   754.6393   40.66274    18.56   0.000     674.9418    834.3368
+           age |   50.76424   6.243556     8.13   0.000      38.5271    63.00139
+        agesqr |  -.5859871   .0788793    -7.43   0.000    -.7405876   -.4313866
+     education |   82.33967   3.229457    25.50   0.000     76.01005    88.66929
+      children |  -.2216169   4.241582    -0.05   0.958    -8.534964    8.091731
+state_inc_1965 |   .0504496   .0319791     1.58   0.115    -.0122284    .1131275
+ deltaStateInc |  -150.6686   97.56025    -1.54   0.123    -341.8832    40.54597
+         _cons |   932.3105   167.2251     5.58   0.000     604.5554    1260.066
+---------------+----------------------------------------------------------------
+       sigma_u |  763.97711
+       sigma_e |  559.26555
+           rho |   .6510884   (fraction of variance due to u_i)
+--------------------------------------------------------------------------------
+
+. 
+. summ occscore_real if tMToNorth ==1 & time==0
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+occscore_r~l |     11,531    2928.053    989.0377    534.478   10555.94
+
+. summ occscore_real if tMToNorth ==0 & time==0
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+occscore_r~l |     17,728     2546.21    1052.641    534.478   10555.94
+
+. summ occscore_real if tMToNorth ==1 & time==1
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+occscore_r~l |     11,862    3578.838    1210.032   472.3609   12438.84
+
+. summ occscore_real if tMToNorth ==0 & time==1
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+occscore_r~l |     17,397    3127.604    1301.367   629.8145   12438.84
+
+. log close
+      name:  <unnamed>
+       log:  /Users/max/Documents/500_data/logs/redesign-stage-one.log
+  log type:  text
+ closed on:   2 Apr 2017, 19:25:56
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
