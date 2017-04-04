@@ -9,8 +9,9 @@ replace statefip=migplac5
 * Set present state income to 1965 value.
 replace state_inc_present=state_inc_1965
 
-* Create change in state income variable for t=0.
-replace deltaStateInc=0
+* Create change in state income variables for t=0.
+replace DeltaOriginStateInc=0
+replace DeltaIncAcrossStates=0
 
 * Subtract five years from everyone's age and rewrite the agesqr variable.
 replace age=age-5

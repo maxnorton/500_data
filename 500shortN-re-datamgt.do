@@ -54,4 +54,5 @@ generate agesqr=age*age
 egen id = group(serial pernum)
 
 * Create change in state income variable as empty value.
-generate deltaStateInc=.
+generate DeltaOriginStateInc=.
+generate DeltaIncAcrossStates=.
