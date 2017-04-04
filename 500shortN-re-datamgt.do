@@ -37,7 +37,7 @@ generate MShortN = (statefip==002  | statefip==004 | statefip==006 | statefip==0
 
 * Join each record to a state_inc_1970 and state_inc_1965 variable (state per-capita income in respective year).
 joinby statefip using "inc70bystate.dta"
-joinby migplac5 using "inc65bystate.dta"
+joinby migplac5 using "migplac_incomes.dta"
 
 * Join generates occscore5yr, erscor505yr, sei5yr, presgl5yr to compare to 1970 values.
 label drop occ5yr95_lbl
@@ -52,3 +52,6 @@ generate agesqr=age*age
 
 * Generate person id for linking across periods.
 egen id = group(serial pernum)
+
+* Create change in state income variable as empty value.
+generate deltaStateInc=.
