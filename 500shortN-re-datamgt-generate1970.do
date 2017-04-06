@@ -7,7 +7,7 @@ generate time=1
 generate state_inc_present = state_inc_1970
 
 * Create change in state income variables for t=1.
-replace DeltaOriginStateInc=(orig_state_inc_1970-state_inc_1965)/state_inc_1965
-replace DeltaIncAcrossStates=(state_inc_1970-orig_state_inc_1970)/orig_state_inc_1970
+replace DeltaOriginStateInc=100*(orig_state_inc_1970-state_inc_1965)/state_inc_1965
+replace DeltaIncAcrossStates=100*(state_inc_1970-orig_state_inc_1970)/orig_state_inc_1970
 
 save "data-1970.dta", replace
