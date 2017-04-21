@@ -9,4 +9,6 @@ include "500shortN-re-datamgt-incomes.do"		// Perform cleanup on income indices.
 include "500marrbyregion-datamgt-education.do"		// Set up education variable.
 include "500shortN-re-datamgt-treatments-interactions.do"	// Set up treatment and interaction terms.
 xtset id time
+save "data-500shortN-re-published.dta", replace
+
 * End of data setup.
